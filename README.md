@@ -1,5 +1,7 @@
 # VinylCollection
 
+![Description of image](./md.png)
+
 A full-stack web application with a Blazor Server (.NET 8) frontend and a Flask (Python) backend. Both services are containerized with Docker and support hot reload for development.
 
 ## Project Structure
