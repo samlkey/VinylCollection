@@ -1,20 +1,32 @@
 ﻿@inherits LayoutComponentBase
 
 <div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
-
     <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
-        </div>
+        <div class="top-row">
+            <h1>VINYL COLLECTION</h1>
+            <div class="nav-buttons">
+                <button class="nav-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" viewBox="0 0 16 16" style="vertical-align: middle;">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85zm-5.242 1.106a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/>
+                    </svg>
+                </button>
+                <button class="nav-btn burger" title="Menu">
+                    <span class="burger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+            </div>
+        </div> 
 
-        <article class="content px-4">
+        <article class="content">
             @Body
         </article>
+
     </main>
 </div>
+<footer class="main-footer">samkey.uk</footer>
 
 <div id="blazor-error-ui" data-nosnippet>
     An unhandled error has occurred.
