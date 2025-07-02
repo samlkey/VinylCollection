@@ -16,9 +16,6 @@ services:
   frontend:
     build:
       context: ./FRONTEND
-      target: dev
-    volumes:
-      - ./FRONTEND:/src
     ports:
       - "8080:8080"
     restart: unless-stopped
