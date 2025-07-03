@@ -1,30 +1,53 @@
 ﻿@page "/"
 @using FRONTEND.Data
+@inject ApiService api
+
 @rendermode InteractiveServer
 
 <PageTitle>Home</PageTitle>
 
-@if (albums.Count > 0)
+@if (albums != null && albums.Count > 0 && currentAlbumIndex >= 0 && currentAlbumIndex < albums.Count)
 {
-    <div class="container">
-        <div class="image-container">
-            <img src="@albums[currentAlbumIndex].ImgSrc" alt="@albums[currentAlbumIndex].Name" />
+    <div class="container" style="--album-bg:@albums[currentAlbumIndex].PrimaryColour;">
+        <div class="@(hasAnimated ? "album-slide-in-right" : "") album-carousel" @key="currentAlbumIndex">
+            <div class="vinyl-box-flip-container"
+                 @onmousemove="OnImageMouseMove"
+                 @onmouseleave="OnImageMouseLeave"
+                 @onclick="ToggleFlip">
+                <div class="vinyl-box-flip @(isFlipped ? "flipped" : "")" style="transform:@(imageTransform + (isFlipped ? " rotateY(180deg)" : ""))">
+                    <img src="@albums[currentAlbumIndex].ImgSrc"
+                         alt="@albums[currentAlbumIndex].Name"
+                         class="vinyl-box-img front"
+                         draggable="false" />
+                    <img src="@albums[currentAlbumIndex].ImgSrcBack"
+                         alt="@($"{albums[currentAlbumIndex]?.Name} back")"
+                         class="vinyl-box-img back"
+                         draggable="false" />
+                </div>
+            </div>
+
+            <div class="info-container">
+                <h1>@albums[currentAlbumIndex].Name</h1>
+                <h2>@albums[currentAlbumIndex].Artist</h2>
+
+                <div class="meta-info">
+                    <p>@albums[currentAlbumIndex].Release</p>
+                    <p>@albums[currentAlbumIndex].TrackList!.Count Songs</p>
+                    <p>@albums[currentAlbumIndex].Length</p>
+                </div>
+                <p class="star-rating">@albums[currentAlbumIndex].GetStars(albums[currentAlbumIndex].Rating)</p>
+
+                <div class="spotify-link-container">
+                    <button class="spotify-link">Listen on Spotify</button>
+                </div>
+            </div>
         </div>
-
-        <div class="info-container">
-            <h1>@albums[currentAlbumIndex].Name</h1>
-            <h2>@albums[currentAlbumIndex].Artist</h2>
-
-            <div class="meta-info">
-                <p>@albums[currentAlbumIndex].Release</p>
-                <p>@albums[currentAlbumIndex].TrackList!.Count Songs</p>
-                <p>@albums[currentAlbumIndex].Length</p>
-            </div>
-            <p class="star-rating">@albums[currentAlbumIndex].GetStars(albums[currentAlbumIndex].Rating)</p>
-            
-            <div class="spotify-link-container">
-                <button class="spotify-link">Listen on Spotify</button>
-            </div>
+        <div class="album-indicator">
+            @for (int i = 0; i < albums.Count; i++)
+            {
+                var dotIndex = i;
+                <span class="dot @(dotIndex == currentAlbumIndex ? "active" : "")" @onclick="() => SetAlbumIndex(dotIndex)"></span>
+            }
         </div>
     </div>
 }
@@ -36,68 +59,89 @@ else
 @code {
     private int currentAlbumIndex = 0; 
     private System.Timers.Timer? timer; 
-    private List<Album> albums = new List<Album>(){
-        new Album() {
-            Name = "MMM..FOOD",
-            Artist = "MF DOOM",
-            Rating = 3.5f,
-            Release = 2004,
-            Length = 48.54f,
-            ImgSrc = "assets/img/album.jpg",
-            TrackList = new List<Track>() {
-                new Track() { Name = "Beef Rapp", Length = 4.39f },
-                new Track() { Name = "Hoe Cakes", Length = 3.54f },
-                new Track() { Name = "Potholderz", Length = 3.20f },
-                new Track() { Name = "One Beer", Length = 4.18f },
-                new Track() { Name = "Deep Fried Frenz", Length = 4.59f },
-                new Track() { Name = "Poo-Putt Platter", Length = 1.13f },
-                new Track() { Name = "Fillet-O-Rapper", Length = 1.03f },
-                new Track() { Name = "Gumbo", Length = 0.49f },
-                new Track() { Name = "Fig Leaf Bi-Carbonate", Length = 3.19f },
-                new Track() { Name = "Kon Karne", Length = 2.51f },
-                new Track() { Name = "Guinnessez", Length = 4.41f },
-                new Track() { Name = "Kon Queso", Length = 4.0f },
-                new Track() { Name = "Rapp Snitch Knishes", Length = 2.52f },
-                new Track() { Name = "Vomitspit", Length = 2.48f },
-                new Track() { Name = "Kookies", Length = 4.01f }
-            }
-        },
-        new Album() {
-            Name = "OK COMPUTER",
-            Artist = "RadioHead",
-            Rating = 5f,
-            Release = 1997,
-            Length = 53.41f,
-            ImgSrc = "assets/img/ok.jpg",
-            TrackList = new List<Track>() {
-                new Track() { Name = "Airbag", Length = 4.39f },
-                new Track() { Name = "Paranoid Android", Length = 6.23f },
-                new Track() { Name = "Subterranean Homesick Alien", Length = 4.27f },
-                new Track() { Name = "Exit Music (For a Film)", Length = 4.24f },
-                new Track() { Name = "Let Down", Length = 4.59f },
-                new Track() { Name = "Karma Police", Length = 4.21f },
-                new Track() { Name = "Filter Happier", Length = 1.57f },
-                new Track() { Name = "Electioneering", Length = 3.50f },
-                new Track() { Name = "Climbing Up the Walls", Length = 4.45f },
-                new Track() { Name = "No Surprises", Length = 3.48f },
-                new Track() { Name = "Lucky", Length = 4.19f },
-                new Track() { Name = "The Tourist", Length = 5.24f }
-            }
-        }
-    };
+    private List<Album>? albums; 
+    private bool hasAnimated = false;
+    private bool isPaused = false;
+    private string imageTransform = "perspective(800px) rotateY(0deg) rotateX(0deg) scale(1)";
+    private bool isFlipped = false;
+    private bool canFlip = true;
 
-    protected override void OnInitialized() {
-        currentAlbumIndex = 0;
+    protected override async Task OnInitializedAsync() {
+        albums = await api.GetAlbumsAsync();
+
         timer = new();
         timer.Interval = 10000;
         timer.Elapsed += async (sender, e) =>
         {
             await InvokeAsync(() =>
             {
-                currentAlbumIndex = (currentAlbumIndex + 1) % albums.Count;
-                StateHasChanged();
+                if (!isPaused)
+                {
+                    currentAlbumIndex = (currentAlbumIndex + 1) % albums.Count;
+                    hasAnimated = true;
+                    isFlipped = false;
+                    StateHasChanged();
+                }
             });
         };
         timer.Enabled = true;
+    }
+
+    private void SetAlbumIndex(int i)
+    {
+        if (albums == null || albums.Count == 0)
+            return;
+
+        if (i < 0) i = 0;
+        if (i >= albums.Count) i = albums.Count - 1;
+
+        if (i != currentAlbumIndex)
+        {
+            currentAlbumIndex = i;
+            hasAnimated = true;
+            isFlipped = false;
+            PauseTimerForSeconds(10);
+        }
+    }
+
+    private async void PauseTimerForSeconds(int seconds)
+    {
+        if (timer != null)
+        {
+            timer.Enabled = false;
+            isPaused = true;
+            await Task.Delay(seconds * 1000);
+            timer.Enabled = true;
+            isPaused = false;
+        }
+    }
+
+    private void OnImageMouseMove(MouseEventArgs e)
+    {
+        double x = e.OffsetX;
+        double y = e.OffsetY;
+        double width = 450;  // match your CSS
+        double height = 450;
+
+        double maxTilt = 10; // reduced from 25 to 10 degrees
+        double rotateY = ((x / width) - 0.5) * 2 * maxTilt; // left/right
+        double rotateX = -((y / height) - 0.5) * 2 * maxTilt; // up/down
+
+        imageTransform = $"perspective(800px) rotateY({rotateY}deg) rotateX({rotateX}deg) scale(1.05)";
+    }
+
+    private void OnImageMouseLeave()
+    {
+        imageTransform = "perspective(800px) rotateY(0deg) rotateX(0deg) scale(1)";
+    }
+
+    private async void ToggleFlip()
+    {
+        if (!canFlip) return;
+        isFlipped = !isFlipped;
+        canFlip = false;
+        StateHasChanged();
+        await Task.Delay(700); // 700ms cooldown, adjust as needed
+        canFlip = true;
     }
 }

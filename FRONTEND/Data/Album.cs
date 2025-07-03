@@ -5,10 +5,12 @@ namespace FRONTEND.Data
         #region PROPS
         public string? Name { get; set; }
         public string? Artist {get; set;}
+        public string? PrimaryColour { get; set; }
         public float Rating { get; set; }
         public int Release { get; set; }
         public float Length { get; set; }
         public string? ImgSrc { get; set; }
+        public string? ImgSrcBack { get; set; }
         public List<Track>? TrackList { get; set; }
         #endregion
     

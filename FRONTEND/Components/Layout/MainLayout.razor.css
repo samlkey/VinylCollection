@@ -18,13 +18,15 @@ main {
 .top-row {
     position: fixed;
     padding: .5rem;
-    height: 5rem;
+    height: 7rem;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #535b59; 
     color: white;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
     .top-row h1 {
@@ -56,7 +58,7 @@ main {
 }
 
 .nav-btn {
-    background-color: #777d7c; 
+    background-color: rgba(255, 255, 255, 0.212); 
     border: none;
     border-radius: 15px;
     font-size: 1rem;
