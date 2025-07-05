@@ -17,6 +17,7 @@ builder.Services.AddDbContext<VinylDbContext>(options =>
 // Services
 builder.Services.AddScoped<IVinylService, VinylService>();
 builder.Services.AddHttpClient<IColorAnalysisService, ColorAnalysisService>();
+builder.Services.AddScoped<ICurrentAlbumColorService, CurrentAlbumColorService>();
 
 var app = builder.Build();
 

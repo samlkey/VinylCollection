@@ -16,6 +16,11 @@
 <body>
     <Routes />
     <script src="_framework/blazor.web.js"></script>
+    <script>
+        window.updateLayoutTextColor = function(color) {
+            document.documentElement.style.setProperty('--layout-text-color', color);
+        };
+    </script>
 </body>
 
 </html>

@@ -1,8 +1,11 @@
 ﻿@page "/"
 @using FRONTEND.Data
 @using FRONTEND.Services
+@using Microsoft.JSInterop
 @inject IVinylService VinylService
 @inject IColorAnalysisService ColorService
+@inject ICurrentAlbumColorService CurrentAlbumColorService
+@inject IJSRuntime JS
 
 @rendermode InteractiveServer
 
@@ -10,34 +13,39 @@
 
 @if (albums != null && albums.Count > 0 && currentAlbumIndex >= 0 && currentAlbumIndex < albums.Count)
 {
-    <div class="container" style="--album-bg:@(albums[currentAlbumIndex].PrimaryColour ?? "#000000");">
+    var currentAlbum = albums[currentAlbumIndex];
+    CurrentAlbumColorService.CurrentAlbumColor = currentAlbum.PrimaryColour ?? "#000000";
+    var textColor = CurrentAlbumColorService.TextColor;
+    var layoutTextColor = CurrentAlbumColorService.IsColorBright ? "black" : "white";
+    
+    <div class="container" style="--album-bg:@(currentAlbum.PrimaryColour ?? "#000000"); --layout-text-color:@layoutTextColor;">
         <div class="@(hasAnimated ? "album-slide-in-right" : "") album-carousel" @key="currentAlbumIndex">
             <div class="vinyl-box-flip-container"
                  @onmousemove="OnImageMouseMove"
                  @onmouseleave="OnImageMouseLeave"
                  @onclick="ToggleFlip">
                 <div class="vinyl-box-flip @(isFlipped ? "flipped" : "")" style="transform:@(imageTransform + (isFlipped ? " rotateY(180deg)" : ""))">
-                    <img src="@albums[currentAlbumIndex].ImgSrc"
-                         alt="@albums[currentAlbumIndex].Name"
+                    <img src="@currentAlbum.ImgSrc"
+                         alt="@currentAlbum.Name"
                          class="vinyl-box-img front"
                          draggable="false" />
-                    <img src="@albums[currentAlbumIndex].ImgSrcBack"
-                         alt="@($"{albums[currentAlbumIndex]?.Name} back")"
+                    <img src="@currentAlbum.ImgSrcBack"
+                         alt="@($"{currentAlbum?.Name} back")"
                          class="vinyl-box-img back"
                          draggable="false" />
                 </div>
             </div>
 
             <div class="info-container">
-                <h1>@albums[currentAlbumIndex].Name</h1>
-                <h2>@albums[currentAlbumIndex].Artist</h2>
+                <h1 style="@textColor">@currentAlbum.Name</h1>
+                <h2 style="@textColor">@currentAlbum.Artist</h2>
 
                 <div class="meta-info">
-                    <p>@albums[currentAlbumIndex].Release</p>
-                    <p>@albums[currentAlbumIndex].TrackList!.Count Songs</p>
-                    <p>@albums[currentAlbumIndex].Length</p>
+                    <p style="@textColor">@currentAlbum.Release</p>
+                    <p style="@textColor">@currentAlbum.TrackList!.Count Songs</p>
+                    <p style="@textColor">@currentAlbum.Length</p>
                 </div>
-                <p class="star-rating">@albums[currentAlbumIndex].GetStars(albums[currentAlbumIndex].Rating)</p>
+                <p class="star-rating">@currentAlbum.GetStars(currentAlbum.Rating)</p>
 
                 <div class="spotify-link-container">
                     <button class="spotify-link">Listen on Spotify</button>
@@ -98,6 +106,8 @@ else
         timer.Enabled = true;
     }
 
+
+
     private void SetAlbumIndex(int i)
     {
         if (albums == null || albums.Count == 0)
@@ -154,5 +164,18 @@ else
         StateHasChanged();
         await Task.Delay(700); // 700ms cooldown, adjust as needed
         canFlip = true;
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (albums != null && albums.Count > 0 && currentAlbumIndex >= 0 && currentAlbumIndex < albums.Count)
+        {
+            var currentAlbum = albums[currentAlbumIndex];
+            CurrentAlbumColorService.CurrentAlbumColor = currentAlbum.PrimaryColour ?? "#000000";
+            var isBright = CurrentAlbumColorService.IsColorBright;
+            var textColor = isBright ? "black" : "white";
+            
+            await JS.InvokeVoidAsync("updateLayoutTextColor", textColor);
+        }
     }
 }

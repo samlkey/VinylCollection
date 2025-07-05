@@ -34,7 +34,7 @@
   {
     "Name": "Tyron",
     "Artist": "Slowthai",
-    "Rating": 4.2,
+    "Rating": 4.5,
     "Release": 2021,
     "Length": 35.2,
     "ImgSrc": "https://m.media-amazon.com/images/I/71LDwv-JwYL.jpg",
@@ -45,6 +45,29 @@
       { "Name": "MAZZA", "Length": 2.8 },
       { "Name": "VEX", "Length": 2.9 },
       { "Name": "PLAY WITH FIRE", "Length": 2.7 }
+    ]
+  },
+  {
+    "Name": "OK Computer",
+    "Artist": "Radiohead",
+    "Rating": 4.5,
+    "Release": 1997,
+    "Length": 53.41,
+    "ImgSrc": "https://m.media-amazon.com/images/I/715LZJ5qX0L._UF350,350_QL50_.jpg",
+    "ImgSrcBack": "https://m.media-amazon.com/images/I/91FeCUOipSL._UF1000,1000_QL80_.jpg",
+    "TrackList": [
+      { "Name": "Airbag", "Length": 4.44 },
+      { "Name": "Paranoid Android", "Length": 6.23 },
+      { "Name": "Subterranean Homesick Alien", "Length": 4.27 },
+      { "Name": "Exit Music (For a Film)", "Length": 4.24 },
+      { "Name": "Let Down", "Length": 4.59 },
+      { "Name": "Karma Police", "Length": 4.21 },
+      { "Name": "Filter Happier", "Length": 1.57 },
+      { "Name": "Electioneering", "Length": 3.50 },
+      { "Name": "Climbing Up the Walls", "Length": 4.45 },
+      { "Name": "No Surprises", "Length": 3.48 },
+      { "Name": "Lucky", "Length": 4.19 },
+      { "Name": "The Tourist", "Length": 5.24 }
     ]
   }
 ] 

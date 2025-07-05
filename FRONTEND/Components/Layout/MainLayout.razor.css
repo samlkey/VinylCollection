@@ -32,6 +32,7 @@ main {
     .top-row h1 {
         font-family: 'Soopafre', sans-serif;
         padding-left: 3vw;
+        transition: color 0.5s ease-in-out;
     }
 
     .top-row ::deep a, .top-row ::deep .btn-link {
@@ -143,6 +144,7 @@ main {
     user-select: none;
     font-weight: bold;
     margin-bottom: 4vh;
+    transition: color 0.5s ease-in-out;
 }
 
 @media (max-width: 768px) {

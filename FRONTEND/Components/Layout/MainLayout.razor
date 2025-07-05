@@ -1,9 +1,11 @@
 ﻿@inherits LayoutComponentBase
+@using FRONTEND.Services
+@inject ICurrentAlbumColorService CurrentAlbumColorService
 
 <div class="page">
     <main>
         <div class="top-row">
-            <h1>VINYL COLLECTION</h1>
+            <h1 style="color: var(--layout-text-color, white);">VINYL COLLECTION</h1>
             <div class="nav-buttons">
                 <button class="nav-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" viewBox="0 0 16 16" style="vertical-align: middle;">
@@ -31,10 +33,12 @@
 
     </main>
 </div>
-<footer class="main-footer">samkey.uk</footer>
+<footer class="main-footer" style="color: var(--layout-text-color, white);">samkey.uk</footer>
 
 <div id="blazor-error-ui" data-nosnippet>
     An unhandled error has occurred.
     <a href="." class="reload">Reload</a>
     <span class="dismiss">🗙</span>
 </div>
+
+

@@ -9,6 +9,14 @@ namespace FRONTEND.Services
         Task<string> GetDominantColorAsync(string imageUrl);
     }
 
+    public interface ICurrentAlbumColorService
+    {
+        string CurrentAlbumColor { get; set; }
+        bool IsColorBright { get; }
+        string TextColor { get; }
+        event Action? OnColorChanged;
+    }
+
     public class ColorAnalysisService : IColorAnalysisService
     {
         private readonly HttpClient _httpClient;
@@ -77,6 +85,57 @@ namespace FRONTEND.Services
             {
                 _logger.LogError(ex, $"Error calculating color for image {imageUrl}");
                 return "#000000"; // Fallback to black
+            }
+        }
+    }
+
+    public class CurrentAlbumColorService : ICurrentAlbumColorService
+    {
+        private string _currentAlbumColor = "#000000";
+        private bool _isColorBright = false;
+
+        public string CurrentAlbumColor 
+        { 
+            get => _currentAlbumColor;
+            set
+            {
+                if (_currentAlbumColor != value)
+                {
+                    _currentAlbumColor = value;
+                    _isColorBright = CalculateIsColorBright(value);
+                    OnColorChanged?.Invoke();
+                }
+            }
+        }
+
+        public bool IsColorBright => _isColorBright;
+
+        public string TextColor => _isColorBright ? "color: black;" : "color: white;";
+
+        public event Action? OnColorChanged;
+
+        private bool CalculateIsColorBright(string hexColor)
+        {
+            try
+            {
+                // Remove # if present
+                hexColor = hexColor.TrimStart('#');
+                
+                // Parse RGB values
+                int r = Convert.ToInt32(hexColor.Substring(0, 2), 16);
+                int g = Convert.ToInt32(hexColor.Substring(2, 2), 16);
+                int b = Convert.ToInt32(hexColor.Substring(4, 2), 16);
+                
+                // Calculate relative luminance (standard formula)
+                double luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+                
+                // Consider bright if luminance > 0.5
+                return luminance > 0.5;
+            }
+            catch
+            {
+                // Default to white text if color parsing fails
+                return false;
             }
         }
     }
