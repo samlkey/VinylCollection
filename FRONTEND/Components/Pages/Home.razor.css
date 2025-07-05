@@ -153,33 +153,6 @@
     will-change: transform;
 }
 
-@keyframes slideInRight {
-    from { opacity: 0; transform: translateX(300px) scale(0.92); }
-    to   { opacity: 1; transform: translateX(0) scale(1); }
-}
-
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-
-    .album-carousel {
-        flex-direction: column;
-    }
-
-    .image-container {
-        margin-top: 10vh;
-    }
-    
-    .image-container img {
-        width: 50vw;
-    }
-
-    .info-container {
-        width: 85vw;
-        padding: 1rem;
-    }
-}
 
 .vinyl-box-container {
     position: relative;
@@ -250,3 +223,261 @@
     transform: rotateY(180deg);
 }
 
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(300px) scale(0.92); }
+    to   { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 2vh;
+        padding: 1vh 0;
+        overflow: hidden;
+        height: 100vh;
+        min-height: 100vh;
+    }
+
+    .album-carousel {
+        flex-direction: column;
+        gap: 2vh;
+        flex: 1;
+        justify-content: center;
+    }
+
+    /* Make vinyl box container smaller on mobile */
+    .vinyl-box-container {
+        width: 240px;
+        height: 240px;
+        perspective: 600px;
+    }
+
+    /* Make vinyl box images smaller on mobile */
+    .vinyl-box-img {
+        width: 220px;
+        height: 220px;
+    }
+
+    /* Make vinyl box flip container smaller on mobile */
+    .vinyl-box-flip-container {
+        width: 240px;
+        height: 240px;
+        perspective: 800px;
+    }
+
+    /* Make vinyl box flip smaller on mobile */
+    .vinyl-box-flip {
+        width: 220px;
+        height: 220px;
+    }
+
+    /* Make vinyl box front/back images smaller on mobile */
+    .vinyl-box-img.front,
+    .vinyl-box-img.back {
+        width: 220px;
+        height: 220px;
+    }
+
+    /* Make regular album images smaller on mobile */
+    .album-img {
+        width: 240px;
+        height: 240px;
+    }
+
+    .info-container {
+        width: 85vw;
+        padding: 1rem;
+        height: auto;
+        min-height: 20vh;
+        max-height: 30vh;
+        overflow: hidden;
+    }
+
+    .info-container > h1 {
+        font-size: 1.8rem;
+        margin: 0;
+        line-height: 1.2;
+    }
+
+    .info-container > h2 {
+        font-size: 1.3rem;
+        margin: 0;
+        line-height: 1.2;
+    }
+
+    .meta-info {
+        font-size: 0.9rem;
+        flex-wrap: wrap;
+        margin: 0.5rem 0;
+    }
+
+    .star-rating {
+        font-size: 1.3rem;
+        margin-top: 0.5vh;
+        margin-bottom: 0.5vh;
+    }
+
+    .spotify-link {
+        padding: 0.4em 1em;
+        font-size: 0.9rem;
+    }
+
+    .album-indicator {
+        bottom: 8rem;
+        gap: 0.4rem;
+        margin-top: 1rem;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+/* Extra small devices (phones, 480px and down) */
+@media (max-width: 480px) {
+    .container {
+        gap: 1vh;
+        padding: 0.5vh 0;
+    }
+
+    .album-carousel {
+        gap: 1vh;
+    }
+
+    .vinyl-box-container {
+        width: 180px;
+        height: 180px;
+        perspective: 500px;
+    }
+
+    .vinyl-box-img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .vinyl-box-flip-container {
+        width: 180px;
+        height: 180px;
+        perspective: 600px;
+    }
+
+    .vinyl-box-flip {
+        width: 160px;
+        height: 160px;
+    }
+
+    .vinyl-box-img.front,
+    .vinyl-box-img.back {
+        width: 160px;
+        height: 160px;
+    }
+
+    .album-img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .info-container {
+        width: 90vw;
+        padding: 0.8rem;
+        min-height: 18vh;
+        max-height: 25vh;
+    }
+
+    .info-container > h1 {
+        font-size: 1.5rem;
+    }
+
+    .info-container > h2 {
+        font-size: 1.1rem;
+    }
+
+    .meta-info {
+        font-size: 0.8rem;
+        margin: 0.3rem 0;
+    }
+
+    .star-rating {
+        font-size: 1.1rem;
+        margin-top: 0.3vh;
+        margin-bottom: 0.3vh;
+    }
+
+    .spotify-link {
+        padding: 0.3em 0.8em;
+        font-size: 0.8rem;
+    }
+
+    .album-indicator {
+        bottom: 10rem;
+        gap: 0.3rem;
+        margin-top: 0.5rem;
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+/* Extra extra small devices (very small phones, 360px and down) */
+@media (max-width: 360px) {
+    .vinyl-box-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .vinyl-box-img {
+        width: 130px;
+        height: 130px;
+    }
+
+    .vinyl-box-flip-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .vinyl-box-flip {
+        width: 130px;
+        height: 130px;
+    }
+
+    .vinyl-box-img.front,
+    .vinyl-box-img.back {
+        width: 130px;
+        height: 130px;
+    }
+
+    .album-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .info-container {
+        min-height: 15vh;
+        max-height: 22vh;
+        padding: 0.6rem;
+    }
+
+    .info-container > h1 {
+        font-size: 1.3rem;
+    }
+
+    .info-container > h2 {
+        font-size: 1rem;
+    }
+
+    .meta-info {
+        font-size: 0.7rem;
+    }
+
+    .star-rating {
+        font-size: 1rem;
+    }
+
+    .spotify-link {
+        padding: 0.25em 0.6em;
+        font-size: 0.7rem;
+    }
+}
