@@ -1,11 +1,12 @@
 using FRONTEND.Data;
 using System.Text.Json;
+using FRONTEND.Services;
 
 namespace FRONTEND.Data
 {
     public static class SeedData
     {
-        public static void SeedDatabase(VinylDbContext context)
+        public static async Task SeedDatabaseAsync(VinylDbContext context, IColorAnalysisService colorService)
         {
             if (context.Albums.Any())
                 return; // Database already seeded
@@ -28,26 +29,31 @@ namespace FRONTEND.Data
                     {
                         Console.WriteLine($"Successfully deserialized {albums.Count} albums");
                         
-                        // Ensure all required fields have values
+                        // Calculate colors for each album
                         foreach (var album in albums)
                         {
-                            album.Name ??= "Unknown Album";
-                            album.Artist ??= "Unknown Artist";
-                            album.PrimaryColour ??= "#000000";
-                            album.ImgSrc ??= "assets/img/album.jpg";
-                            album.ImgSrcBack ??= "assets/img/album.jpg";
-                            album.TrackList ??= new List<Track>();
+                            if (string.IsNullOrEmpty(album.Name))
+                                album.Name = "Unknown Album";
+                            if (string.IsNullOrEmpty(album.Artist))
+                                album.Artist = "Unknown Artist";
+                            
+                            // Calculate primary color from album cover
+                            await album.CalculatePrimaryColourAsync(colorService);
                             
                             // Ensure track names are not null
-                            foreach (var track in album.TrackList)
+                            if (album.TrackList != null)
                             {
-                                track.Name ??= "Unknown Track";
+                                foreach (var track in album.TrackList)
+                                {
+                                    if (string.IsNullOrEmpty(track.Name))
+                                        track.Name = "Unknown Track";
+                                }
                             }
                         }
 
                         context.Albums.AddRange(albums);
-                        context.SaveChanges();
-                        Console.WriteLine("Successfully seeded database from JSON");
+                        await context.SaveChangesAsync();
+                        Console.WriteLine("Successfully seeded database from JSON with calculated colors");
                     }
                     else
                     {

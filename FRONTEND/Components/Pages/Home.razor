@@ -2,6 +2,7 @@
 @using FRONTEND.Data
 @using FRONTEND.Services
 @inject IVinylService VinylService
+@inject IColorAnalysisService ColorService
 
 @rendermode InteractiveServer
 
@@ -9,7 +10,7 @@
 
 @if (albums != null && albums.Count > 0 && currentAlbumIndex >= 0 && currentAlbumIndex < albums.Count)
 {
-    <div class="container" style="--album-bg:@albums[currentAlbumIndex].PrimaryColour;">
+    <div class="container" style="--album-bg:@(albums[currentAlbumIndex].PrimaryColour ?? "#000000");">
         <div class="@(hasAnimated ? "album-slide-in-right" : "") album-carousel" @key="currentAlbumIndex">
             <div class="vinyl-box-flip-container"
                  @onmousemove="OnImageMouseMove"
@@ -69,6 +70,15 @@ else
 
     protected override async Task OnInitializedAsync() {
         albums = await VinylService.GetAllAlbumsAsync();
+
+        // Calculate colors for albums that don't have them
+        foreach (var album in albums)
+        {
+            if (string.IsNullOrEmpty(album.PrimaryColour))
+            {
+                await album.CalculatePrimaryColourAsync(ColorService);
+            }
+        }
 
         timer = new();
         timer.Interval = 10000;

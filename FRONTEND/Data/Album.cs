@@ -1,5 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
+using FRONTEND.Services;
+
 
 namespace FRONTEND.Data
 {
@@ -13,6 +15,7 @@ namespace FRONTEND.Data
         
         [Required(ErrorMessage = "Artist is required.")]
         public string? Artist {get; set;}
+        [JsonIgnore] // Don't serialize to JSON, calculate at runtime
         public string? PrimaryColour { get; set; }
         
         [Range(0, 5, ErrorMessage = "Rating must be between 0 and 5.")]
@@ -34,6 +37,15 @@ namespace FRONTEND.Data
             return new string('★', fullStars) +
                (halfStar ? "½" : "") +
                new string('☆', emptyStars);
+        }
+
+        public async Task<string> CalculatePrimaryColourAsync(IColorAnalysisService colorService)
+        {
+            if (string.IsNullOrEmpty(PrimaryColour) && !string.IsNullOrEmpty(ImgSrc))
+            {
+                PrimaryColour = await colorService.GetDominantColorAsync(ImgSrc);
+            }
+            return PrimaryColour ?? "#000000";
         }
         #endregion
     }

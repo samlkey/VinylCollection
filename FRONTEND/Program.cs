@@ -16,6 +16,7 @@ builder.Services.AddDbContext<VinylDbContext>(options =>
 
 // Services
 builder.Services.AddScoped<IVinylService, VinylService>();
+builder.Services.AddHttpClient<IColorAnalysisService, ColorAnalysisService>();
 
 var app = builder.Build();
 
@@ -23,8 +24,9 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<VinylDbContext>();
+    var colorService = scope.ServiceProvider.GetRequiredService<IColorAnalysisService>();
     context.Database.EnsureCreated();
-    SeedData.SeedDatabase(context);
+    await SeedData.SeedDatabaseAsync(context, colorService);
 }
 
 // Configure the HTTP request pipeline.

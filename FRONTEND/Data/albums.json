@@ -2,7 +2,6 @@
   {
     "Name": "MM...FOOD",
     "Artist": "MF DOOM",
-    "PrimaryColour": "#535b59",
     "Rating": 4.5,
     "Release": 2004,
     "Length": 77.5,
@@ -19,7 +18,6 @@
   {
     "Name": "Plastic Beach",
     "Artist": "Gorillaz",
-    "PrimaryColour": "#9e4f29",
     "Rating": 4.0,
     "Release": 2010,
     "Length": 56.8,
@@ -36,7 +34,6 @@
   {
     "Name": "Tyron",
     "Artist": "Slowthai",
-    "PrimaryColour": "#63534d",
     "Rating": 4.2,
     "Release": 2021,
     "Length": 35.2,
