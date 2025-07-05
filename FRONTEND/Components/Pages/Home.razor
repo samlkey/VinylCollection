@@ -1,6 +1,7 @@
 ﻿@page "/"
 @using FRONTEND.Data
-@inject ApiService api
+@using FRONTEND.Services
+@inject IVinylService VinylService
 
 @rendermode InteractiveServer
 
@@ -67,7 +68,7 @@ else
     private bool canFlip = true;
 
     protected override async Task OnInitializedAsync() {
-        albums = await api.GetAlbumsAsync();
+        albums = await VinylService.GetAllAlbumsAsync();
 
         timer = new();
         timer.Interval = 10000;

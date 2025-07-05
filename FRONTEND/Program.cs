@@ -1,4 +1,7 @@
 using FRONTEND.Components;
+using FRONTEND.Data;
+using FRONTEND.Services;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,10 +9,23 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
+// Database Configuration
+builder.Services.AddDbContext<VinylDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection") ?? 
+        "Data Source=VinylCollection.db"));
+
 // Services
-builder.Services.AddHttpClient<ApiService>();
+builder.Services.AddScoped<IVinylService, VinylService>();
 
 var app = builder.Build();
+
+// Ensure database is created and seeded
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<VinylDbContext>();
+    context.Database.EnsureCreated();
+    SeedData.SeedDatabase(context);
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -20,7 +36,6 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 
 app.UseAntiforgery();
 

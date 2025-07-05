@@ -1,11 +1,21 @@
+using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
+
 namespace FRONTEND.Data
 {
     public class Album
     {
         #region PROPS
+        public int Id { get; set; }
+        
+        [Required(ErrorMessage = "Album name is required.")]
         public string? Name { get; set; }
+        
+        [Required(ErrorMessage = "Artist is required.")]
         public string? Artist {get; set;}
         public string? PrimaryColour { get; set; }
+        
+        [Range(0, 5, ErrorMessage = "Rating must be between 0 and 5.")]
         public float Rating { get; set; }
         public int Release { get; set; }
         public float Length { get; set; }

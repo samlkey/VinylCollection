@@ -1,0 +1,53 @@
+[
+  {
+    "Name": "MM...FOOD",
+    "Artist": "MF DOOM",
+    "PrimaryColour": "#535b59",
+    "Rating": 4.5,
+    "Release": 2004,
+    "Length": 77.5,
+    "ImgSrc": "https://m.media-amazon.com/images/I/61IhnFgGQPL._UF894,1000_QL80_.jpg",
+    "ImgSrcBack": "https://m.media-amazon.com/images/I/614ylffF-9L._UF894,1000_QL80_.jpg",
+    "TrackList": [
+      { "Name": "Beef Rapp", "Length": 4.5 },
+      { "Name": "Hoe Cakes", "Length": 3.2 },
+      { "Name": "Potholderz", "Length": 3.8 },
+      { "Name": "One Beer", "Length": 4.2 },
+      { "Name": "Deep Fried Frenz", "Length": 3.9 }
+    ]
+  },
+  {
+    "Name": "Plastic Beach",
+    "Artist": "Gorillaz",
+    "PrimaryColour": "#9e4f29",
+    "Rating": 4.0,
+    "Release": 2010,
+    "Length": 56.8,
+    "ImgSrc": "https://m.media-amazon.com/images/I/81EP2fxHLRL._UF1000,1000_QL80_.jpg",
+    "ImgSrcBack": "https://m.media-amazon.com/images/I/71RK33UII0L._UF1000,1000_QL80_.jpg",
+    "TrackList": [
+      { "Name": "Rhinestone Eyes", "Length": 3.2 },
+      { "Name": "Stylo", "Length": 4.3 },
+      { "Name": "Superfast Jellyfish", "Length": 2.8 },
+      { "Name": "Empire Ants", "Length": 4.4 },
+      { "Name": "On Melancholy Hill", "Length": 3.5 }
+    ]
+  },
+  {
+    "Name": "Tyron",
+    "Artist": "Slowthai",
+    "PrimaryColour": "#63534d",
+    "Rating": 4.2,
+    "Release": 2021,
+    "Length": 35.2,
+    "ImgSrc": "https://m.media-amazon.com/images/I/71LDwv-JwYL.jpg",
+    "ImgSrcBack": "https://m.media-amazon.com/images/I/611R+T21pML._UF1000,1000_QL80_.jpg",
+    "TrackList": [
+      { "Name": "45 SMOKE", "Length": 2.1 },
+      { "Name": "CANCELLED", "Length": 2.4 },
+      { "Name": "MAZZA", "Length": 2.8 },
+      { "Name": "VEX", "Length": 2.9 },
+      { "Name": "PLAY WITH FIRE", "Length": 2.7 }
+    ]
+  }
+] 
