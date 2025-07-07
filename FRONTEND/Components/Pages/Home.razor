@@ -2,6 +2,7 @@
 @using FRONTEND.Data
 @using FRONTEND.Services
 @using Microsoft.JSInterop
+@using FRONTEND.Components.Shared
 @inject IVinylService VinylService
 @inject IColorAnalysisService ColorService
 @inject ICurrentAlbumColorService CurrentAlbumColorService
@@ -18,6 +19,7 @@
     var textColor = CurrentAlbumColorService.TextColor;
     var layoutTextColor = CurrentAlbumColorService.IsColorBright ? "black" : "white";
     
+    <Search />
     <div class="container" style="--album-bg:@(currentAlbum.PrimaryColour ?? "#000000"); --layout-text-color:@layoutTextColor;">
         <div class="@(hasAnimated ? "album-slide-in-right" : "") album-carousel" @key="currentAlbumIndex">
             <div class="vinyl-box-flip-container"

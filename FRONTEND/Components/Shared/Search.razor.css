@@ -15,19 +15,23 @@
     width: 6vw;
     min-width: 6vw;
     height: 5vh;
-    margin-left: 3vw;
+    margin-left: 1vw;
 }
 
 .search-anim-row {
+    position: fixed;
+    top: 2vw;
+    right: 2vw;
+    z-index: 2147483647;
+    width: auto;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    position: relative;
-    width: 100%;
     justify-content: flex-start;
 }
 
 .search-bar-container {
+    position: relative;
     overflow: hidden;
     width: 0;
     transition: width 0.35s cubic-bezier(0.4,0,0.2,1);
@@ -44,6 +48,7 @@
 .search-bar-container.expanded {
     width: 40vw;
     transition: width 0.35s cubic-bezier(0.4,0,0.2,1);
+    overflow: visible;
 }
 
 .search-bar-container.shrinking {
@@ -95,11 +100,60 @@
     }
 }
 
+@keyframes autocomplete-fade-slide {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes autocomplete-li-in {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes autocomplete-li-out {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+        height: 4vh;
+    }
+    to {
+        opacity: 0;
+        transform: translateX(20px);
+        height: 0;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@keyframes autocomplete-fade-slide-out {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
 .autocomplete-list {
     position: absolute;
+    width: 100%;
     top: 100%;
-    width: 40vw;
-    min-height: 400px;
+    max-height: 600px;
+    z-index: 2147483647;
     overflow-y: auto;
     background: #222;
     color: #fff;
@@ -107,26 +161,106 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    z-index: 99;
     border-radius: 15px;
+    margin-top: 2vh;
+    animation: autocomplete-fade-slide 0.25s cubic-bezier(0.4,0,0.2,1);
 }
 
 .autocomplete-list li {
-    font-weight: bold;
-    min-height: 4vh;
     display: flex;
     align-items: center;
-    gap: .8vw;
-    font-size: 1.5rem;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #444;
+    background: transparent;
+    transition: background 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    min-height: 60px;
 }
 
-.autocomplete-list li img {
-    width: 40px;
-    height: 40px;
-    margin-left: 1vw;
+.autocomplete-list li:last-child {
+    border-bottom: none;
 }
 
 .autocomplete-list li:hover {
-    background-color: #363636;
+    background: #333;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.autocomplete-list li img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    background: #222;
+    flex-shrink: 0;
+}
+
+.autocomplete-list li .album-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+}
+
+.autocomplete-list li .album-title {
+    font-weight: bold;
+    color: #fff;
+    font-size: 1.1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.autocomplete-list li .album-artist {
+    color: #bbb;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.autocomplete-list li.removing {
+    animation: autocomplete-li-out 0.2s cubic-bezier(0.4,0,0.2,1) forwards;
+}
+
+.autocomplete-list.closing {
+    animation: autocomplete-fade-slide-out 0.25s cubic-bezier(0.4,0,0.2,1) forwards;
+}
+
+.clear-search-btn {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
+    padding: 0;
+    margin: 0;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.clear-search-btn span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    line-height: 2rem;
+}
+
+.clear-search-btn:hover {
+    opacity: 1;
 }

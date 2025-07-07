@@ -32,6 +32,7 @@
     width: 30vw;
     height: 29vh;
     z-index: 1;
+    position: relative;
 }
 
     .info-container > h1 {
@@ -202,6 +203,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 1;
 }
 
 .vinyl-box-flip {

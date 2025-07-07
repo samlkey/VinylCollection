@@ -50,36 +50,6 @@ main {
         text-overflow: ellipsis;
     }
 
-.nav-buttons {
-    display: flex;
-    justify-content: right;
-    gap: 2rem;
-    border-radius: 15px;
-    padding-right: 3vw;
-}
-
-.nav-btn {
-    background-color: rgba(255, 255, 255, 0.212); 
-    border: none;
-    border-radius: 15px;
-    font-size: 1rem;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.1s;
-    outline: none;
-    padding: .5rem;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    width: 6vw;
-    height: 5vh;
-}
-
-.nav-buttons .nav-btn:hover {
-    background: rgba(255,255,255,0.9);
-}
-
 #blazor-error-ui {
     color-scheme: light only;
     background: lightyellow;

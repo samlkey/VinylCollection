@@ -19,9 +19,21 @@
                 @oninput="OnInput"
                 autofocus />
             
-            @if (showSuggestions)
+            @if (!string.IsNullOrEmpty(searchText))
             {
-                <ul class="autocomplete-list">
+                <button class="clear-search-btn" @onclick="ClearSearch" type="button" title="Clear search">
+                    <span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+                            <line x1="5" y1="5" x2="15" y2="15" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="15" y1="5" x2="5" y2="15" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </span>
+                </button>
+            }
+            
+            @if (showSuggestions || isClosingSuggestions)
+            {
+                <ul class="autocomplete-list @(isClosingSuggestions ? "closing" : "")">
                     @foreach (var album in suggestions)
                     {
                         <li @onclick="() => SelectSuggestion(album)">
@@ -41,25 +53,29 @@
     private string searchText = string.Empty;
     private List<Album> suggestions = new List<Album>(); 
     private bool showSuggestions = false; 
+    private bool isClosingSuggestions = false;
 
     private async Task OnInput(ChangeEventArgs e){
         searchText = e.Value?.ToString() ?? "";
         if (!string.IsNullOrWhiteSpace(searchText))
         {
             suggestions = await VinylService.SearchAlbumsAsync(searchText);
-            showSuggestions = suggestions.Any();
+
+            Console.WriteLine(suggestions.Count);
+            if (suggestions.Count == 0) await CloseSuggestionsAsync();
+            else showSuggestions = suggestions.Any();
         }
         else
         {
             suggestions.Clear();
-            showSuggestions = false;
+            await CloseSuggestionsAsync();
         }
     }
 
     private void SelectSuggestion(Album album)
     {
         searchText = album.Name ?? "";
-        showSuggestions = false;
+        _ = CloseSuggestionsAsync();
         // Optionally: trigger navigation or callback here
     }
 
@@ -67,6 +83,8 @@
     {
         if (showSearchBar)
         {
+            suggestions.Clear();
+            showSuggestions = false;
             isClosing = true;
             await Task.Delay(350);
             showSearchBar = false;
@@ -77,5 +95,22 @@
         {
             showSearchBar = true;
         }
+    }
+
+    private async Task CloseSuggestionsAsync()
+    {
+        isClosingSuggestions = true;
+        StateHasChanged();
+        await Task.Delay(250); // Match the animation duration
+        showSuggestions = false;
+        isClosingSuggestions = false;
+        StateHasChanged();
+    }
+
+    private async Task ClearSearch()
+    {
+        searchText = string.Empty;
+        suggestions.Clear();
+        await CloseSuggestionsAsync();
     }
 }

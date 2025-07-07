@@ -1,27 +1,11 @@
 ﻿@inherits LayoutComponentBase
 @using FRONTEND.Services
-@using FRONTEND.Components.Shared
 @inject ICurrentAlbumColorService CurrentAlbumColorService
 
 <div class="page">
     <main>
         <div class="top-row">
             <h1 style="color: var(--layout-text-color, white);">VINYL COLLECTION</h1>
-            <div class="nav-buttons">
-                <Search />
-                <a href="/add-album" class="nav-btn add-album-btn" title="Add Album">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" viewBox="0 0 16 16" style="vertical-align: middle;">
-                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                    </svg>
-                </a>
-                <button class="nav-btn burger" title="Menu">
-                    <span class="burger-icon">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
-                </button>
-            </div>
         </div> 
 
         <article class="content">
