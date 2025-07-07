@@ -2,7 +2,7 @@
   {
     "Name": "MM...FOOD",
     "Artist": "MF DOOM",
-    "Rating": 4.5,
+    "Rating": 3.5,
     "Release": 2004,
     "Length": 77.5,
     "ImgSrc": "https://m.media-amazon.com/images/I/61IhnFgGQPL._UF894,1000_QL80_.jpg",
@@ -18,7 +18,7 @@
   {
     "Name": "Plastic Beach",
     "Artist": "Gorillaz",
-    "Rating": 4.0,
+    "Rating": 5.0,
     "Release": 2010,
     "Length": 56.8,
     "ImgSrc": "https://m.media-amazon.com/images/I/81EP2fxHLRL._UF1000,1000_QL80_.jpg",
@@ -50,7 +50,7 @@
   {
     "Name": "OK Computer",
     "Artist": "Radiohead",
-    "Rating": 4.5,
+    "Rating": 4,
     "Release": 1997,
     "Length": 53.41,
     "ImgSrc": "https://m.media-amazon.com/images/I/715LZJ5qX0L._UF350,350_QL50_.jpg",
@@ -68,6 +68,50 @@
       { "Name": "No Surprises", "Length": 3.48 },
       { "Name": "Lucky", "Length": 4.19 },
       { "Name": "The Tourist", "Length": 5.24 }
+    ]
+  },
+  {
+    "Name": "The Fat of the Land",
+    "Artist": "The Prodigy",
+    "Rating": 3,
+    "Release": 1997,
+    "Length": 58.2,
+    "ImgSrc": "https://m.media-amazon.com/images/I/91DMeDHmwpL._UF894,1000_QL80_.jpg",
+    "ImgSrcBack": "https://m.media-amazon.com/images/I/71B9mJ33O2L._UF894,1000_QL80_.jpg",
+    "TrackList": [
+      { "Name": "Smack My Bitch Up", "Length": 5.42 },
+      { "Name": "Breathe", "Length": 5.35 },
+      { "Name": "Diesel Power", "Length": 4.11 },
+      { "Name": "Funky Shit", "Length": 5.16 },
+      { "Name": "Serial Thrilla", "Length": 5.11 },
+      { "Name": "Mindfields", "Length": 5.40 },
+      { "Name": "Narayan", "Length": 9.05 },
+      { "Name": "Firestarter", "Length": 4.40 },
+      { "Name": "Climbatize", "Length": 7.37 },
+      { "Name": "Fuel My Fire", "Length": 4.19 }
+    ]
+  },
+  {
+    "Name": "Good Kid, M.A.A.D City",
+    "Artist": "Kendrick Lamar",
+    "Rating": 3.0,
+    "Release": 2012,
+    "Length": 68.3,
+    "ImgSrc": "https://m.media-amazon.com/images/I/81EYtj8oi3L._UF894,1000_QL80_.jpg",
+    "ImgSrcBack": "https://m.media-amazon.com/images/I/61lXQQd7ZPL._UF1000,1000_QL80_.jpg",
+    "TrackList": [
+      { "Name": "Sherane a.k.a Master Splinter's Daughter", "Length": 4.33 },
+      { "Name": "Bitch, Don't Kill My Vibe", "Length": 5.10 },
+      { "Name": "Backseat Freestyle", "Length": 3.32 },
+      { "Name": "The Art of Peer Pressure", "Length": 5.24 },
+      { "Name": "Money Trees", "Length": 6.26 },
+      { "Name": "Poetic Justice", "Length": 4.36 },
+      { "Name": "good kid", "Length": 3.34 },
+      { "Name": "m.A.A.d city", "Length": 5.50 },
+      { "Name": "Swimming Pools (Drank)", "Length": 5.13 },
+      { "Name": "Sing About Me, I'm Dying of Thirst", "Length": 12.03 },
+      { "Name": "Real", "Length": 7.23 },
+      { "Name": "Compton", "Length": 4.08 }
     ]
   }
 ] 
