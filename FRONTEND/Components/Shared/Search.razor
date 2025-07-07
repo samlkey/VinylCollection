@@ -1,0 +1,81 @@
+@using FRONTEND.Services
+@using FRONTEND.Data
+@rendermode InteractiveServer
+@inject IVinylService VinylService
+
+<div class="search-anim-row">
+    <button class="nav-btn search-btn" @onclick="ToggleSearchBar" title="Search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" viewBox="0 0 16 16" style="vertical-align: middle;">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85zm-5.242 1.106a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/>
+        </svg>
+    </button>
+    <div class="search-bar-container @(isClosing ? "shrinking" : showSearchBar ? "expanded" : "")">
+        @if (showSearchBar || isClosing)
+        {
+            <input class="search-bar" 
+                type="text" 
+                placeholder="Search albums..." 
+                @bind="searchText" 
+                @oninput="OnInput"
+                autofocus />
+            
+            @if (showSuggestions)
+            {
+                <ul class="autocomplete-list">
+                    @foreach (var album in suggestions)
+                    {
+                        <li @onclick="() => SelectSuggestion(album)">
+                            <img src="@album.ImgSrc">
+                            <p>@album.Name - @album.Artist</p>
+                        </li>
+                    }
+                </ul>
+            }
+        }
+    </div>
+</div>
+
+@code {
+    private bool showSearchBar = false;
+    private bool isClosing = false;
+    private string searchText = string.Empty;
+    private List<Album> suggestions = new List<Album>(); 
+    private bool showSuggestions = false; 
+
+    private async Task OnInput(ChangeEventArgs e){
+        searchText = e.Value?.ToString() ?? "";
+        if (!string.IsNullOrWhiteSpace(searchText))
+        {
+            suggestions = await VinylService.SearchAlbumsAsync(searchText);
+            showSuggestions = suggestions.Any();
+        }
+        else
+        {
+            suggestions.Clear();
+            showSuggestions = false;
+        }
+    }
+
+    private void SelectSuggestion(Album album)
+    {
+        searchText = album.Name ?? "";
+        showSuggestions = false;
+        // Optionally: trigger navigation or callback here
+    }
+
+    private async Task ToggleSearchBar()
+    {
+        if (showSearchBar)
+        {
+            isClosing = true;
+            await Task.Delay(350);
+            showSearchBar = false;
+            isClosing = false;
+            searchText = string.Empty;
+        }
+        else
+        {
+            showSearchBar = true;
+        }
+    }
+}

@@ -13,6 +13,7 @@ namespace FRONTEND.Services
         Task<List<Track>> GetTracksByAlbumIdAsync(int albumId);
         Task<Track> AddTrackAsync(Track track);
         Task DeleteTrackAsync(int id);
+        Task<List<Album>> SearchAlbumsAsync(string query);
     }
 
     public class VinylService : IVinylService
@@ -84,6 +85,17 @@ namespace FRONTEND.Services
                 _context.Tracks.Remove(track);
                 await _context.SaveChangesAsync();
             }
+        }
+
+        public async Task<List<Album>> SearchAlbumsAsync(string query)
+        {
+            if (string.IsNullOrWhiteSpace(query))
+                return new List<Album>();
+            var lowered = query.ToLower();
+            return await _context.Albums
+                .Include(a => a.TrackList)
+                .Where(a => a.Name.ToLower().Contains(lowered) || a.Artist.ToLower().Contains(lowered))
+                .ToListAsync();
         }
     }
 } 
