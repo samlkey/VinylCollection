@@ -26,26 +26,70 @@
         </div>
     </div>
     <div class="stats-container">
-        <h2>STATS</h2>
         <ul>
             <li><strong>Total Albums:</strong> <span>@albums.Count</span></li>
+            <li><strong>Unique Artists:</strong> <span>@(albums.Count > 0 ? albums.Select(a => a.Artist).Distinct().Count() : 0)</span></li>
             <li><strong>Average Rating:</strong> <span>@(albums.Count > 0 ? albums.Average(a => a.Rating).ToString("0.00") : "N/A")</span></li>
-            <li><strong>Highest Rated Album:</strong> <span>@(albums.Count > 0 ? albums.OrderByDescending(a => a.Rating).First().Name : "N/A")</span></li>
-            <li><strong>Lowest Rated Album:</strong> <span>@(albums.Count > 0 ? albums.OrderBy(a => a.Rating).First().Name : "N/A")</span></li>
+            <li>
+                <strong>Highest Rated Album:</strong>
+                @if (GetHighestRatedAlbum() is Album highest)
+                {
+                    <span>@highest.Name - @highest.Artist <img src="@highest.ImgSrc" alt="@highest.Name" style="height:32px;width:32px;vertical-align:middle;margin-left:0.5rem;border-radius:4px;" /></span>
+                }
+                else
+                {
+                    <span>N/A</span>
+                }
+            </li>
+            <li>
+                <strong>Lowest Rated Album:</strong>
+                @if (GetLowestRatedAlbum() is Album lowest)
+                {
+                    <span>@lowest.Name - @lowest.Artist <img src="@lowest.ImgSrc" alt="@lowest.Name" class="stats-img" /></span>
+                }
+                else
+                {
+                    <span>N/A</span>
+                }
+            </li>
             <li><strong>Most Popular Artist:</strong> <span>@(albums.Count > 0 ? albums.GroupBy(a => a.Artist).OrderByDescending(g => g.Count()).ThenBy(g => g.Key).First().Key : "N/A")</span></li>
-            <li><strong>Oldest Album:</strong> <span>@(albums.Count > 0 ? albums.OrderBy(a => a.Release).First().Name + " (" + albums.OrderBy(a => a.Release).First().Release + ")" : "N/A")</span></li>
-            <li><strong>Newest Album:</strong> <span>@(albums.Count > 0 ? albums.OrderByDescending(a => a.Release).First().Name + " (" + albums.OrderByDescending(a => a.Release).First().Release + ")" : "N/A")</span></li>
+            <li>
+                <strong>Oldest Album:</strong>
+                @if (GetOldestAlbum() is Album oldest)
+                {
+                    <span>@oldest.Name - @oldest.Artist (@oldest.Release) <img src="@oldest.ImgSrc" alt="@oldest.Name" class="stats-img" /></span>
+                }
+                else
+                {
+                    <span>N/A</span>
+                }
+            </li>
+            <li>
+                <strong>Newest Album:</strong>
+                @if (GetNewestAlbum() is Album newest)
+                {
+                    <span>@newest.Name - @newest.Artist (@newest.Release) <img src="@newest.ImgSrc" alt="@newest.Name" class="stats-img" /></span>
+                }
+                else
+                {
+                    <span>N/A</span>
+                }
+            </li>
         </ul>
     </div>
 </div>
 
 @code {
     private List<Album> albums = new List<Album>();
-
     protected override async Task OnInitializedAsync() {
         albums = await VinylService.GetAllAlbumsAsync(); 
         albums = albums.OrderByDescending(a => a.Rating).ToList();
     }
+
+    private Album? GetHighestRatedAlbum() => albums.Count > 0 ? albums.OrderByDescending(a => a.Rating).First() : null;
+    private Album? GetLowestRatedAlbum() => albums.Count > 0 ? albums.OrderBy(a => a.Rating).First() : null;
+    private Album? GetNewestAlbum() => albums.Count > 0 ? albums.OrderByDescending(a => a.Release).First() : null;
+    private Album? GetOldestAlbum() => albums.Count > 0 ? albums.OrderBy(a => a.Release).First() : null;
 
     string GetOrdinal(int number)
     {

@@ -142,18 +142,6 @@
     align-items: center;
 }
 
-.stats-container h2 {
-    font-size: 2rem;
-    color: #fff;
-    margin-bottom: 1.5rem;
-    border-bottom: 2px solid #9ea3a1;
-    padding-bottom: 0.5rem;
-    width: 100%;
-    text-align: center;
-    letter-spacing: 1px;
-    font-weight: 700;
-}
-
 .stats-container ul {
     list-style: none;
     padding: 0;
@@ -190,6 +178,14 @@
     color: #fff;
     font-weight: 700;
     font-size: 1.15rem;
+}
+
+.stats-img {
+    height:32px;
+    width:32px;
+    vertical-align:middle;
+    margin-left:0.5rem;
+    border-radius:4px;
 }
 
 

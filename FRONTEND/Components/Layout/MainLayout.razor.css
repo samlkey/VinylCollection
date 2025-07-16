@@ -19,10 +19,11 @@ main {
     position: fixed;
     padding: .5rem;
     height: 7rem;
-    width: 100%;
+    width: 10%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-left: 3vw;
     color: white;
     user-select: none;
     -webkit-user-select: none;
@@ -31,7 +32,6 @@ main {
 
     .top-row h1 {
         font-family: 'Soopafre', sans-serif;
-        padding-left: 3vw;
         transition: color 0.5s ease-in-out;
     }
 
@@ -50,47 +50,10 @@ main {
         text-overflow: ellipsis;
     }
 
-#blazor-error-ui {
-    color-scheme: light only;
-    background: lightyellow;
-    bottom: 0;
-    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
-    box-sizing: border-box;
-    display: none;
-    left: 0;
-    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-}
-
-    #blazor-error-ui .dismiss {
-        cursor: pointer;
-        position: absolute;
-        right: 0.75rem;
-        top: 0.5rem;
+    .top-row img {
+        height: 50px;
+        width: 50px;
     }
-
-
-
-.burger-icon {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100px;
-    height: 24px;
-    gap: 4px;
-}
-
-.burger-icon span {
-    display: block;
-    width: 24px;
-    height: 3px;
-    background: #fff;
-    border-radius: 2px;
-    transition: all 0.2s;
-}
 
 .nav-btn:hover svg {
     color: #111;
@@ -122,3 +85,24 @@ main {
         width: 100vw;
     }
 }
+
+#blazor-error-ui {
+    color-scheme: light only;
+    background: lightyellow;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+    #blazor-error-ui .dismiss {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+    }
