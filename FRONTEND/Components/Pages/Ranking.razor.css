@@ -4,16 +4,16 @@
     justify-content: center;
     height: 100vh;
     width: 100%;
-    gap: 5vw;
+    gap: 1vw;
     background-color: var(--album-bg, #535b59);
     transition: background-color 2s cubic-bezier(.34,1.56,.64,1);
 }
 
 .albums-grid {
-    gap: 0.5rem;
+
     padding: 1.5rem;
     height: 65vh;
-    width: 90.5vw;
+    width: 50vw;
     background-color: #777e7c;
     border-radius: 15px;
     overflow: auto;
@@ -45,6 +45,10 @@
     background: transparent;
 }
 
+.albums-grid-wrapper {
+    width: 100%;
+}
+
 .album-card {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
@@ -55,7 +59,7 @@
     display: flex;
     margin-bottom: 0.25rem;
     align-items: center;
-    width: 50vw;
+    width: 96%;
 }
 
 .album-card:hover {
@@ -122,6 +126,72 @@
     color: #888;
     margin-left: 0.5rem;
 }
+
+.stats-container {
+    padding: 1.5rem;
+    height: 65vh;
+    width: 35vw;
+    background-color: #777e7c;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stats-container h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #9ea3a1;
+    padding-bottom: 0.5rem;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.stats-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.stats-container li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,0.07);
+    margin-bottom: 1rem;
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    transition: background 0.2s;
+}
+
+.stats-container li:last-child {
+    margin-bottom: 0;
+}
+
+.stats-container strong {
+    color: #ffd700;
+    font-weight: 600;
+    margin-right: 0.5rem;
+    min-width: 120px;
+    display: inline-block;
+}
+
+.stats-container li span {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.15rem;
+}
+
 
 @media (max-width: 768px) {
     .albums-grid {
