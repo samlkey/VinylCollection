@@ -85,7 +85,7 @@
     {
         searchText = album.Name ?? "";
         _ = CloseSuggestionsAsync();
-        // Optionally: trigger navigation or callback here
+        Navigation.NavigateTo($"/album/{album.Id}");
     }
 
     private async Task ToggleSearchBar()

@@ -42,7 +42,7 @@
         
         <div class="form-group">
             <label for="rating">Rating (0-5):</label>
-            <InputNumber id="rating" @bind-Value="newAlbum.Rating" class="form-control" min="0" max="5" step="0.1" TValue="float" />
+            <InputNumber id="rating" @bind-Value="newAlbum.Rating" class="form-control" min="0" max="5" step="0.1" TValue="int" />
             <ValidationMessage For="@(() => newAlbum.Rating)" />
         </div>
         

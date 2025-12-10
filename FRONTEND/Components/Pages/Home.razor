@@ -7,6 +7,7 @@
 @inject IColorAnalysisService ColorService
 @inject ICurrentAlbumColorService CurrentAlbumColorService
 @inject IJSRuntime JS
+@inject NavigationManager Navigation
 
 @rendermode InteractiveServer
 
@@ -39,7 +40,7 @@
             </div>
 
             <div class="info-container">
-                <h1 style="@textColor">@currentAlbum.Name</h1>
+                <h1 style="@textColor" @onclick="() => NavigateToAlbum(currentAlbum!.Id)">@currentAlbum.Name</h1>
                 <h2 style="@textColor">@currentAlbum.Artist</h2>
 
                 <div class="meta-info">
@@ -47,7 +48,7 @@
                     <p style="@textColor">@currentAlbum.TrackList!.Count Songs</p>
                     <p style="@textColor">@currentAlbum.Length</p>
                 </div>
-                <p class="star-rating">@currentAlbum.GetStars(currentAlbum.Rating)</p>
+                <p class="star-rating">@currentAlbum.Rating</p>
 
                 <div class="spotify-link-container">
                     <button class="spotify-link">Listen on Spotify</button>
@@ -79,7 +80,7 @@ else
     private bool canFlip = true;
 
     protected override async Task OnInitializedAsync() {
-        albums = await VinylService.GetAllAlbumsAsync();
+        albums = await VinylService.GetRandomAlbumsAsync(5);
 
         // Calculate colors for albums that don't have them
         foreach (var album in albums)
@@ -108,7 +109,10 @@ else
         timer.Enabled = true;
     }
 
-
+    private void NavigateToAlbum(int albumId)
+    {
+        Navigation.NavigateTo($"/album/{albumId}");
+    }
 
     private void SetAlbumIndex(int i)
     {

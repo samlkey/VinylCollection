@@ -167,7 +167,7 @@
 }
 
 .stats-container strong {
-    color: #ffd700;
+    color: white;
     font-weight: 600;
     margin-right: 0.5rem;
     min-width: 120px;
@@ -175,14 +175,14 @@
 }
 
 .stats-container li span {
-    color: #fff;
+    color: #ffd700;
     font-weight: 700;
     font-size: 1.15rem;
 }
 
 .stats-img {
-    height:32px;
-    width:32px;
+    height:40px;
+    width:40px;
     vertical-align:middle;
     margin-left:0.5rem;
     border-radius:4px;

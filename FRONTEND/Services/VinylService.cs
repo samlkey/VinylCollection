@@ -14,6 +14,7 @@ namespace FRONTEND.Services
         Task<Track> AddTrackAsync(Track track);
         Task DeleteTrackAsync(int id);
         Task<List<Album>> SearchAlbumsAsync(string query);
+        Task<List<Album>> GetRandomAlbumsAsync(int count = 5);
     }
 
     public class VinylService : IVinylService
@@ -97,5 +98,14 @@ namespace FRONTEND.Services
                 .Where(a => a.Name.ToLower().Contains(lowered) || a.Artist.ToLower().Contains(lowered))
                 .ToListAsync();
         }
+
+        public async Task<List<Album>> GetRandomAlbumsAsync(int count = 5)
+        {
+            return await _context.Albums
+                .Include(a => a.TrackList)
+                .OrderBy(a => EF.Functions.Random())
+                .Take(count)
+                .ToListAsync();
+        }
     }
-} 
+}

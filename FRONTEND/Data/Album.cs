@@ -19,7 +19,7 @@ namespace FRONTEND.Data
         public string? PrimaryColour { get; set; }
         
         [Range(0, 5, ErrorMessage = "Rating must be between 0 and 5.")]
-        public float Rating { get; set; }
+        public int Rating { get; set; }
         public int Release { get; set; }
         public float Length { get; set; }
         public string? ImgSrc { get; set; }
@@ -28,16 +28,6 @@ namespace FRONTEND.Data
         #endregion
     
         #region METHODS
-        public string GetStars(double rating)
-        {
-            int fullStars = (int)rating;
-            bool halfStar = rating - fullStars >= 0.5;
-            int emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
-
-            return new string('★', fullStars) +
-               (halfStar ? "½" : "") +
-               new string('☆', emptyStars);
-        }
 
         public async Task<string> CalculatePrimaryColourAsync(IColorAnalysisService colorService)
         {

@@ -1,0 +1,22 @@
+@page "/album/{albumId:int}"
+@rendermode InteractiveServer
+@using FRONTEND.Data
+@using FRONTEND.Services
+@inject IVinylService VinylService
+
+<div class="container">
+
+
+</div>
+
+@code {
+    [Parameter]
+    public int albumId { get; set; }
+    
+    private Album? album;
+
+    protected override async Task OnInitializedAsync()
+    {
+        album = await VinylService.GetAlbumByIdAsync(albumId);
+    }
+}

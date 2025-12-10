@@ -1,0 +1,2 @@
+ADD BAR UNDERNEITH RANKING, will fill based on the number, and have a colour
+on the stats "Lowest Rated Album" have the right have a full album cover overflow style

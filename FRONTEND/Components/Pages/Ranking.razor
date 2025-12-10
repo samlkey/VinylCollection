@@ -4,6 +4,7 @@
 @using FRONTEND.Data
 @using FRONTEND.Components.Shared
 @inject IVinylService VinylService
+@inject NavigationManager Navigation
 
 <div class="container">
     <Search />
@@ -12,14 +13,14 @@
             @for (int i = 0; i < albums.Count; i++)
             {
                 var album = albums[i];
-                <div class="album-card">
+                <div class="album-card" style="cursor:pointer;" @onclick="() => NavigateToAlbum(album.Id)">
                     <img src="@album.ImgSrc" alt="@album.Name" class="album-art">
                     <div class="album-info">
                         <div class="album-credits">
                             <h3>@album.Name</h3>
                             <p class="artist">@album.Artist</p>
                         </div>
-                        <p class="rating">@album.GetStars(album.Rating)</p>
+                        <p class="rating">@album.Rating</p>
                     </div>
                 </div>
             }
@@ -45,7 +46,7 @@
                 <strong>Lowest Rated Album:</strong>
                 @if (GetLowestRatedAlbum() is Album lowest)
                 {
-                    <span>@lowest.Name - @lowest.Artist <img src="@lowest.ImgSrc" alt="@lowest.Name" class="stats-img" /></span>
+                    <img src="@lowest.ImgSrc" alt="@lowest.Name" class="stats-img" />
                 }
                 else
                 {
@@ -57,7 +58,7 @@
                 <strong>Oldest Album:</strong>
                 @if (GetOldestAlbum() is Album oldest)
                 {
-                    <span>@oldest.Name - @oldest.Artist (@oldest.Release) <img src="@oldest.ImgSrc" alt="@oldest.Name" class="stats-img" /></span>
+                   <img src="@oldest.ImgSrc" alt="@oldest.Name" class="stats-img" />
                 }
                 else
                 {
@@ -68,7 +69,7 @@
                 <strong>Newest Album:</strong>
                 @if (GetNewestAlbum() is Album newest)
                 {
-                    <span>@newest.Name - @newest.Artist (@newest.Release) <img src="@newest.ImgSrc" alt="@newest.Name" class="stats-img" /></span>
+                    <img src="@newest.ImgSrc" alt="@newest.Name" class="stats-img" />
                 }
                 else
                 {
@@ -91,6 +92,11 @@
     private Album? GetNewestAlbum() => albums.Count > 0 ? albums.OrderByDescending(a => a.Release).First() : null;
     private Album? GetOldestAlbum() => albums.Count > 0 ? albums.OrderBy(a => a.Release).First() : null;
 
+    private void NavigateToAlbum(int albumId)
+    {
+        Navigation.NavigateTo($"/album/{albumId}");
+    }
+
     string GetOrdinal(int number)
     {
         if (number <= 0) return number.ToString();
@@ -104,4 +110,4 @@
             default: return number + "th";
         }
     }
-}    
+}
