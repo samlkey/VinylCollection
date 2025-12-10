@@ -3,10 +3,61 @@
 @using FRONTEND.Data
 @using FRONTEND.Services
 @inject IVinylService VinylService
+@inject IColorAnalysisService ColorService
 
 <div class="container">
+    <div class="album-view">
+        <div class="album-banner" style="background: @(album?.PrimaryColour); --album-bg: @(album?.PrimaryColour);">
+            <img src="@album?.ImgSrc" alt="@album?.Name" class="album-art" />
+            <div class="album-details">
+                <h1>@album?.Name</h1>
 
+                <div class="meta-info">
+                    <p>@album?.Artist</p>
+                    <p>@album?.Release</p>
+                    <p>@album?.TrackList!.Count Songs</p>
+                    <p>@album?.Length</p>
+                </div>
+            </div>
+        </div>
 
+        <div class="info-panel" style="--album-bg: @(album?.PrimaryColour);">
+            <div class="spotify-link-container">
+                <button class="spotify-link">Listen on Spotify</button>
+            </div>
+
+            <div class="track-panel">
+                @if (album?.TrackList != null && album.TrackList.Count > 0)
+                {
+                    <table class="track-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Length</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 0; i < album.TrackList.Count; i++)
+                            {
+                                var track = album.TrackList[i];
+                                <tr>
+                                    <td>@(i + 1)</td>
+                                    <td>@track.Name</td>
+                                    <td>@track.Length</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <p>No tracks available.</p>
+                }
+            </div>
+        </div>
+
+    </div>
 </div>
 
 @code {

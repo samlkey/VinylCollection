@@ -2,9 +2,166 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 150vh;
     width: 100%;
     gap: 1vw;
     background-color: var(--album-bg, #535b59);
     transition: background-color 2s cubic-bezier(.34,1.56,.64,1);
+}
+
+.album-banner {
+    display: flex;
+    width: 95vw;
+    height: 48vh;
+    align-items: flex-end;
+    color: white;
+    position: relative;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: inset 0 -30px 40px -10px var(--album-bg, #535b59);
+}
+
+.album-art {
+    height: 30vh;
+    width: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-right: 1.5rem;
+    margin-left: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.album-details {
+    margin-bottom: 2.6rem;
+}
+    .album-details > h1 {
+        font-size: 3.5rem;
+        margin: 0;
+        font-weight: 900;
+    }
+
+    .album-details > h2 {
+        margin: 0;
+        font-size: 1.5rem;
+    }
+
+.meta-info {
+    display: flex;
+    font-size: 1.2rem;
+    gap: 1vw;
+    border-bottom: 1px solid var(--layout-text-color, white);
+    transition: border-bottom-color 0.5s ease-in-out;
+}
+
+.meta-info p:not(:last-child)::after {
+    content: " \2022 ";
+    color: var(--layout-text-color, white);
+    margin: 0 0 0 0.8rem;
+    font-weight: bold;
+    transition: color 0.5s ease-in-out;
+}
+
+    .meta-info > p {
+        margin-top: 0;
+    }
+
+    .meta-info :first-child {
+        font-weight: 900;
+    }
+
+
+.spotify-link-container {
+    display: flex;
+    width: 100%;
+}
+
+
+.spotify-link {
+    gap: 0.5em;
+    background: linear-gradient(90deg, #1db954 0%, #1ed760 100%);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    padding: 0.7em 1.6em;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 8px rgba(30,185,84,0.15);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+    text-decoration: none;
+    outline: none;
+    margin: 2rem;
+}
+
+.spotify-link:hover, .spotify-link:focus {
+    background: linear-gradient(90deg, #1ed760 0%, #1db954 100%);
+    color: #fff;
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 4px 16px rgba(30,185,84,0.25);
+    text-decoration: none;
+}
+
+.info-panel {
+    background-color: rgba(0,0,0,0.80);
+    position: relative;
+}
+
+.info-panel::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 400px;
+    pointer-events: none;
+    z-index: 1;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    background: linear-gradient(
+        to bottom,
+        var(--album-bg, #535b59) 0%,
+        rgba(0,0,0,0) 50%
+    );
+    opacity: 0.3;
+}
+
+.track-panel {
+    margin: 2rem;
+}
+
+.track-table {
+    width: 100%;
+    border-collapse: separate;
+    border-radius: 12px;
+    overflow: hidden;
+    border-spacing: 0 1rem;
+}
+
+.track-table th, .track-table td {
+    padding: 0.7rem 1.2rem;
+    text-align: left;
+    color: #fff;
+    font-weight: 600;
+}
+
+.track-table th {
+    color: gray;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--layout-text-color, gray);
+    transition: border-bottom-color 0.5s ease-in-out;
+    font-weight: normal;
+}
+
+.track-table th:first-child, .track-table td:first-child {
+    padding-right: 0.5rem;
+}
+
+.track-table tr:last-child {
+    border-bottom: none;
+}
+
+.track-table td {
+    font-size: 1rem;
+    background: none;
 }
