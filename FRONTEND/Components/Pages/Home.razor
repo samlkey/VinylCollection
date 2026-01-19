@@ -48,7 +48,10 @@
                     <p style="@textColor">@currentAlbum.TrackList!.Count Songs</p>
                     <p style="@textColor">@currentAlbum.Length</p>
                 </div>
-                <p class="star-rating">@currentAlbum.Rating</p>
+
+                <Rating Value="@currentAlbum.Rating" TextColor="@textColor"></Rating>
+
+                
 
                 <div class="spotify-link-container">
                     <button class="spotify-link">Listen on Spotify</button>

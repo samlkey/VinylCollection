@@ -1,0 +1,29 @@
+@* Rating bar component that accepts an integer between 0-100 *@
+<div class="rating-wrapper">
+    <p class="rating-value" style="@TextColor">@Value</p>
+    <div class="rating-bar">
+        <div class="rating-bar-fill" style="width: @(Math.Clamp(Value, 0, 100))%; background-color: @GetRatingColor()"></div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public int Value { get; set; } = 0;
+    
+    [Parameter]
+    public string TextColor { get; set; } = "green";
+
+    private string GetRatingColor()
+    {
+        int clampedValue = Math.Clamp(Value, 0, 100);
+        double ratio = clampedValue / 100.0;
+        
+        // Red: RGB(255, 0, 0) at 0
+        // Gold: RGB(255, 215, 0) at 100
+        int r = 255; // Red stays constant
+        int g = (int)(0 + (215 * ratio)); // Green goes from 0 to 215
+        int b = (int)(0 + (0 * ratio)); // Blue stays 0
+        
+        return $"rgb({r}, {g}, {b})";
+    }
+}

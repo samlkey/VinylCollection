@@ -9,117 +9,6 @@
     transition: background-color 2s cubic-bezier(.34,1.56,.64,1);
 }
 
-.albums-grid {
-
-    padding: 1.5rem;
-    height: 65vh;
-    width: 50vw;
-    background-color: #777e7c;
-    border-radius: 15px;
-    overflow: auto;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
-    display: flex;
-}
-
-.albums-grid::-webkit-scrollbar {
-    width: 8px;
-}
-
-.albums-grid::-webkit-scrollbar-track {
-    background: transparent;
-    border-radius: 4px;
-}
-
-.albums-grid::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 4px;
-    transition: background 0.2s ease;
-}
-
-.albums-grid::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.5);
-}
-
-.albums-grid::-webkit-scrollbar-corner {
-    background: transparent;
-}
-
-.albums-grid-wrapper {
-    width: 100%;
-}
-
-.album-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    padding: 0.75rem 1rem;
-    backdrop-filter: blur(10px);
-    transition: background 0.2s ease;
-    cursor: pointer;
-    display: flex;
-    margin-bottom: 0.25rem;
-    align-items: center;
-    width: 96%;
-}
-
-.album-card:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: none;
-    box-shadow: none;
-}
-
-.album-card:nth-child(1) {
-    background: linear-gradient(135deg, #b8860b, #daa520);
-}
-
-.album-card:nth-child(2) {
-    background: linear-gradient(135deg, #a0a0a0, #c0c0c0);
-}
-
-.album-card:nth-child(3) {
-    background: linear-gradient(135deg, #8b4513, #a0522d);
-}
-
-.album-art {
-    width: 80px;
-    height: 80px;
-    border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    flex-shrink: 0;
-}
-
-.album-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-left: 1.5rem;
-}
-
-.album-credits {
-    flex: 1;
-}
-
-.album-info h3 {
-    color: #fff;
-    margin: 0;
-    font-size: 1.3rem;
-    font-weight: 600;
-}
-
-.album-info .artist {
-    color: #ccc;
-    margin: 0;
-    font-size: 1rem;
-}
-
-.album-info .rating {
-    color: #ffd700;
-    font-size: 1.4rem;
-    margin: 0;
-    margin-right: 1rem;
-}
-
 .ranking-index {
     font-weight: 700;
     font-size: 1.2rem;
@@ -127,65 +16,198 @@
     margin-left: 0.5rem;
 }
 
-.stats-container {
-    padding: 1.5rem;
-    height: 65vh;
-    width: 35vw;
-    background-color: #777e7c;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+/* Ranking Content Wrapper */
+.ranking-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.stats-container ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    justify-content: center;
+    gap: 2rem;
     width: 100%;
 }
 
-.stats-container li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(255,255,255,0.07);
-    margin-bottom: 1rem;
-    padding: 1rem 1.2rem;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-    transition: background 0.2s;
-}
-
-.stats-container li:last-child {
-    margin-bottom: 0;
-}
-
-.stats-container strong {
-    color: white;
-    font-weight: 600;
-    margin-right: 0.5rem;
-    min-width: 120px;
-    display: inline-block;
-}
-
-.stats-container li span {
-    color: #ffd700;
+.ranking-content h1 {
+    color: #fff;
+    font-size: 3rem;
     font-weight: 700;
-    font-size: 1.15rem;
+    margin: 0;
+    text-align: center;
 }
 
-.stats-img {
-    height:40px;
-    width:40px;
-    vertical-align:middle;
-    margin-left:0.5rem;
-    border-radius:4px;
+/* Carousel Styles */
+.carousel-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-wrapper {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 6rem; /* Space for side controls */
+}
+
+.carousel-track {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.carousel-track.centered {
+    justify-content: center;
+}
+
+.carousel-track.first-item {
+    justify-content: flex-start;
+    transform: translateX(calc(50% - 200px - 1rem)); /* Shift to center current item: 50% of wrapper minus half card width (200px) minus half gap (1rem) */
+}
+
+
+.carousel-item {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+}
+
+.carousel-item.prev {
+    transform: scale(0.75) translateX(-50px);
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.carousel-item.next {
+    transform: scale(0.75) translateX(50px);
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.carousel-item.current {
+    transform: scale(1);
+    opacity: 1;
+    z-index: 10;
+}
+
+.carousel-item.prev:hover,
+.carousel-item.next:hover {
+    opacity: 0.8;
+    transform: scale(0.8);
+}
+
+.carousel-album-card {
+    position: relative;
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 400px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-album-card:hover {
+    transform: translateY(-5px);
+}
+
+.carousel-album-art {
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    object-fit: cover;
+}
+
+.carousel-item.prev .carousel-album-art,
+.carousel-item.next .carousel-album-art {
+    max-width: 225px;
+    height: 225px;
+}
+
+.carousel-album-info {
+    text-align: center;
+    width: 100%;
+}
+
+.carousel-album-info h3 {
+    color: #fff;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    transition: font-size 0.3s ease;
+}
+
+.carousel-item.prev .carousel-album-info h3,
+.carousel-item.next .carousel-album-info h3 {
+    font-size: 1.4rem;
+}
+
+.carousel-album-info .artist {
+    color: #ccc;
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+    transition: font-size 0.3s ease;
+}
+
+.carousel-item.prev .carousel-album-info .artist,
+.carousel-item.next .carousel-album-info .artist {
+    font-size: 1rem;
+}
+
+.rating-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.carousel-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 3rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    z-index: 20;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-btn-left {
+    left: 3rem;
+}
+
+.carousel-btn-right {
+    right: 3rem;
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.1);
 }
 
 
@@ -197,5 +219,70 @@
     
     .container {
         padding: 1rem;
+        flex-direction: column;
+    }
+
+    .carousel-section {
+        max-width: 100%;
+        flex-direction: column;
+    }
+
+    .carousel-wrapper {
+        margin: 0;
+        width: 100%;
+    }
+
+    .carousel-track {
+        gap: 1rem;
+    }
+
+    .carousel-album-card {
+        width: 280px;
+        padding: 1.5rem;
+    }
+
+    .carousel-item.prev,
+    .carousel-item.next {
+        display: none; /* Hide side items on mobile for simplicity */
+    }
+
+    .carousel-item.current {
+        transform: scale(1);
+    }
+
+    .carousel-album-art {
+        max-width: 250px;
+        height: 250px;
+    }
+
+    .carousel-album-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .carousel-album-info .artist {
+        font-size: 1rem;
+    }
+
+    .carousel-btn {
+        position: absolute;
+        font-size: 2rem;
+        width: 50px;
+        height: 50px;
+    }
+
+    .carousel-btn-left {
+        left: 0.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .carousel-btn-right {
+        right: 0.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .carousel-btn:hover {
+        transform: translateY(-50%) scale(1.1);
     }
 }

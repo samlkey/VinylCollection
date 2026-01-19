@@ -168,18 +168,6 @@
     will-change: transform;
 }
 
-
-.vinyl-box-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 450px;
-    height: 450px;
-    perspective: 800px;
-    margin: 0 auto;
-}
-
 .vinyl-box-img {
     width: 425px;
     height: 425px;

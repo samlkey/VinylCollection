@@ -3,111 +3,170 @@
 @using FRONTEND.Services
 @using FRONTEND.Data
 @using FRONTEND.Components.Shared
+@using Microsoft.JSInterop
 @inject IVinylService VinylService
+@inject IColorAnalysisService ColorService
+@inject ICurrentAlbumColorService CurrentAlbumColorService
+@inject IJSRuntime JS
 @inject NavigationManager Navigation
 
-<div class="container">
+<PageTitle>Ranking</PageTitle>
+
+@{
+    var currentAlbum = rankedAlbums[currentAlbumIndex];
+    CurrentAlbumColorService.CurrentAlbumColor = currentAlbum.PrimaryColour ?? "#000000";
+    var textColor = CurrentAlbumColorService.TextColor;
+    var layoutTextColor = CurrentAlbumColorService.IsColorBright ? "black" : "white";
+}
+
+<div class="container" style="--album-bg:@(currentAlbum.PrimaryColour ?? "#000000"); --layout-text-color:@layoutTextColor;">
     <Search />
-    <div class="albums-grid">
-        <div class="albums-grid-wrapper">
-            @for (int i = 0; i < albums.Count; i++)
-            {
-                var album = albums[i];
-                <div class="album-card" style="cursor:pointer;" @onclick="() => NavigateToAlbum(album.Id)">
-                    <img src="@album.ImgSrc" alt="@album.Name" class="album-art">
-                    <div class="album-info">
-                        <div class="album-credits">
-                            <h3>@album.Name</h3>
-                            <p class="artist">@album.Artist</p>
+    
+    @if (rankedAlbums != null && rankedAlbums.Count > 0)
+    {
+        <div class="ranking-content">
+            <h1 style="@textColor">@(currentAlbumIndex+1)</h1>
+            <div class="carousel-section">
+                @* Left Side Controls *@
+                <button class="carousel-btn carousel-btn-left" @onclick="PreviousAlbum" disabled="@(currentAlbumIndex <= 0)"></button>
+
+                <div class="carousel-wrapper">
+                    <div class="carousel-track @(currentAlbumIndex == rankedAlbums.Count - 1 ? "centered" : "") @(currentAlbumIndex == 0 ? "first-item" : "")" @key="currentAlbumIndex">
+                        @{
+                            var prevIndex = GetPreviousIndex();
+                            var nextIndex = GetNextIndex();
+                        }
+
+                        @* Previous Album *@
+                        @if (rankedAlbums.Count > 1 && currentAlbumIndex != 0)
+                        {
+                            var prevAlbum = rankedAlbums[prevIndex];
+                            <div class="carousel-item prev" @onclick="PreviousAlbum" @key="@prevIndex">
+                                <div class="carousel-album-card">
+                                    <img src="@prevAlbum.ImgSrc" alt="@prevAlbum.Name" class="carousel-album-art" />
+                                    <div class="carousel-album-info">
+                                        <h3 style="@textColor">@prevAlbum.Name</h3>
+                                        <p class="artist" style="@textColor">@prevAlbum.Artist</p>
+                                        <div class="rating-display">
+                                            <Rating Value="@prevAlbum.Rating" TextColor="@textColor"></Rating>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                        @* Current Album *@
+                        @{
+                            var rankingPosition = currentAlbumIndex + 1;
+                        }
+                        <div class="carousel-item current" @onclick="() => NavigateToAlbum(currentAlbum.Id)" @key="@currentAlbumIndex">
+                            <div class="carousel-album-card">
+                                <img src="@currentAlbum.ImgSrc" alt="@currentAlbum.Name" class="carousel-album-art" />
+                                <div class="carousel-album-info">
+                                    <h3 style="@textColor">@currentAlbum.Name</h3>
+                                    <p class="artist" style="@textColor">@currentAlbum.Artist</p>
+                                    <div class="rating-display">
+                                        <Rating Value="@currentAlbum.Rating" TextColor="@textColor"></Rating>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <p class="rating">@album.Rating</p>
+
+                        @* Next Album *@
+                        @if (rankedAlbums.Count > 1 && currentAlbumIndex != rankedAlbums.Count-1)
+                        {
+                            var nextAlbum = rankedAlbums[nextIndex];
+                            <div class="carousel-item next" @onclick="NextAlbum" @key="@nextIndex">
+                                <div class="carousel-album-card">
+                                    <img src="@nextAlbum.ImgSrc" alt="@nextAlbum.Name" class="carousel-album-art" />
+                                    <div class="carousel-album-info">
+                                        <h3 style="@textColor">@nextAlbum.Name</h3>
+                                        <p class="artist" style="@textColor">@nextAlbum.Artist</p>
+                                        <div class="rating-display">
+                                            <Rating Value="@nextAlbum.Rating" TextColor="@textColor"></Rating>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
                     </div>
                 </div>
-            }
+
+                @* Right Side Controls *@
+                <button class="carousel-btn carousel-btn-right" @onclick="NextAlbum" disabled="@(currentAlbumIndex >= rankedAlbums.Count - 1)"></button>
+            </div>
         </div>
-    </div>
-    <div class="stats-container">
-        <ul>
-            <li><strong>Total Albums:</strong> <span>@albums.Count</span></li>
-            <li><strong>Unique Artists:</strong> <span>@(albums.Count > 0 ? albums.Select(a => a.Artist).Distinct().Count() : 0)</span></li>
-            <li><strong>Average Rating:</strong> <span>@(albums.Count > 0 ? albums.Average(a => a.Rating).ToString("0.00") : "N/A")</span></li>
-            <li>
-                <strong>Highest Rated Album:</strong>
-                @if (GetHighestRatedAlbum() is Album highest)
-                {
-                    <span>@highest.Name - @highest.Artist <img src="@highest.ImgSrc" alt="@highest.Name" style="height:32px;width:32px;vertical-align:middle;margin-left:0.5rem;border-radius:4px;" /></span>
-                }
-                else
-                {
-                    <span>N/A</span>
-                }
-            </li>
-            <li>
-                <strong>Lowest Rated Album:</strong>
-                @if (GetLowestRatedAlbum() is Album lowest)
-                {
-                    <img src="@lowest.ImgSrc" alt="@lowest.Name" class="stats-img" />
-                }
-                else
-                {
-                    <span>N/A</span>
-                }
-            </li>
-            <li><strong>Most Popular Artist:</strong> <span>@(albums.Count > 0 ? albums.GroupBy(a => a.Artist).OrderByDescending(g => g.Count()).ThenBy(g => g.Key).First().Key : "N/A")</span></li>
-            <li>
-                <strong>Oldest Album:</strong>
-                @if (GetOldestAlbum() is Album oldest)
-                {
-                   <img src="@oldest.ImgSrc" alt="@oldest.Name" class="stats-img" />
-                }
-                else
-                {
-                    <span>N/A</span>
-                }
-            </li>
-            <li>
-                <strong>Newest Album:</strong>
-                @if (GetNewestAlbum() is Album newest)
-                {
-                    <img src="@newest.ImgSrc" alt="@newest.Name" class="stats-img" />
-                }
-                else
-                {
-                    <span>N/A</span>
-                }
-            </li>
-        </ul>
-    </div>
+    }
 </div>
 
 @code {
     private List<Album> albums = new List<Album>();
+    private List<Album> rankedAlbums = new List<Album>();
+    private int currentAlbumIndex = 0;
+
     protected override async Task OnInitializedAsync() {
-        albums = await VinylService.GetAllAlbumsAsync(); 
-        albums = albums.OrderByDescending(a => a.Rating).ToList();
+        albums = await VinylService.GetAllAlbumsAsync();
+        rankedAlbums = GetAlbumsByRating();
+        
+        // Start at the lowest rated album (last in the list)
+        if (rankedAlbums.Count > 0)
+        {
+            currentAlbumIndex = rankedAlbums.Count - 1;
+        }
+        
+        // Calculate colors for albums that don't have them
+        foreach (var album in rankedAlbums)
+        {
+            if (string.IsNullOrEmpty(album.PrimaryColour))
+            {
+                await album.CalculatePrimaryColourAsync(ColorService);
+            }
+        }
     }
 
-    private Album? GetHighestRatedAlbum() => albums.Count > 0 ? albums.OrderByDescending(a => a.Rating).First() : null;
-    private Album? GetLowestRatedAlbum() => albums.Count > 0 ? albums.OrderBy(a => a.Rating).First() : null;
-    private Album? GetNewestAlbum() => albums.Count > 0 ? albums.OrderByDescending(a => a.Release).First() : null;
-    private Album? GetOldestAlbum() => albums.Count > 0 ? albums.OrderBy(a => a.Release).First() : null;
+    private List<Album> GetAlbumsByRating() => albums.OrderByDescending(a => a.Rating).ToList();
 
     private void NavigateToAlbum(int albumId)
     {
         Navigation.NavigateTo($"/album/{albumId}");
     }
 
-    string GetOrdinal(int number)
+    private void NextAlbum()
     {
-        if (number <= 0) return number.ToString();
-        int rem100 = number % 100;
-        if (rem100 >= 11 && rem100 <= 13) return number + "th";
-        switch (number % 10)
+        if (rankedAlbums.Count > 0 && currentAlbumIndex < rankedAlbums.Count - 1)
         {
-            case 1: return number + "st";
-            case 2: return number + "nd";
-            case 3: return number + "rd";
-            default: return number + "th";
+            currentAlbumIndex = currentAlbumIndex + 1;
         }
+    }
+
+    private void PreviousAlbum()
+    {
+        if (rankedAlbums.Count > 0 && currentAlbumIndex > 0)
+        {
+            currentAlbumIndex = currentAlbumIndex - 1;
+        }
+    }
+
+    private void SetAlbumIndex(int index)
+    {
+        if (index >= 0 && index < rankedAlbums.Count)
+        {
+            currentAlbumIndex = index;
+        }
+    }
+
+
+    private int GetPreviousIndex()
+    {
+        if (rankedAlbums.Count == 0) return 0;
+        if (currentAlbumIndex <= 0) return 0;
+        return currentAlbumIndex - 1;
+    }
+
+    private int GetNextIndex()
+    {
+        if (rankedAlbums.Count == 0) return 0;
+        if (currentAlbumIndex >= rankedAlbums.Count - 1) return rankedAlbums.Count - 1;
+        return currentAlbumIndex + 1;
     }
 }

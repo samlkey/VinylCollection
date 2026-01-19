@@ -2,644 +2,1577 @@
   {
     "Name": "The College Dropout",
     "Artist": "Kanye West",
-    "Rating": 0,
+    "Rating": 95,
     "Release": 2004,
     "Length": 76.13,
     "ImgSrc": "https://m.media-amazon.com/images/I/8131j2MuspL._AC_SL1500_.jpg",
     "ImgSrcBack": "https://m.media-amazon.com/images/I/61T9gi1VMuL._AC_SL1069_.jpg",
     "TrackList": [
-      { "Name": "Intro", "Length": 0.19 },
-      { "Name": "We Don't Care", "Length": 3.59 },
-      { "Name": "Graduation Day", "Length": 1.22 },
-      { "Name": "All Falls Down", "Length": 3.43 },
-      { "Name": "I'll Fly Away", "Length": 1.09 },
-      { "Name": "Spaceship", "Length": 5.24 },
-      { "Name": "Jesus Walks", "Length": 3.13 },
-      { "Name": "Never Let Me Down", "Length": 5.24 },
-      { "Name": "Get Em High", "Length": 4.49 },
-      { "Name": "The New Workout Plan", "Length": 5.22 },
-      { "Name": "Slow Jamz", "Length": 5.16 },
-      { "Name": "Breathe In Breathe Out", "Length": 4.06 },
-      { "Name": "School Spirit", "Length": 3.02 },
-      { "Name": "Two Words", "Length": 4.26 },
-      { "Name": "Through the Wire", "Length": 3.41 },
-      { "Name": "Family Business", "Length": 4.38 },
-      { "Name": "Last Call", "Length": 12.40 }
+      {
+        "Name": "Intro",
+        "Length": 0.19
+      },
+      {
+        "Name": "We Don't Care",
+        "Length": 3.59
+      },
+      {
+        "Name": "Graduation Day",
+        "Length": 1.22
+      },
+      {
+        "Name": "All Falls Down",
+        "Length": 3.43
+      },
+      {
+        "Name": "I'll Fly Away",
+        "Length": 1.09
+      },
+      {
+        "Name": "Spaceship",
+        "Length": 5.24
+      },
+      {
+        "Name": "Jesus Walks",
+        "Length": 3.13
+      },
+      {
+        "Name": "Never Let Me Down",
+        "Length": 5.24
+      },
+      {
+        "Name": "Get Em High",
+        "Length": 4.49
+      },
+      {
+        "Name": "The New Workout Plan",
+        "Length": 5.22
+      },
+      {
+        "Name": "Slow Jamz",
+        "Length": 5.16
+      },
+      {
+        "Name": "Breathe In Breathe Out",
+        "Length": 4.06
+      },
+      {
+        "Name": "School Spirit",
+        "Length": 3.02
+      },
+      {
+        "Name": "Two Words",
+        "Length": 4.26
+      },
+      {
+        "Name": "Through the Wire",
+        "Length": 3.41
+      },
+      {
+        "Name": "Family Business",
+        "Length": 4.38
+      },
+      {
+        "Name": "Last Call",
+        "Length": 12.4
+      }
     ]
   },
-
   {
     "Name": "Late Registration",
     "Artist": "Kanye West",
-    "Rating": 0,
+    "Rating": 22,
     "Release": 2005,
     "Length": 70.13,
     "ImgSrc": "https://m.media-amazon.com/images/I/718khrgr5bL._AC_SL1400_.jpg",
     "ImgSrcBack": "https://m.media-amazon.com/images/I/51tI8uhvClL._UF894,1000_QL80_.jpg",
     "TrackList": [
-      { "Name": "Wake Up Mr. West", "Length": 0.41 },
-      { "Name": "Heard 'Em Say", "Length": 3.23 },
-      { "Name": "Touch the Sky", "Length": 3.56 },
-      { "Name": "Gold Digger", "Length": 3.27 },
-      { "Name": "Skit #1", "Length": 0.33 },
-      { "Name": "Drive Slow", "Length": 4.32 },
-      { "Name": "My Way Home", "Length": 1.43 },
-      { "Name": "Crack Music", "Length": 4.31 },
-      { "Name": "Roses", "Length": 4.05 },
-      { "Name": "Bring Me Down", "Length": 3.18 },
-      { "Name": "Addiction", "Length": 4.27 },
-      { "Name": "Skit #2", "Length": 0.31 },
-      { "Name": "Diamonds from Sierra Leone (Remix)", "Length": 4.21 },
-      { "Name": "We Major", "Length": 7.28 },
-      { "Name": "Skit #3", "Length": 0.24 },
-      { "Name": "Hey Mama", "Length": 5.05 },
-      { "Name": "Celebration", "Length": 3.18 },
-      { "Name": "Skit #4", "Length": 1.19 },
-      { "Name": "Gone", "Length": 5.33 },
-      { "Name": "Late", "Length": 3.50 }
+      {
+        "Name": "Wake Up Mr. West",
+        "Length": 0.41
+      },
+      {
+        "Name": "Heard 'Em Say",
+        "Length": 3.23
+      },
+      {
+        "Name": "Touch the Sky",
+        "Length": 3.56
+      },
+      {
+        "Name": "Gold Digger",
+        "Length": 3.27
+      },
+      {
+        "Name": "Skit #1",
+        "Length": 0.33
+      },
+      {
+        "Name": "Drive Slow",
+        "Length": 4.32
+      },
+      {
+        "Name": "My Way Home",
+        "Length": 1.43
+      },
+      {
+        "Name": "Crack Music",
+        "Length": 4.31
+      },
+      {
+        "Name": "Roses",
+        "Length": 4.05
+      },
+      {
+        "Name": "Bring Me Down",
+        "Length": 3.18
+      },
+      {
+        "Name": "Addiction",
+        "Length": 4.27
+      },
+      {
+        "Name": "Skit #2",
+        "Length": 0.31
+      },
+      {
+        "Name": "Diamonds from Sierra Leone (Remix)",
+        "Length": 4.21
+      },
+      {
+        "Name": "We Major",
+        "Length": 7.28
+      },
+      {
+        "Name": "Skit #3",
+        "Length": 0.24
+      },
+      {
+        "Name": "Hey Mama",
+        "Length": 5.05
+      },
+      {
+        "Name": "Celebration",
+        "Length": 3.18
+      },
+      {
+        "Name": "Skit #4",
+        "Length": 1.19
+      },
+      {
+        "Name": "Gone",
+        "Length": 5.33
+      },
+      {
+        "Name": "Late",
+        "Length": 3.5
+      }
     ]
   },
-
   {
     "Name": "Ye",
     "Artist": "Kanye West",
-    "Rating": 0,
+    "Rating": 53,
     "Release": 2018,
     "Length": 23.41,
     "ImgSrc": "https://m.media-amazon.com/images/I/714yVKHQM-L._AC_SL1400_.jpg",
     "ImgSrcBack": "https://m.media-amazon.com/images/I/61rYRcJsuHL._UF894,1000_QL80_.jpg",
     "TrackList": [
-      { "Name": "I Thought About Killing You", "Length": 4.34 },
-      { "Name": "Yikes", "Length": 3.09 },
-      { "Name": "All Mine", "Length": 2.25 },
-      { "Name": "Wouldn't Leave", "Length": 3.25 },
-      { "Name": "No Mistakes", "Length": 2.03 },
-      { "Name": "Ghost Town", "Length": 4.31 },
-      { "Name": "Violent Crimes", "Length": 3.35 }
+      {
+        "Name": "I Thought About Killing You",
+        "Length": 4.34
+      },
+      {
+        "Name": "Yikes",
+        "Length": 3.09
+      },
+      {
+        "Name": "All Mine",
+        "Length": 2.25
+      },
+      {
+        "Name": "Wouldn't Leave",
+        "Length": 3.25
+      },
+      {
+        "Name": "No Mistakes",
+        "Length": 2.03
+      },
+      {
+        "Name": "Ghost Town",
+        "Length": 4.31
+      },
+      {
+        "Name": "Violent Crimes",
+        "Length": 3.35
+      }
     ]
   },
-
   {
     "Name": "Kids See Ghosts",
     "Artist": "Kanye West",
-    "Rating": 0,
+    "Rating": 5,
     "Release": 2018,
     "Length": 23.53,
     "ImgSrc": "https://m.media-amazon.com/images/I/81t-DYwzAML._AC_SL1280_.jpg",
     "ImgSrcBack": "https://uk.rarevinyl.com/cdn/shop/files/kids-see-ghosts-kids-see-ghosts-180gm-heavyweight-vinyl-uk-vinyl-lp-album-record-602567800484-782718c_a0202b8c-f949-4f3f-9708-7d83aee23936_1000x1008.jpg?v=1736276388",
     "TrackList": [
-      { "Name": "Feel the Love", "Length": 4.02 },
-      { "Name": "Fire", "Length": 2.20 },
-      { "Name": "4th Dimension", "Length": 2.33 },
-      { "Name": "Freeee (Ghost Town, Pt. 2)", "Length": 3.26 },
-      { "Name": "Reborn", "Length": 5.24 },
-      { "Name": "Kids See Ghosts", "Length": 4.06 },
-      { "Name": "Cudi Montage", "Length": 3.17 }
+      {
+        "Name": "Feel the Love",
+        "Length": 4.02
+      },
+      {
+        "Name": "Fire",
+        "Length": 2.2
+      },
+      {
+        "Name": "4th Dimension",
+        "Length": 2.33
+      },
+      {
+        "Name": "Freeee (Ghost Town, Pt. 2)",
+        "Length": 3.26
+      },
+      {
+        "Name": "Reborn",
+        "Length": 5.24
+      },
+      {
+        "Name": "Kids See Ghosts",
+        "Length": 4.06
+      },
+      {
+        "Name": "Cudi Montage",
+        "Length": 3.17
+      }
     ]
   },
-
   {
     "Name": "GNX",
     "Artist": "Kendrick Lamar",
-    "Rating": 0,
+    "Rating": 84,
     "Release": 2024,
     "Length": 44.12,
     "ImgSrc": "https://www.normanrecords.com/artwork/medium/208/206708-kendrick-lamar-gnx.jpg",
     "ImgSrcBack": "https://digvinyl.co.uk/cdn/shop/files/33102840-1796286467ab718266c3867ab718266c39173928896267ab718266c3d.jpg?v=1747924220&width=1445",
     "TrackList": [
-      { "Name": "wacced out murals", "Length": 4.01 },
-      { "Name": "squabble up", "Length": 3.12 },
-      { "Name": "luther", "Length": 3.44 },
-      { "Name": "man at the garden", "Length": 3.18 },
-      { "Name": "hey now", "Length": 3.26 },
-      { "Name": "reincarnated", "Length": 4.05 },
-      { "Name": "tv off", "Length": 3.10 },
-      { "Name": "dodger blue", "Length": 3.21 },
-      { "Name": "peekaboo", "Length": 3.07 },
-      { "Name": "gnx", "Length": 2.59 },
-      { "Name": "gloria", "Length": 4.29 }
+      {
+        "Name": "wacced out murals",
+        "Length": 4.01
+      },
+      {
+        "Name": "squabble up",
+        "Length": 3.12
+      },
+      {
+        "Name": "luther",
+        "Length": 3.44
+      },
+      {
+        "Name": "man at the garden",
+        "Length": 3.18
+      },
+      {
+        "Name": "hey now",
+        "Length": 3.26
+      },
+      {
+        "Name": "reincarnated",
+        "Length": 4.05
+      },
+      {
+        "Name": "tv off",
+        "Length": 3.1
+      },
+      {
+        "Name": "dodger blue",
+        "Length": 3.21
+      },
+      {
+        "Name": "peekaboo",
+        "Length": 3.07
+      },
+      {
+        "Name": "gnx",
+        "Length": 2.59
+      },
+      {
+        "Name": "gloria",
+        "Length": 4.29
+      }
     ]
   },
-
   {
     "Name": "The Miseducation of Lauren Hill",
     "Artist": "Lauren Hill",
-    "Rating": 0,
+    "Rating": 75,
     "Release": 1998,
     "Length": 77.43,
     "ImgSrc": "https://m.media-amazon.com/images/I/81Jr6DEe02L._AC_SL1500_.jpg",
     "ImgSrcBack": "https://m.media-amazon.com/images/I/91NNqzcj+yL._AC_SL1500_.jpg",
     "TrackList": [
-      { "Name": "Intro", "Length": 1.03 },
-      { "Name": "Lost Ones", "Length": 5.33 },
-      { "Name": "Ex-Factor", "Length": 5.26 },
-      { "Name": "To Zion", "Length": 6.09 },
-      { "Name": "Doo Wop (That Thing)", "Length": 5.20 },
-      { "Name": "Superstar", "Length": 4.57 },
-      { "Name": "Final Hour", "Length": 4.16 },
-      { "Name": "When It Hurts So Bad", "Length": 4.53 },
-      { "Name": "I Used to Love Him", "Length": 5.39 },
-      { "Name": "Forgive Them Father", "Length": 5.15 },
-      { "Name": "Every Ghetto, Every City", "Length": 5.14 },
-      { "Name": "Nothing Even Matters", "Length": 5.50 },
-      { "Name": "Everything Is Everything", "Length": 4.57 },
-      { "Name": "The Miseducation of Lauryn Hill", "Length": 3.55 },
-      { "Name": "Can't Take My Eyes Off of You", "Length": 3.41 },
-      { "Name": "Tell Him", "Length": 4.40 }
+      {
+        "Name": "Intro",
+        "Length": 1.03
+      },
+      {
+        "Name": "Lost Ones",
+        "Length": 5.33
+      },
+      {
+        "Name": "Ex-Factor",
+        "Length": 5.26
+      },
+      {
+        "Name": "To Zion",
+        "Length": 6.09
+      },
+      {
+        "Name": "Doo Wop (That Thing)",
+        "Length": 5.2
+      },
+      {
+        "Name": "Superstar",
+        "Length": 4.57
+      },
+      {
+        "Name": "Final Hour",
+        "Length": 4.16
+      },
+      {
+        "Name": "When It Hurts So Bad",
+        "Length": 4.53
+      },
+      {
+        "Name": "I Used to Love Him",
+        "Length": 5.39
+      },
+      {
+        "Name": "Forgive Them Father",
+        "Length": 5.15
+      },
+      {
+        "Name": "Every Ghetto, Every City",
+        "Length": 5.14
+      },
+      {
+        "Name": "Nothing Even Matters",
+        "Length": 5.5
+      },
+      {
+        "Name": "Everything Is Everything",
+        "Length": 4.57
+      },
+      {
+        "Name": "The Miseducation of Lauryn Hill",
+        "Length": 3.55
+      },
+      {
+        "Name": "Can't Take My Eyes Off of You",
+        "Length": 3.41
+      },
+      {
+        "Name": "Tell Him",
+        "Length": 4.4
+      }
     ]
   },
-
   {
     "Name": "Madvillainy",
     "Artist": "MF DOOM",
-    "Rating": 0,
+    "Rating": 11,
     "Release": 2004,
     "Length": 46.33,
     "ImgSrc": "https://m.media-amazon.com/images/I/812l-fRzALL._AC_SL1500_.jpg",
     "ImgSrcBack": "https://m.media-amazon.com/images/I/81IRudVDlzL._AC_SL1500_.jpg",
     "TrackList": [
-      { "Name": "The Illest Villains", "Length": 1.55 },
-      { "Name": "Accordion", "Length": 1.58 },
-      { "Name": "Meat Grinder", "Length": 2.11 },
-      { "Name": "Bistro", "Length": 1.08 },
-      { "Name": "Raid", "Length": 2.36 },
-      { "Name": "America's Most Blunted", "Length": 3.54 },
-      { "Name": "Sickfit", "Length": 1.22 },
-      { "Name": "Rainbows", "Length": 2.51 },
-      { "Name": "Curls", "Length": 1.36 },
-      { "Name": "Do Not Fire!", "Length": 0.52 },
-      { "Name": "Money Folder", "Length": 2.29 },
-      { "Name": "Shadows of Tomorrow", "Length": 2.36 },
-      { "Name": "Operation Lifesaver", "Length": 1.30 },
-      { "Name": "Figaro", "Length": 2.25 },
-      { "Name": "Hardcore Hustle", "Length": 1.21 },
-      { "Name": "Strange Ways", "Length": 1.56 },
-      { "Name": "Fancy Clown", "Length": 2.55 },
-      { "Name": "Eye", "Length": 1.57 },
-      { "Name": "Supervillain Theme", "Length": 0.52 },
-      { "Name": "All Caps", "Length": 2.10 },
-      { "Name": "Great Day", "Length": 2.16 },
-      { "Name": "Rhinestone Cowboy", "Length": 4.12 }
+      {
+        "Name": "The Illest Villains",
+        "Length": 1.55
+      },
+      {
+        "Name": "Accordion",
+        "Length": 1.58
+      },
+      {
+        "Name": "Meat Grinder",
+        "Length": 2.11
+      },
+      {
+        "Name": "Bistro",
+        "Length": 1.08
+      },
+      {
+        "Name": "Raid",
+        "Length": 2.36
+      },
+      {
+        "Name": "America's Most Blunted",
+        "Length": 3.54
+      },
+      {
+        "Name": "Sickfit",
+        "Length": 1.22
+      },
+      {
+        "Name": "Rainbows",
+        "Length": 2.51
+      },
+      {
+        "Name": "Curls",
+        "Length": 1.36
+      },
+      {
+        "Name": "Do Not Fire!",
+        "Length": 0.52
+      },
+      {
+        "Name": "Money Folder",
+        "Length": 2.29
+      },
+      {
+        "Name": "Shadows of Tomorrow",
+        "Length": 2.36
+      },
+      {
+        "Name": "Operation Lifesaver",
+        "Length": 1.3
+      },
+      {
+        "Name": "Figaro",
+        "Length": 2.25
+      },
+      {
+        "Name": "Hardcore Hustle",
+        "Length": 1.21
+      },
+      {
+        "Name": "Strange Ways",
+        "Length": 1.56
+      },
+      {
+        "Name": "Fancy Clown",
+        "Length": 2.55
+      },
+      {
+        "Name": "Eye",
+        "Length": 1.57
+      },
+      {
+        "Name": "Supervillain Theme",
+        "Length": 0.52
+      },
+      {
+        "Name": "All Caps",
+        "Length": 2.1
+      },
+      {
+        "Name": "Great Day",
+        "Length": 2.16
+      },
+      {
+        "Name": "Rhinestone Cowboy",
+        "Length": 4.12
+      }
     ]
   },
   {
     "Name": "OK Computer",
     "Artist": "RADIOHEAD",
-    "Rating": 0,
+    "Rating": 96,
     "Release": 1997,
     "Length": 53.41,
     "ImgSrc": "https://m.media-amazon.com/images/I/715LZJ5qX0L._UF1000,1000_QL80_.jpg",
     "ImgSrcBack": "https://m.media-amazon.com/images/I/91FeCUOipSL._UF1000,1000_QL80_.jpg",
     "TrackList": [
-      { "Name": "Airbag", "Length": 4.44 },
-      { "Name": "Paranoid Android", "Length": 6.23 },
-      { "Name": "Subterranean Homesick Alien", "Length": 4.27 },
-      { "Name": "Exit Music (For a Film)", "Length": 4.24 },
-      { "Name": "Let Down", "Length": 4.59 },
-      { "Name": "Karma Police", "Length": 4.21 },
-      { "Name": "Fitter Happier", "Length": 1.57 },
-      { "Name": "Electioneering", "Length": 3.50 },
-      { "Name": "Climbing Up the Walls", "Length": 4.45 },
-      { "Name": "No Surprises", "Length": 3.48 },
-      { "Name": "Lucky", "Length": 4.19 },
-      { "Name": "The Tourist", "Length": 5.24 }
+      {
+        "Name": "Airbag",
+        "Length": 4.44
+      },
+      {
+        "Name": "Paranoid Android",
+        "Length": 6.23
+      },
+      {
+        "Name": "Subterranean Homesick Alien",
+        "Length": 4.27
+      },
+      {
+        "Name": "Exit Music (For a Film)",
+        "Length": 4.24
+      },
+      {
+        "Name": "Let Down",
+        "Length": 4.59
+      },
+      {
+        "Name": "Karma Police",
+        "Length": 4.21
+      },
+      {
+        "Name": "Fitter Happier",
+        "Length": 1.57
+      },
+      {
+        "Name": "Electioneering",
+        "Length": 3.5
+      },
+      {
+        "Name": "Climbing Up the Walls",
+        "Length": 4.45
+      },
+      {
+        "Name": "No Surprises",
+        "Length": 3.48
+      },
+      {
+        "Name": "Lucky",
+        "Length": 4.19
+      },
+      {
+        "Name": "The Tourist",
+        "Length": 5.24
+      }
     ]
   },
-
   {
     "Name": "Villains",
     "Artist": "Queens of the Stone Age",
-    "Rating": 0,
+    "Rating": 34,
     "Release": 2017,
     "Length": 48.29,
     "ImgSrc": "https://m.media-amazon.com/images/I/711ea5-uyZL._UF894,1000_QL80_.jpg",
     "ImgSrcBack": "https://m.media-amazon.com/images/I/61ckd4lfCcL._UF894,1000_QL80_.jpg",
     "TrackList": [
-      { "Name": "Feet Don't Fail Me", "Length": 5.39 },
-      { "Name": "The Way You Used to Do", "Length": 4.33 },
-      { "Name": "Domesticated Animals", "Length": 4.00 },
-      { "Name": "Fortress", "Length": 5.47 },
-      { "Name": "Head Like a Haunted House", "Length": 3.32 },
-      { "Name": "Un-Reborn Again", "Length": 6.05 },
-      { "Name": "Hideaway", "Length": 4.36 },
-      { "Name": "The Evil Has Landed", "Length": 6.31 },
-      { "Name": "Villains of Circumstance", "Length": 7.09 }
+      {
+        "Name": "Feet Don't Fail Me",
+        "Length": 5.39
+      },
+      {
+        "Name": "The Way You Used to Do",
+        "Length": 4.33
+      },
+      {
+        "Name": "Domesticated Animals",
+        "Length": 4.0
+      },
+      {
+        "Name": "Fortress",
+        "Length": 5.47
+      },
+      {
+        "Name": "Head Like a Haunted House",
+        "Length": 3.32
+      },
+      {
+        "Name": "Un-Reborn Again",
+        "Length": 6.05
+      },
+      {
+        "Name": "Hideaway",
+        "Length": 4.36
+      },
+      {
+        "Name": "The Evil Has Landed",
+        "Length": 6.31
+      },
+      {
+        "Name": "Villains of Circumstance",
+        "Length": 7.09
+      }
     ]
   },
-
   {
     "Name": "The Fat of the Land",
     "Artist": "Prodigy",
-    "Rating": 0,
+    "Rating": 22,
     "Release": 1997,
-    "Length": 60.00,
+    "Length": 60.0,
     "ImgSrc": "https://m.media-amazon.com/images/I/91DMeDHmwpL._UF1000,1000_QL80_.jpg",
     "ImgSrcBack": "https://m.media-amazon.com/images/I/71B9mJ33O2L._UF1000,1000_QL80_.jpg",
     "TrackList": [
-      { "Name": "Smack My Bitch Up", "Length": 5.42 },
-      { "Name": "Breathe", "Length": 5.35 },
-      { "Name": "Diesel Power", "Length": 4.11 },
-      { "Name": "Funky Shit", "Length": 5.16 },
-      { "Name": "Serial Thrilla", "Length": 5.11 },
-      { "Name": "Mindfields", "Length": 5.40 },
-      { "Name": "Narayan", "Length": 9.05 },
-      { "Name": "Firestarter", "Length": 4.40 },
-      { "Name": "Climbatize", "Length": 7.37 },
-      { "Name": "Fuel My Fire", "Length": 4.19 }
+      {
+        "Name": "Smack My Bitch Up",
+        "Length": 5.42
+      },
+      {
+        "Name": "Breathe",
+        "Length": 5.35
+      },
+      {
+        "Name": "Diesel Power",
+        "Length": 4.11
+      },
+      {
+        "Name": "Funky Shit",
+        "Length": 5.16
+      },
+      {
+        "Name": "Serial Thrilla",
+        "Length": 5.11
+      },
+      {
+        "Name": "Mindfields",
+        "Length": 5.4
+      },
+      {
+        "Name": "Narayan",
+        "Length": 9.05
+      },
+      {
+        "Name": "Firestarter",
+        "Length": 4.4
+      },
+      {
+        "Name": "Climbatize",
+        "Length": 7.37
+      },
+      {
+        "Name": "Fuel My Fire",
+        "Length": 4.19
+      }
     ]
   },
-
   {
     "Name": "Gorillaz",
     "Artist": "Gorillaz",
-    "Rating": 0,
+    "Rating": 58,
     "Release": 2001,
     "Length": 57.52,
     "ImgSrc": "https://m.media-amazon.com/images/I/71jHAy4L1IL.jpg",
     "ImgSrcBack": "https://m.media-amazon.com/images/I/714bLtgZHlL._AC_SL1046_.jpg",
     "TrackList": [
-      { "Name": "Re-Hash", "Length": 3.38 },
-      { "Name": "5/4", "Length": 2.41 },
-      { "Name": "Tomorrow Comes Today", "Length": 3.12 },
-      { "Name": "New Genius (Brother)", "Length": 3.59 },
-      { "Name": "Clint Eastwood", "Length": 5.40 },
-      { "Name": "Man Research (Clapper)", "Length": 4.31 },
-      { "Name": "19-2000", "Length": 3.27 },
-      { "Name": "Sound Check (Gravity)", "Length": 4.41 },
-      { "Name": "Double Bass", "Length": 4.03 },
-      { "Name": "Rock the House", "Length": 4.09 },
-      { "Name": "Latin Simone (¿Qué Pasa Contigo?)", "Length": 3.38 },
-      { "Name": "Starshine", "Length": 4.37 },
-      { "Name": "Slow Country", "Length": 3.36 },
-      { "Name": "M1 A1", "Length": 4.03 }
+      {
+        "Name": "Re-Hash",
+        "Length": 3.38
+      },
+      {
+        "Name": "5/4",
+        "Length": 2.41
+      },
+      {
+        "Name": "Tomorrow Comes Today",
+        "Length": 3.12
+      },
+      {
+        "Name": "New Genius (Brother)",
+        "Length": 3.59
+      },
+      {
+        "Name": "Clint Eastwood",
+        "Length": 5.4
+      },
+      {
+        "Name": "Man Research (Clapper)",
+        "Length": 4.31
+      },
+      {
+        "Name": "19-2000",
+        "Length": 3.27
+      },
+      {
+        "Name": "Sound Check (Gravity)",
+        "Length": 4.41
+      },
+      {
+        "Name": "Double Bass",
+        "Length": 4.03
+      },
+      {
+        "Name": "Rock the House",
+        "Length": 4.09
+      },
+      {
+        "Name": "Latin Simone (¿Qué Pasa Contigo?)",
+        "Length": 3.38
+      },
+      {
+        "Name": "Starshine",
+        "Length": 4.37
+      },
+      {
+        "Name": "Slow Country",
+        "Length": 3.36
+      },
+      {
+        "Name": "M1 A1",
+        "Length": 4.03
+      }
     ]
   },
-
   {
     "Name": "Bandana",
     "Artist": "Freddie Gibbs",
-    "Rating": 0,
+    "Rating": 34,
     "Release": 2019,
     "Length": 46.12,
     "ImgSrc": "https://m.media-amazon.com/images/I/81OMGDryyZL.jpg",
     "ImgSrcBack": "https://m.media-amazon.com/images/I/91TX44VF+vL._UF894,1000_QL80_.jpg",
     "TrackList": [
-      { "Name": "Freestyle Shit", "Length": 2.33 },
-      { "Name": "Half Manne Half Cocaine", "Length": 3.19 },
-      { "Name": "Crime Pays", "Length": 2.58 },
-      { "Name": "Massage Seats", "Length": 3.56 },
-      { "Name": "Palmolive", "Length": 5.08 },
-      { "Name": "Fake Names", "Length": 3.39 },
-      { "Name": "Flat Tummy Tea", "Length": 3.42 },
-      { "Name": "Situations", "Length": 2.57 },
-      { "Name": "Giannis", "Length": 3.36 },
-      { "Name": "Practice", "Length": 4.00 },
-      { "Name": "Cataracts", "Length": 2.47 },
-      { "Name": "Education", "Length": 4.11 }
+      {
+        "Name": "Freestyle Shit",
+        "Length": 2.33
+      },
+      {
+        "Name": "Half Manne Half Cocaine",
+        "Length": 3.19
+      },
+      {
+        "Name": "Crime Pays",
+        "Length": 2.58
+      },
+      {
+        "Name": "Massage Seats",
+        "Length": 3.56
+      },
+      {
+        "Name": "Palmolive",
+        "Length": 5.08
+      },
+      {
+        "Name": "Fake Names",
+        "Length": 3.39
+      },
+      {
+        "Name": "Flat Tummy Tea",
+        "Length": 3.42
+      },
+      {
+        "Name": "Situations",
+        "Length": 2.57
+      },
+      {
+        "Name": "Giannis",
+        "Length": 3.36
+      },
+      {
+        "Name": "Practice",
+        "Length": 4.0
+      },
+      {
+        "Name": "Cataracts",
+        "Length": 2.47
+      },
+      {
+        "Name": "Education",
+        "Length": 4.11
+      }
     ]
   },
-
   {
     "Name": "TYRON",
     "Artist": "Slowthai",
-    "Rating": 0,
+    "Rating": 5,
     "Release": 2021,
-    "Length": 35.20,
+    "Length": 35.2,
     "ImgSrc": "https://m.media-amazon.com/images/I/71LDwv-JwYL._UF1000,1000_QL80_.jpg",
     "ImgSrcBack": "https://m.media-amazon.com/images/I/611R+T21pML._UF1000,1000_QL80_.jpg",
     "TrackList": [
-      { "Name": "45 SMOKE", "Length": 2.10 },
-      { "Name": "CANCELLED", "Length": 2.40 },
-      { "Name": "MAZZA", "Length": 2.80 },
-      { "Name": "VEX", "Length": 2.90 },
-      { "Name": "WOT", "Length": 1.58 },
-      { "Name": "DEAD", "Length": 3.02 },
-      { "Name": "PLAY WITH FIRE", "Length": 2.70 },
-      { "Name": "i tried", "Length": 3.55 },
-      { "Name": "focus", "Length": 3.58 },
-      { "Name": "adhd", "Length": 3.17 },
-      { "Name": "push", "Length": 2.53 },
-      { "Name": "nhs", "Length": 2.51 },
-      { "Name": "terms", "Length": 0.52 }
+      {
+        "Name": "45 SMOKE",
+        "Length": 2.1
+      },
+      {
+        "Name": "CANCELLED",
+        "Length": 2.4
+      },
+      {
+        "Name": "MAZZA",
+        "Length": 2.8
+      },
+      {
+        "Name": "VEX",
+        "Length": 2.9
+      },
+      {
+        "Name": "WOT",
+        "Length": 1.58
+      },
+      {
+        "Name": "DEAD",
+        "Length": 3.02
+      },
+      {
+        "Name": "PLAY WITH FIRE",
+        "Length": 2.7
+      },
+      {
+        "Name": "i tried",
+        "Length": 3.55
+      },
+      {
+        "Name": "focus",
+        "Length": 3.58
+      },
+      {
+        "Name": "adhd",
+        "Length": 3.17
+      },
+      {
+        "Name": "push",
+        "Length": 2.53
+      },
+      {
+        "Name": "nhs",
+        "Length": 2.51
+      },
+      {
+        "Name": "terms",
+        "Length": 0.52
+      }
     ]
   },
   {
     "Name": "Plastic Beach",
     "Artist": "Gorillaz",
-    "Rating": 0,
+    "Rating": 29,
     "Release": 2010,
-    "Length": 56.80,
+    "Length": 56.8,
     "ImgSrc": "https://m.media-amazon.com/images/I/81EP2fxHLRL._UF1000,1000_QL80_.jpg",
     "ImgSrcBack": "https://m.media-amazon.com/images/I/71RK33UII0L._UF1000,1000_QL80_.jpg",
     "TrackList": [
-      { "Name": "Orchestral Intro", "Length": 1.03 },
-      { "Name": "Welcome to the World of the Plastic Beach", "Length": 3.35 },
-      { "Name": "White Flag", "Length": 3.42 },
-      { "Name": "Rhinestone Eyes", "Length": 3.20 },
-      { "Name": "Stylo", "Length": 4.30 },
-      { "Name": "Superfast Jellyfish", "Length": 2.80 },
-      { "Name": "Empire Ants", "Length": 4.40 },
-      { "Name": "Glitter Freeze", "Length": 4.03 },
-      { "Name": "Some Kind of Nature", "Length": 2.00 },
-      { "Name": "On Melancholy Hill", "Length": 3.50 },
-      { "Name": "Broken", "Length": 3.18 },
-      { "Name": "Sweepstakes", "Length": 5.19 },
-      { "Name": "Plastic Beach", "Length": 3.46 },
-      { "Name": "To Binge", "Length": 3.56 },
-      { "Name": "Cloud of Unknowing", "Length": 3.50 },
-      { "Name": "Pirate Jet", "Length": 2.53 }
+      {
+        "Name": "Orchestral Intro",
+        "Length": 1.03
+      },
+      {
+        "Name": "Welcome to the World of the Plastic Beach",
+        "Length": 3.35
+      },
+      {
+        "Name": "White Flag",
+        "Length": 3.42
+      },
+      {
+        "Name": "Rhinestone Eyes",
+        "Length": 3.2
+      },
+      {
+        "Name": "Stylo",
+        "Length": 4.3
+      },
+      {
+        "Name": "Superfast Jellyfish",
+        "Length": 2.8
+      },
+      {
+        "Name": "Empire Ants",
+        "Length": 4.4
+      },
+      {
+        "Name": "Glitter Freeze",
+        "Length": 4.03
+      },
+      {
+        "Name": "Some Kind of Nature",
+        "Length": 2.0
+      },
+      {
+        "Name": "On Melancholy Hill",
+        "Length": 3.5
+      },
+      {
+        "Name": "Broken",
+        "Length": 3.18
+      },
+      {
+        "Name": "Sweepstakes",
+        "Length": 5.19
+      },
+      {
+        "Name": "Plastic Beach",
+        "Length": 3.46
+      },
+      {
+        "Name": "To Binge",
+        "Length": 3.56
+      },
+      {
+        "Name": "Cloud of Unknowing",
+        "Length": 3.5
+      },
+      {
+        "Name": "Pirate Jet",
+        "Length": 2.53
+      }
     ]
   },
   {
     "Name": "IGOR",
     "Artist": "Tyler the Creator",
-    "Rating": 0,
+    "Rating": 71,
     "Release": 2019,
     "Length": 39.46,
     "ImgSrc": "https://m.media-amazon.com/images/I/81MJUW7iUaL.jpg",
     "ImgSrcBack": "https://cdn.prod.website-files.com/66428b017813ba35b9c025ad/6666ec3663871ecec97fbdc8_Screen-Shot-2019-05-17-at-12.12.35.png",
     "TrackList": [
-      { "Name": "IGOR'S THEME", "Length": 3.20 },
-      { "Name": "EARFQUAKE", "Length": 3.10 },
-      { "Name": "I THINK", "Length": 3.32 },
-      { "Name": "EXACTLY WHAT YOU RUN FROM YOU END UP CHASING", "Length": 0.16 },
-      { "Name": "RUNNING OUT OF TIME", "Length": 2.57 },
-      { "Name": "NEW MAGIC WAND", "Length": 3.15 },
-      { "Name": "A BOY IS A GUN*", "Length": 3.30 },
-      { "Name": "PUPPET", "Length": 2.59 },
-      { "Name": "WHAT'S GOOD", "Length": 3.25 },
-      { "Name": "GONE, GONE / THANK YOU", "Length": 6.15 },
-      { "Name": "I DON'T LOVE YOU ANYMORE", "Length": 2.41 },
-      { "Name": "ARE WE STILL FRIENDS?", "Length": 4.25 }
+      {
+        "Name": "IGOR'S THEME",
+        "Length": 3.2
+      },
+      {
+        "Name": "EARFQUAKE",
+        "Length": 3.1
+      },
+      {
+        "Name": "I THINK",
+        "Length": 3.32
+      },
+      {
+        "Name": "EXACTLY WHAT YOU RUN FROM YOU END UP CHASING",
+        "Length": 0.16
+      },
+      {
+        "Name": "RUNNING OUT OF TIME",
+        "Length": 2.57
+      },
+      {
+        "Name": "NEW MAGIC WAND",
+        "Length": 3.15
+      },
+      {
+        "Name": "A BOY IS A GUN*",
+        "Length": 3.3
+      },
+      {
+        "Name": "PUPPET",
+        "Length": 2.59
+      },
+      {
+        "Name": "WHAT'S GOOD",
+        "Length": 3.25
+      },
+      {
+        "Name": "GONE, GONE / THANK YOU",
+        "Length": 6.15
+      },
+      {
+        "Name": "I DON'T LOVE YOU ANYMORE",
+        "Length": 2.41
+      },
+      {
+        "Name": "ARE WE STILL FRIENDS?",
+        "Length": 4.25
+      }
     ]
   },
-
   {
     "Name": "Why Try Harder",
     "Artist": "Fat Boy Slim",
-    "Rating": 0,
+    "Rating": 45,
     "Release": 2006,
-    "Length": 79.00,
+    "Length": 79.0,
     "ImgSrc": "https://m.media-amazon.com/images/I/51nqPxl5rwL._UF894,1000_QL80_.jpg",
     "ImgSrcBack": "https://m.media-amazon.com/images/I/71FcP8OklFL._UF894,1000_QL80_.jpg",
     "TrackList": [
-      { "Name": "Praise You", "Length": 5.24 },
-      { "Name": "The Rockafeller Skank", "Length": 3.55 },
-      { "Name": "Weapon of Choice", "Length": 5.45 },
-      { "Name": "Right Here, Right Now", "Length": 6.29 }
+      {
+        "Name": "Praise You",
+        "Length": 5.24
+      },
+      {
+        "Name": "The Rockafeller Skank",
+        "Length": 3.55
+      },
+      {
+        "Name": "Weapon of Choice",
+        "Length": 5.45
+      },
+      {
+        "Name": "Right Here, Right Now",
+        "Length": 6.29
+      }
     ]
   },
-
   {
     "Name": "Whatever People Say I Am, That's What I'm Not",
     "Artist": "Arctic Monkeys",
-    "Rating": 0,
+    "Rating": 73,
     "Release": 2006,
     "Length": 40.53,
     "ImgSrc": "https://m.media-amazon.com/images/I/813Qw4j8phL._AC_SL1424_.jpg",
     "ImgSrcBack": "https://m.media-amazon.com/images/I/81HzOcQ-QeL._AC_SL1500_.jpg",
     "TrackList": [
-      { "Name": "The View from the Afternoon", "Length": 3.38 },
-      { "Name": "I Bet You Look Good on the Dancefloor", "Length": 2.53 },
-      { "Name": "Fake Tales of San Francisco", "Length": 2.58 },
-      { "Name": "Dancing Shoes", "Length": 2.21 },
-      { "Name": "You Probably Couldn't See for the Lights", "Length": 2.41 },
-      { "Name": "When the Sun Goes Down", "Length": 3.21 },
-      { "Name": "From the Ritz to the Rubble", "Length": 3.13 },
-      { "Name": "A Certain Romance", "Length": 5.30 }
+      {
+        "Name": "The View from the Afternoon",
+        "Length": 3.38
+      },
+      {
+        "Name": "I Bet You Look Good on the Dancefloor",
+        "Length": 2.53
+      },
+      {
+        "Name": "Fake Tales of San Francisco",
+        "Length": 2.58
+      },
+      {
+        "Name": "Dancing Shoes",
+        "Length": 2.21
+      },
+      {
+        "Name": "You Probably Couldn't See for the Lights",
+        "Length": 2.41
+      },
+      {
+        "Name": "When the Sun Goes Down",
+        "Length": 3.21
+      },
+      {
+        "Name": "From the Ritz to the Rubble",
+        "Length": 3.13
+      },
+      {
+        "Name": "A Certain Romance",
+        "Length": 5.3
+      }
     ]
   },
-
   {
     "Name": "Song Machine",
     "Artist": "Gorillaz",
-    "Rating": 0,
+    "Rating": 88,
     "Release": 2020,
-    "Length": 59.40,
+    "Length": 59.4,
     "ImgSrc": "https://m.media-amazon.com/images/I/81-19WGwkzL._AC_SL1425_.jpg",
     "ImgSrcBack": "https://uk.rarevinyl.com/cdn/shop/files/gorillaz-song-machine-blue-vinyl-uk-vinyl-lp-album-record-0190295209414-870994c_1000x1013.jpg?v=1754150596",
     "TrackList": [
-      { "Name": "Strange Timez", "Length": 4.42 },
-      { "Name": "The Valley of the Pagans", "Length": 2.44 },
-      { "Name": "Pac-Man", "Length": 3.04 },
-      { "Name": "Momentary Bliss", "Length": 3.35 },
-      { "Name": "Pink Phantom", "Length": 3.38 },
-      { "Name": "Aries", "Length": 3.41 },
-      { "Name": "Dead Butterflies", "Length": 4.03 },
-      { "Name": "Desolé", "Length": 3.27 }
+      {
+        "Name": "Strange Timez",
+        "Length": 4.42
+      },
+      {
+        "Name": "The Valley of the Pagans",
+        "Length": 2.44
+      },
+      {
+        "Name": "Pac-Man",
+        "Length": 3.04
+      },
+      {
+        "Name": "Momentary Bliss",
+        "Length": 3.35
+      },
+      {
+        "Name": "Pink Phantom",
+        "Length": 3.38
+      },
+      {
+        "Name": "Aries",
+        "Length": 3.41
+      },
+      {
+        "Name": "Dead Butterflies",
+        "Length": 4.03
+      },
+      {
+        "Name": "Desolé",
+        "Length": 3.27
+      }
     ]
   },
-
   {
     "Name": "Favourite Worst Nightmare",
     "Artist": "Arctic Monkeys",
-    "Rating": 0,
+    "Rating": 50,
     "Release": 2007,
     "Length": 37.32,
     "ImgSrc": "https://m.media-amazon.com/images/I/81jUUHuNvEL._UF894,1000_QL80_.jpg",
     "ImgSrcBack": "https://m.media-amazon.com/images/I/71sZYo4Fe9L._AC_SL1500_.jpg",
     "TrackList": [
-      { "Name": "Brianstorm", "Length": 2.50 },
-      { "Name": "Teddy Picker", "Length": 2.40 },
-      { "Name": "Fluorescent Adolescent", "Length": 3.01 },
-      { "Name": "505", "Length": 4.13 }
+      {
+        "Name": "Brianstorm",
+        "Length": 2.5
+      },
+      {
+        "Name": "Teddy Picker",
+        "Length": 2.4
+      },
+      {
+        "Name": "Fluorescent Adolescent",
+        "Length": 3.01
+      },
+      {
+        "Name": "505",
+        "Length": 4.13
+      }
     ]
   },
-
   {
     "Name": "Led Zeppelin IV",
     "Artist": "Led Zeppelin",
-    "Rating": 0,
+    "Rating": 62,
     "Release": 1971,
     "Length": 42.38,
     "ImgSrc": "https://m.media-amazon.com/images/I/81x364UAGAL._AC_SL1425_.jpg",
     "ImgSrcBack": "https://vinylreviews.com/wp-content/uploads/2018/06/LedZep_IV_back.jpg",
     "TrackList": [
-      { "Name": "Black Dog", "Length": 4.55 },
-      { "Name": "Rock and Roll", "Length": 3.40 },
-      { "Name": "The Battle of Evermore", "Length": 5.52 },
-      { "Name": "Stairway to Heaven", "Length": 8.02 },
-      { "Name": "Going to California", "Length": 3.31 }
+      {
+        "Name": "Black Dog",
+        "Length": 4.55
+      },
+      {
+        "Name": "Rock and Roll",
+        "Length": 3.4
+      },
+      {
+        "Name": "The Battle of Evermore",
+        "Length": 5.52
+      },
+      {
+        "Name": "Stairway to Heaven",
+        "Length": 8.02
+      },
+      {
+        "Name": "Going to California",
+        "Length": 3.31
+      }
     ]
   },
-
   {
     "Name": "American Idiot",
     "Artist": "Green Day",
-    "Rating": 0,
+    "Rating": 64,
     "Release": 2004,
     "Length": 57.12,
     "ImgSrc": "https://m.media-amazon.com/images/I/6191UqQ-xCL._AC_SL1200_.jpg",
     "ImgSrcBack": "https://m.media-amazon.com/images/I/81z5L93y-eL._AC_SL1500_.jpg",
     "TrackList": [
-      { "Name": "American Idiot", "Length": 2.54 },
-      { "Name": "Jesus of Suburbia", "Length": 9.08 },
-      { "Name": "Holiday", "Length": 3.52 },
-      { "Name": "Boulevard of Broken Dreams", "Length": 4.20 },
-      { "Name": "Wake Me Up When September Ends", "Length": 4.45 }
+      {
+        "Name": "American Idiot",
+        "Length": 2.54
+      },
+      {
+        "Name": "Jesus of Suburbia",
+        "Length": 9.08
+      },
+      {
+        "Name": "Holiday",
+        "Length": 3.52
+      },
+      {
+        "Name": "Boulevard of Broken Dreams",
+        "Length": 4.2
+      },
+      {
+        "Name": "Wake Me Up When September Ends",
+        "Length": 4.45
+      }
     ]
   },
-
-    {
+  {
     "Name": "Fragile",
     "Artist": "Yes",
-    "Rating": 0,
+    "Rating": 65,
     "Release": 1971,
     "Length": 41.12,
     "ImgSrc": "https://m.media-amazon.com/images/I/812tYB9nLjL._AC_SL1425_.jpg",
     "ImgSrcBack": "https://uk.rarevinyl.com/cdn/shop/files/yes-fragile-1st-ex-uk-vinyl-lp-album-record-66706c_1000x1005.jpg?v=1712373262",
     "TrackList": [
-      { "Name": "Roundabout", "Length": 8.29 },
-      { "Name": "Cans and Brahms", "Length": 1.42 },
-      { "Name": "We Have Heaven", "Length": 1.39 },
-      { "Name": "South Side of the Sky", "Length": 8.04 },
-      { "Name": "Five Per Cent for Nothing", "Length": 0.35 },
-      { "Name": "Long Distance Runaround", "Length": 3.33 },
-      { "Name": "The Fish (Schindleria Praematurus)", "Length": 2.42 },
-      { "Name": "Mood for a Day", "Length": 2.57 },
-      { "Name": "Heart of the Sunrise", "Length": 10.34 }
+      {
+        "Name": "Roundabout",
+        "Length": 8.29
+      },
+      {
+        "Name": "Cans and Brahms",
+        "Length": 1.42
+      },
+      {
+        "Name": "We Have Heaven",
+        "Length": 1.39
+      },
+      {
+        "Name": "South Side of the Sky",
+        "Length": 8.04
+      },
+      {
+        "Name": "Five Per Cent for Nothing",
+        "Length": 0.35
+      },
+      {
+        "Name": "Long Distance Runaround",
+        "Length": 3.33
+      },
+      {
+        "Name": "The Fish (Schindleria Praematurus)",
+        "Length": 2.42
+      },
+      {
+        "Name": "Mood for a Day",
+        "Length": 2.57
+      },
+      {
+        "Name": "Heart of the Sunrise",
+        "Length": 10.34
+      }
     ]
   },
   {
     "Name": "Original Pirate Material",
     "Artist": "The Streets",
-    "Rating": 0,
+    "Rating": 77,
     "Release": 2002,
     "Length": 48.36,
     "ImgSrc": "https://m.media-amazon.com/images/I/81upq3MhouL._AC_SL1400_.jpg",
     "ImgSrcBack": "https://m.media-amazon.com/images/I/61+0EO6l2kL._AC_.jpg",
     "TrackList": [
-      { "Name": "Turn the Page", "Length": 3.15 },
-      { "Name": "Has It Come to This?", "Length": 3.50 },
-      { "Name": "Let's Push Things Forward", "Length": 3.57 },
-      { "Name": "Sharp Darts", "Length": 1.33 },
-      { "Name": "Same Old Thing", "Length": 3.42 },
-      { "Name": "Geezers Need Excitement", "Length": 3.46 },
-      { "Name": "It's Too Late", "Length": 4.09 },
-      { "Name": "Too Much Brandy", "Length": 3.01 },
-      { "Name": "Don't Mug Yourself", "Length": 2.37 },
-      { "Name": "Who Got the Funk?", "Length": 1.50 },
-      { "Name": "The Irony of It All", "Length": 3.30 },
-      { "Name": "Weak Become Heroes", "Length": 5.32 },
-      { "Name": "Who Dares Wins", "Length": 1.17 },
-      { "Name": "Stay Positive", "Length": 6.02 }
+      {
+        "Name": "Turn the Page",
+        "Length": 3.15
+      },
+      {
+        "Name": "Has It Come to This?",
+        "Length": 3.5
+      },
+      {
+        "Name": "Let's Push Things Forward",
+        "Length": 3.57
+      },
+      {
+        "Name": "Sharp Darts",
+        "Length": 1.33
+      },
+      {
+        "Name": "Same Old Thing",
+        "Length": 3.42
+      },
+      {
+        "Name": "Geezers Need Excitement",
+        "Length": 3.46
+      },
+      {
+        "Name": "It's Too Late",
+        "Length": 4.09
+      },
+      {
+        "Name": "Too Much Brandy",
+        "Length": 3.01
+      },
+      {
+        "Name": "Don't Mug Yourself",
+        "Length": 2.37
+      },
+      {
+        "Name": "Who Got the Funk?",
+        "Length": 1.5
+      },
+      {
+        "Name": "The Irony of It All",
+        "Length": 3.3
+      },
+      {
+        "Name": "Weak Become Heroes",
+        "Length": 5.32
+      },
+      {
+        "Name": "Who Dares Wins",
+        "Length": 1.17
+      },
+      {
+        "Name": "Stay Positive",
+        "Length": 6.02
+      }
     ]
   },
   {
     "Name": "St Peppers Lonely Hearts Club Band",
     "Artist": "Beatles",
-    "Rating": 0,
+    "Rating": 61,
     "Release": 1967,
     "Length": 39.52,
     "ImgSrc": "https://m.media-amazon.com/images/I/91wePXK9jfL._AC_SL1500_.jpg",
     "ImgSrcBack": "https://m.media-amazon.com/images/I/91B7iSIeYeL._AC_SL1500_.jpg",
     "TrackList": [
-      { "Name": "Sgt. Pepper's Lonely Hearts Club Band", "Length": 2.02 },
-      { "Name": "With a Little Help from My Friends", "Length": 2.44 },
-      { "Name": "Lucy in the Sky with Diamonds", "Length": 3.28 },
-      { "Name": "Getting Better", "Length": 2.47 },
-      { "Name": "Fixing a Hole", "Length": 2.36 },
-      { "Name": "She's Leaving Home", "Length": 3.35 },
-      { "Name": "Being for the Benefit of Mr. Kite!", "Length": 2.37 },
-      { "Name": "Within You Without You", "Length": 5.05 },
-      { "Name": "When I'm Sixty-Four", "Length": 2.37 },
-      { "Name": "Lovely Rita", "Length": 2.42 },
-      { "Name": "Good Morning Good Morning", "Length": 2.41 },
-      { "Name": "Sgt. Pepper's Lonely Hearts Club Band (Reprise)", "Length": 1.19 },
-      { "Name": "A Day in the Life", "Length": 5.38 }
+      {
+        "Name": "Sgt. Pepper's Lonely Hearts Club Band",
+        "Length": 2.02
+      },
+      {
+        "Name": "With a Little Help from My Friends",
+        "Length": 2.44
+      },
+      {
+        "Name": "Lucy in the Sky with Diamonds",
+        "Length": 3.28
+      },
+      {
+        "Name": "Getting Better",
+        "Length": 2.47
+      },
+      {
+        "Name": "Fixing a Hole",
+        "Length": 2.36
+      },
+      {
+        "Name": "She's Leaving Home",
+        "Length": 3.35
+      },
+      {
+        "Name": "Being for the Benefit of Mr. Kite!",
+        "Length": 2.37
+      },
+      {
+        "Name": "Within You Without You",
+        "Length": 5.05
+      },
+      {
+        "Name": "When I'm Sixty-Four",
+        "Length": 2.37
+      },
+      {
+        "Name": "Lovely Rita",
+        "Length": 2.42
+      },
+      {
+        "Name": "Good Morning Good Morning",
+        "Length": 2.41
+      },
+      {
+        "Name": "Sgt. Pepper's Lonely Hearts Club Band (Reprise)",
+        "Length": 1.19
+      },
+      {
+        "Name": "A Day in the Life",
+        "Length": 5.38
+      }
     ]
   },
   {
     "Name": "Nothing Great About Britain",
     "Artist": "Slowthai",
-    "Rating": 0,
+    "Rating": 59,
     "Release": 2019,
-    "Length": 37.00,
+    "Length": 37.0,
     "ImgSrc": "https://m.media-amazon.com/images/I/71Dl85zDs5L._AC_SL1200_.jpg",
     "ImgSrcBack": "https://uk.rarevinyl.com/cdn/shop/products/slowthai-nothing-great-about-britain-white-vinyl-plus-art-prints-uk-vinyl-lp-album-record-602577604591-828819c_1000x986.jpg?v=1706880212",
     "TrackList": [
-      { "Name": "Nothing Great About Britain", "Length": 3.27 },
-      { "Name": "Doorman", "Length": 3.32 },
-      { "Name": "Dead Leaves", "Length": 3.09 },
-      { "Name": "Gorgeous", "Length": 3.14 },
-      { "Name": "Crack", "Length": 3.09 },
-      { "Name": "Grow Up", "Length": 3.08 },
-      { "Name": "Inglorious", "Length": 3.06 },
-      { "Name": "Toaster", "Length": 3.09 },
-      { "Name": "Peace of Mind", "Length": 3.09 },
-      { "Name": "Missing", "Length": 3.09 },
-      { "Name": "North Nights", "Length": 3.09 },
-      { "Name": "Drug Dealer", "Length": 3.09 }
+      {
+        "Name": "Nothing Great About Britain",
+        "Length": 3.27
+      },
+      {
+        "Name": "Doorman",
+        "Length": 3.32
+      },
+      {
+        "Name": "Dead Leaves",
+        "Length": 3.09
+      },
+      {
+        "Name": "Gorgeous",
+        "Length": 3.14
+      },
+      {
+        "Name": "Crack",
+        "Length": 3.09
+      },
+      {
+        "Name": "Grow Up",
+        "Length": 3.08
+      },
+      {
+        "Name": "Inglorious",
+        "Length": 3.06
+      },
+      {
+        "Name": "Toaster",
+        "Length": 3.09
+      },
+      {
+        "Name": "Peace of Mind",
+        "Length": 3.09
+      },
+      {
+        "Name": "Missing",
+        "Length": 3.09
+      },
+      {
+        "Name": "North Nights",
+        "Length": 3.09
+      },
+      {
+        "Name": "Drug Dealer",
+        "Length": 3.09
+      }
     ]
   },
   {
     "Name": "The Dark Side of the Moon",
     "Artist": "Pink Floyd",
-    "Rating": 0,
+    "Rating": 53,
     "Release": 1973,
     "Length": 42.49,
     "ImgSrc": "https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png",
     "ImgSrcBack": "https://vinylreviews.com/wp-content/uploads/2018/05/PinkFloyd_DSOTM-back.jpg",
     "TrackList": [
-      { "Name": "Speak to Me", "Length": 1.30 },
-      { "Name": "Breathe", "Length": 2.43 },
-      { "Name": "On the Run", "Length": 3.30 },
-      { "Name": "Time", "Length": 6.53 },
-      { "Name": "The Great Gig in the Sky", "Length": 4.15 },
-      { "Name": "Money", "Length": 6.30 },
-      { "Name": "Us and Them", "Length": 7.51 },
-      { "Name": "Any Colour You Like", "Length": 3.25 },
-      { "Name": "Brain Damage", "Length": 3.50 },
-      { "Name": "Eclipse", "Length": 2.06 }
+      {
+        "Name": "Speak to Me",
+        "Length": 1.3
+      },
+      {
+        "Name": "Breathe",
+        "Length": 2.43
+      },
+      {
+        "Name": "On the Run",
+        "Length": 3.3
+      },
+      {
+        "Name": "Time",
+        "Length": 6.53
+      },
+      {
+        "Name": "The Great Gig in the Sky",
+        "Length": 4.15
+      },
+      {
+        "Name": "Money",
+        "Length": 6.3
+      },
+      {
+        "Name": "Us and Them",
+        "Length": 7.51
+      },
+      {
+        "Name": "Any Colour You Like",
+        "Length": 3.25
+      },
+      {
+        "Name": "Brain Damage",
+        "Length": 3.5
+      },
+      {
+        "Name": "Eclipse",
+        "Length": 2.06
+      }
     ]
   },
   {
     "Name": "Demon Days",
     "Artist": "Gorillaz",
-    "Rating": 0,
+    "Rating": 91,
     "Release": 2005,
     "Length": 50.44,
     "ImgSrc": "https://cdn.hmv.com/r/w-640/hmv/files/7a/7ae39718-6d16-46ab-aaab-db852e1788d9.jpg",
     "ImgSrcBack": "https://shop.loud-clear.co.uk/cdn/shop/products/NzYtMjY1MC5qcGVn_grande.jpg?v=1669994409",
     "TrackList": [
-      { "Name": "Intro", "Length": 1.03 },
-      { "Name": "Last Living Souls", "Length": 3.10 },
-      { "Name": "Kids with Guns", "Length": 3.45 },
-      { "Name": "O Green World", "Length": 4.33 },
-      { "Name": "Dirty Harry", "Length": 3.43 },
-      { "Name": "Feel Good Inc.", "Length": 3.41 },
-      { "Name": "El Mañana", "Length": 3.50 },
-      { "Name": "Every Planet We Reach Is Dead", "Length": 4.53 },
-      { "Name": "November Has Come", "Length": 2.41 },
-      { "Name": "All Alone", "Length": 3.30 },
-      { "Name": "White Light", "Length": 2.08 },
-      { "Name": "Dare", "Length": 4.04 },
-      { "Name": "Fire Coming Out of the Monkey's Head", "Length": 3.16 },
-      { "Name": "Don't Get Lost in Heaven", "Length": 2.00 },
-      { "Name": "Demon Days", "Length": 4.28 }
+      {
+        "Name": "Intro",
+        "Length": 1.03
+      },
+      {
+        "Name": "Last Living Souls",
+        "Length": 3.1
+      },
+      {
+        "Name": "Kids with Guns",
+        "Length": 3.45
+      },
+      {
+        "Name": "O Green World",
+        "Length": 4.33
+      },
+      {
+        "Name": "Dirty Harry",
+        "Length": 3.43
+      },
+      {
+        "Name": "Feel Good Inc.",
+        "Length": 3.41
+      },
+      {
+        "Name": "El Mañana",
+        "Length": 3.5
+      },
+      {
+        "Name": "Every Planet We Reach Is Dead",
+        "Length": 4.53
+      },
+      {
+        "Name": "November Has Come",
+        "Length": 2.41
+      },
+      {
+        "Name": "All Alone",
+        "Length": 3.3
+      },
+      {
+        "Name": "White Light",
+        "Length": 2.08
+      },
+      {
+        "Name": "Dare",
+        "Length": 4.04
+      },
+      {
+        "Name": "Fire Coming Out of the Monkey's Head",
+        "Length": 3.16
+      },
+      {
+        "Name": "Don't Get Lost in Heaven",
+        "Length": 2.0
+      },
+      {
+        "Name": "Demon Days",
+        "Length": 4.28
+      }
     ]
   },
   {
     "Name": "Endtroducing",
     "Artist": "DJ Shadow",
-    "Rating": 0,
+    "Rating": 92,
     "Release": 1996,
     "Length": 63.18,
     "ImgSrc": "https://m.media-amazon.com/images/I/81Xmrdt8hGL._UF894,1000_QL80_.jpg",
     "ImgSrcBack": "https://images.eil.com/large_image/DJ%20SHADOW%7CENDTRODUCING....-611379b.jpg",
     "TrackList": [
-      { "Name": "Best Foot Forward", "Length": 0.48 },
-      { "Name": "Building Steam with a Grain of Salt", "Length": 6.41 },
-      { "Name": "The Number Song", "Length": 4.38 },
-      { "Name": "Changeling", "Length": 7.48 },
-      { "Name": "What Does Your Soul Look Like (Part 4)", "Length": 5.09 },
-      { "Name": "Stem/Long Stem", "Length": 7.47 },
-      { "Name": "Mutual Slump", "Length": 4.19 },
-      { "Name": "Organ Donor", "Length": 1.57 },
-      { "Name": "Why Hip Hop Sucks in '96", "Length": 0.43 },
-      { "Name": "Midnight in a Perfect World", "Length": 4.58 },
-      { "Name": "Napalm Brain/Scatter Brain", "Length": 9.22 },
-      { "Name": "What Does Your Soul Look Like (Part 1 - Blue Sky Revisit)", "Length": 7.12 }
+      {
+        "Name": "Best Foot Forward",
+        "Length": 0.48
+      },
+      {
+        "Name": "Building Steam with a Grain of Salt",
+        "Length": 6.41
+      },
+      {
+        "Name": "The Number Song",
+        "Length": 4.38
+      },
+      {
+        "Name": "Changeling",
+        "Length": 7.48
+      },
+      {
+        "Name": "What Does Your Soul Look Like (Part 4)",
+        "Length": 5.09
+      },
+      {
+        "Name": "Stem/Long Stem",
+        "Length": 7.47
+      },
+      {
+        "Name": "Mutual Slump",
+        "Length": 4.19
+      },
+      {
+        "Name": "Organ Donor",
+        "Length": 1.57
+      },
+      {
+        "Name": "Why Hip Hop Sucks in '96",
+        "Length": 0.43
+      },
+      {
+        "Name": "Midnight in a Perfect World",
+        "Length": 4.58
+      },
+      {
+        "Name": "Napalm Brain/Scatter Brain",
+        "Length": 9.22
+      },
+      {
+        "Name": "What Does Your Soul Look Like (Part 1 - Blue Sky Revisit)",
+        "Length": 7.12
+      }
     ]
   }
 ]
