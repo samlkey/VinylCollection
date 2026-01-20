@@ -3,11 +3,10 @@
 @using FRONTEND.Services
 @using FRONTEND.Data
 @using FRONTEND.Components.Shared
-@using Microsoft.JSInterop
+
 @inject IVinylService VinylService
 @inject IColorAnalysisService ColorService
 @inject ICurrentAlbumColorService CurrentAlbumColorService
-@inject IJSRuntime JS
 @inject NavigationManager Navigation
 
 <PageTitle>Ranking</PageTitle>
@@ -19,8 +18,12 @@
     var layoutTextColor = CurrentAlbumColorService.IsColorBright ? "black" : "white";
 }
 
-<div class="container" style="--album-bg:@(currentAlbum.PrimaryColour ?? "#000000"); --layout-text-color:@layoutTextColor;">
-    <Search />
+<div class="container" style="--album-bg:@(currentAlbum.PrimaryColour ?? "#000000"); --layout-text-color:@layoutTextColor;" 
+     @ref="_keyTarget"
+     @onkeydown="HandleKeyDown"
+     tabindex="0">
+
+    <Search IsBackVisible="true" />
     
     @if (rankedAlbums != null && rankedAlbums.Count > 0)
     {
@@ -28,7 +31,11 @@
             <h1 style="@textColor">@(currentAlbumIndex+1)</h1>
             <div class="carousel-section">
                 @* Left Side Controls *@
-                <button class="carousel-btn carousel-btn-left" @onclick="PreviousAlbum" disabled="@(currentAlbumIndex <= 0)"></button>
+                <button class="carousel-btn carousel-btn-left" @onclick="PreviousAlbum" disabled="@(currentAlbumIndex <= 0)">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="color: var(--layout-text-color, white);">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+                    </svg>
+                </button>
 
                 <div class="carousel-wrapper">
                     <div class="carousel-track @(currentAlbumIndex == rankedAlbums.Count - 1 ? "centered" : "") @(currentAlbumIndex == 0 ? "first-item" : "")" @key="currentAlbumIndex">
@@ -93,7 +100,11 @@
                 </div>
 
                 @* Right Side Controls *@
-                <button class="carousel-btn carousel-btn-right" @onclick="NextAlbum" disabled="@(currentAlbumIndex >= rankedAlbums.Count - 1)"></button>
+                <button class="carousel-btn carousel-btn-right" @onclick="NextAlbum" disabled="@(currentAlbumIndex >= rankedAlbums.Count - 1)">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="color: var(--layout-text-color, white); transform: scaleX(-1);">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+                    </svg>
+                </button>
             </div>
         </div>
     }
@@ -103,6 +114,7 @@
     private List<Album> albums = new List<Album>();
     private List<Album> rankedAlbums = new List<Album>();
     private int currentAlbumIndex = 0;
+    private ElementReference _keyTarget;
 
     protected override async Task OnInitializedAsync() {
         albums = await VinylService.GetAllAlbumsAsync();
@@ -155,7 +167,6 @@
         }
     }
 
-
     private int GetPreviousIndex()
     {
         if (rankedAlbums.Count == 0) return 0;
@@ -168,5 +179,19 @@
         if (rankedAlbums.Count == 0) return 0;
         if (currentAlbumIndex >= rankedAlbums.Count - 1) return rankedAlbums.Count - 1;
         return currentAlbumIndex + 1;
+    }
+    
+    private async Task HandleKeyDown(KeyboardEventArgs e)
+    {
+        if (e.Key == "ArrowRight")
+        {
+            NextAlbum();
+            await InvokeAsync(StateHasChanged);
+        }
+        else if (e.Key == "ArrowLeft")
+        {
+            PreviousAlbum();
+            await InvokeAsync(StateHasChanged);
+        }
     }
 }

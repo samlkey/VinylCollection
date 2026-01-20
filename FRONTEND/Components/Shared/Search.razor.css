@@ -264,3 +264,10 @@
 .clear-search-btn:hover {
     opacity: 1;
 }
+
+.back-btn {
+    position: fixed;
+    left: 2vw;
+    top: 2vw;
+    z-index: 2147483647;
+}

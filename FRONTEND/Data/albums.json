@@ -2,7 +2,7 @@
   {
     "Name": "The College Dropout",
     "Artist": "Kanye West",
-    "Rating": 95,
+    "Rating": 0,
     "Release": 2004,
     "Length": 76.13,
     "ImgSrc": "https://m.media-amazon.com/images/I/8131j2MuspL._AC_SL1500_.jpg",
@@ -81,7 +81,7 @@
   {
     "Name": "Late Registration",
     "Artist": "Kanye West",
-    "Rating": 22,
+    "Rating": 0,
     "Release": 2005,
     "Length": 70.13,
     "ImgSrc": "https://m.media-amazon.com/images/I/718khrgr5bL._AC_SL1400_.jpg",
@@ -172,7 +172,7 @@
   {
     "Name": "Ye",
     "Artist": "Kanye West",
-    "Rating": 53,
+    "Rating": 74,
     "Release": 2018,
     "Length": 23.41,
     "ImgSrc": "https://m.media-amazon.com/images/I/714yVKHQM-L._AC_SL1400_.jpg",
@@ -209,9 +209,9 @@
     ]
   },
   {
-    "Name": "Kids See Ghosts",
+    "Name": "KIDS SEE GHOSTS",
     "Artist": "Kanye West",
-    "Rating": 5,
+    "Rating": 64,
     "Release": 2018,
     "Length": 23.53,
     "ImgSrc": "https://m.media-amazon.com/images/I/81t-DYwzAML._AC_SL1280_.jpg",
@@ -250,7 +250,7 @@
   {
     "Name": "GNX",
     "Artist": "Kendrick Lamar",
-    "Rating": 84,
+    "Rating": 0,
     "Release": 2024,
     "Length": 44.12,
     "ImgSrc": "https://www.normanrecords.com/artwork/medium/208/206708-kendrick-lamar-gnx.jpg",
@@ -305,7 +305,7 @@
   {
     "Name": "The Miseducation of Lauren Hill",
     "Artist": "Lauren Hill",
-    "Rating": 75,
+    "Rating": 0,
     "Release": 1998,
     "Length": 77.43,
     "ImgSrc": "https://m.media-amazon.com/images/I/81Jr6DEe02L._AC_SL1500_.jpg",
@@ -380,7 +380,7 @@
   {
     "Name": "Madvillainy",
     "Artist": "MF DOOM",
-    "Rating": 11,
+    "Rating": 0,
     "Release": 2004,
     "Length": 46.33,
     "ImgSrc": "https://m.media-amazon.com/images/I/812l-fRzALL._AC_SL1500_.jpg",
@@ -479,7 +479,7 @@
   {
     "Name": "OK Computer",
     "Artist": "RADIOHEAD",
-    "Rating": 96,
+    "Rating": 0,
     "Release": 1997,
     "Length": 53.41,
     "ImgSrc": "https://m.media-amazon.com/images/I/715LZJ5qX0L._UF1000,1000_QL80_.jpg",
@@ -538,7 +538,7 @@
   {
     "Name": "Villains",
     "Artist": "Queens of the Stone Age",
-    "Rating": 34,
+    "Rating": 0,
     "Release": 2017,
     "Length": 48.29,
     "ImgSrc": "https://m.media-amazon.com/images/I/711ea5-uyZL._UF894,1000_QL80_.jpg",
@@ -585,7 +585,7 @@
   {
     "Name": "The Fat of the Land",
     "Artist": "Prodigy",
-    "Rating": 22,
+    "Rating": 0,
     "Release": 1997,
     "Length": 60.0,
     "ImgSrc": "https://m.media-amazon.com/images/I/91DMeDHmwpL._UF1000,1000_QL80_.jpg",
@@ -636,7 +636,7 @@
   {
     "Name": "Gorillaz",
     "Artist": "Gorillaz",
-    "Rating": 58,
+    "Rating": 0,
     "Release": 2001,
     "Length": 57.52,
     "ImgSrc": "https://m.media-amazon.com/images/I/71jHAy4L1IL.jpg",
@@ -703,7 +703,7 @@
   {
     "Name": "Bandana",
     "Artist": "Freddie Gibbs",
-    "Rating": 34,
+    "Rating": 0,
     "Release": 2019,
     "Length": 46.12,
     "ImgSrc": "https://m.media-amazon.com/images/I/81OMGDryyZL.jpg",
@@ -762,7 +762,7 @@
   {
     "Name": "TYRON",
     "Artist": "Slowthai",
-    "Rating": 5,
+    "Rating": 87,
     "Release": 2021,
     "Length": 35.2,
     "ImgSrc": "https://m.media-amazon.com/images/I/71LDwv-JwYL._UF1000,1000_QL80_.jpg",
@@ -825,7 +825,7 @@
   {
     "Name": "Plastic Beach",
     "Artist": "Gorillaz",
-    "Rating": 29,
+    "Rating": 0,
     "Release": 2010,
     "Length": 56.8,
     "ImgSrc": "https://m.media-amazon.com/images/I/81EP2fxHLRL._UF1000,1000_QL80_.jpg",
@@ -900,7 +900,7 @@
   {
     "Name": "IGOR",
     "Artist": "Tyler the Creator",
-    "Rating": 71,
+    "Rating": 0,
     "Release": 2019,
     "Length": 39.46,
     "ImgSrc": "https://m.media-amazon.com/images/I/81MJUW7iUaL.jpg",
@@ -959,7 +959,7 @@
   {
     "Name": "Why Try Harder",
     "Artist": "Fat Boy Slim",
-    "Rating": 45,
+    "Rating": 0,
     "Release": 2006,
     "Length": 79.0,
     "ImgSrc": "https://m.media-amazon.com/images/I/51nqPxl5rwL._UF894,1000_QL80_.jpg",
@@ -986,7 +986,7 @@
   {
     "Name": "Whatever People Say I Am, That's What I'm Not",
     "Artist": "Arctic Monkeys",
-    "Rating": 73,
+    "Rating": 0,
     "Release": 2006,
     "Length": 40.53,
     "ImgSrc": "https://m.media-amazon.com/images/I/813Qw4j8phL._AC_SL1424_.jpg",
@@ -1029,7 +1029,7 @@
   {
     "Name": "Song Machine",
     "Artist": "Gorillaz",
-    "Rating": 88,
+    "Rating": 0,
     "Release": 2020,
     "Length": 59.4,
     "ImgSrc": "https://m.media-amazon.com/images/I/81-19WGwkzL._AC_SL1425_.jpg",
@@ -1072,7 +1072,7 @@
   {
     "Name": "Favourite Worst Nightmare",
     "Artist": "Arctic Monkeys",
-    "Rating": 50,
+    "Rating": 0,
     "Release": 2007,
     "Length": 37.32,
     "ImgSrc": "https://m.media-amazon.com/images/I/81jUUHuNvEL._UF894,1000_QL80_.jpg",
@@ -1099,7 +1099,7 @@
   {
     "Name": "Led Zeppelin IV",
     "Artist": "Led Zeppelin",
-    "Rating": 62,
+    "Rating": 0,
     "Release": 1971,
     "Length": 42.38,
     "ImgSrc": "https://m.media-amazon.com/images/I/81x364UAGAL._AC_SL1425_.jpg",
@@ -1130,7 +1130,7 @@
   {
     "Name": "American Idiot",
     "Artist": "Green Day",
-    "Rating": 64,
+    "Rating": 0,
     "Release": 2004,
     "Length": 57.12,
     "ImgSrc": "https://m.media-amazon.com/images/I/6191UqQ-xCL._AC_SL1200_.jpg",
@@ -1161,7 +1161,7 @@
   {
     "Name": "Fragile",
     "Artist": "Yes",
-    "Rating": 65,
+    "Rating": 0,
     "Release": 1971,
     "Length": 41.12,
     "ImgSrc": "https://m.media-amazon.com/images/I/812tYB9nLjL._AC_SL1425_.jpg",
@@ -1208,7 +1208,7 @@
   {
     "Name": "Original Pirate Material",
     "Artist": "The Streets",
-    "Rating": 77,
+    "Rating": 82,
     "Release": 2002,
     "Length": 48.36,
     "ImgSrc": "https://m.media-amazon.com/images/I/81upq3MhouL._AC_SL1400_.jpg",
@@ -1275,7 +1275,7 @@
   {
     "Name": "St Peppers Lonely Hearts Club Band",
     "Artist": "Beatles",
-    "Rating": 61,
+    "Rating": 0,
     "Release": 1967,
     "Length": 39.52,
     "ImgSrc": "https://m.media-amazon.com/images/I/91wePXK9jfL._AC_SL1500_.jpg",
@@ -1338,7 +1338,7 @@
   {
     "Name": "Nothing Great About Britain",
     "Artist": "Slowthai",
-    "Rating": 59,
+    "Rating": 0,
     "Release": 2019,
     "Length": 37.0,
     "ImgSrc": "https://m.media-amazon.com/images/I/71Dl85zDs5L._AC_SL1200_.jpg",
@@ -1397,7 +1397,7 @@
   {
     "Name": "The Dark Side of the Moon",
     "Artist": "Pink Floyd",
-    "Rating": 53,
+    "Rating": 0,
     "Release": 1973,
     "Length": 42.49,
     "ImgSrc": "https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png",
@@ -1448,7 +1448,7 @@
   {
     "Name": "Demon Days",
     "Artist": "Gorillaz",
-    "Rating": 91,
+    "Rating": 0,
     "Release": 2005,
     "Length": 50.44,
     "ImgSrc": "https://cdn.hmv.com/r/w-640/hmv/files/7a/7ae39718-6d16-46ab-aaab-db852e1788d9.jpg",
@@ -1519,7 +1519,7 @@
   {
     "Name": "Endtroducing",
     "Artist": "DJ Shadow",
-    "Rating": 92,
+    "Rating": 0,
     "Release": 1996,
     "Length": 63.18,
     "ImgSrc": "https://m.media-amazon.com/images/I/81Xmrdt8hGL._UF894,1000_QL80_.jpg",
@@ -1572,6 +1572,266 @@
       {
         "Name": "What Does Your Soul Look Like (Part 1 - Blue Sky Revisit)",
         "Length": 7.12
+      }
+    ]
+  },
+  {
+    "Name": "The Black Parade",
+    "Artist": "My Chemical Romance",
+    "Rating": 91,
+    "Release": 2006,
+    "Length": 51.57,
+    "ImgSrc": "https://m.media-amazon.com/images/I/61BWI2VdBML._AC_SL1129_.jpg",
+    "ImgSrcBack": "https://m.media-amazon.com/images/I/711+c7UwHlL._UF894,1000_QL80_.jpg",
+    "TrackList": [
+      {
+        "Name": "The End.",
+        "Length": 1.52
+      },
+      {
+        "Name": "Dead!",
+        "Length": 3.15
+      },
+      {
+        "Name": "This is How I Disappear",
+        "Length": 3.59
+      },
+      {
+        "Name": "The Sharpest Lives",
+        "Length": 3.20
+      },
+      {
+        "Name": "Welcome to the Black Parade",
+        "Length": 5.11
+      },
+      {
+        "Name": "I Don't Love You",
+        "Length": 3.58
+      },
+      {
+        "Name": "House of Wolves",
+        "Length": 3.04
+      },
+      {
+        "Name": "Cancer",
+        "Length": 2.22
+      },
+      {
+        "Name": "Mama",
+        "Length": 4.39
+      },
+      {
+        "Name": "Sleep",
+        "Length": 4.43
+      },
+      {
+        "Name": "Teenagers",
+        "Length": 2.41
+      },
+      {
+        "Name": "Disenchanted",
+        "Length": 4.55
+      },
+      {
+        "Name": "Famous Last Words",
+        "Length": 4.59
+      },
+      {
+        "Name": "Blood - Hidden Track",
+        "Length": 2.53
+      }
+    ]
+  },
+  {
+    "Name": "My Beautiful Dark Twisted Fantasy",
+    "Artist": "Kanye West",
+    "Rating": 98,
+    "Release": 2010,
+    "Length": 60.8,
+    "ImgSrc": "https://m.media-amazon.com/images/I/71BjhQlaLPL.jpg",
+    "ImgSrcBack": "https://m.media-amazon.com/images/I/A1aFmZnTjdL._UF894,1000_QL80_.jpg",
+    "TrackList": [
+      {
+        "Name": "Dark Fantasy",
+        "Length": 4.40
+      },
+      {
+        "Name": "Gorgeous",
+        "Length": 5.57
+      },
+      {
+        "Name": "POWER",
+        "Length": 4.52
+      },
+      {
+        "Name": "All Of The Lights (Interlude)",
+        "Length": 1.02
+      },
+      {
+        "Name": "All Of The Lights",
+        "Length": 4.59
+      },
+      {
+        "Name": "Monster",
+        "Length": 6.18
+      },
+      {
+        "Name": "So Appalled",
+        "Length": 6.37
+      },
+      {
+        "Name": "Devil In A New Dress",
+        "Length": 5.51
+      },
+      {
+        "Name": "Runaway",
+        "Length": 9.07
+      },
+      {
+        "Name": "Hell Of A Life",
+        "Length": 5.27
+      },
+      {
+        "Name": "Blame Game",
+        "Length": 7.49
+      },
+      {
+        "Name": "Lost In The World",
+        "Length": 4.16
+      },
+      {
+        "Name": "Who Will Survive In America",
+        "Length": 1.38
+      }
+    ]
+  },
+  {
+    "Name": "MM..FOOD",
+    "Artist": "MF DOOM",
+    "Rating": 0,
+    "Release": 2004,
+    "Length": 48.54,
+    "ImgSrc": "https://m.media-amazon.com/images/I/61IhnFgGQPL._UF894,1000_QL80_.jpg",
+    "ImgSrcBack": "https://rockers.de/wp-content/uploads/2023/12/MF-Doom-MM.Food-LP-Vinyl-2.jpg",
+    "TrackList": [
+      {
+        "Name": "Beef Rapp",
+        "Length": 4.40
+      },
+      {
+        "Name": "Hoe Cakes",
+        "Length": 5.57
+      },
+      {
+        "Name": "Potholderz",
+        "Length": 4.52
+      },
+      {
+        "Name": "One Beer",
+        "Length": 1.02
+      },
+      {
+        "Name": "Deep Fried Frenz",
+        "Length": 4.59
+      },
+      {
+        "Name": "Poo-Putt Platter",
+        "Length": 6.18
+      },
+      {
+        "Name": "Fillet-O-Rapper",
+        "Length": 6.37
+      },
+      {
+        "Name": "Gumbo",
+        "Length": 5.51
+      },
+      {
+        "Name": "Fig Leaf Bi-Carbonate",
+        "Length": 9.07
+      },
+      {
+        "Name": "Kon Karne",
+        "Length": 5.27
+      },
+      {
+        "Name": "Guinnessez",
+        "Length": 7.49
+      },
+      {
+        "Name": "Kon Queso",
+        "Length": 4.16
+      },
+      {
+        "Name": "Rapp Snitch Knishes",
+        "Length": 1.38
+      },
+      {
+        "Name": "Vomitspit",
+        "Length": 1.38
+      },
+      {
+        "Name": "Kookies",
+        "Length": 1.38
+      }
+    ]
+  },
+  {
+    "Name": "good kid, m.A.A.d city",
+    "Artist": "Kendrick Lamar",
+    "Rating": 0,
+    "Release": 2012,
+    "Length": 60.32,
+    "ImgSrc": "https://m.media-amazon.com/images/I/81e-3lhg4rL.jpg",
+    "ImgSrcBack": "https://m.media-amazon.com/images/I/61lXQQd7ZPL._UF894,1000_QL80_.jpg",
+    "TrackList": [
+      {
+        "Name": "Sherane a.k.a Master Splinter’s Daughter",
+        "Length": 4.33
+      },
+      {
+        "Name": "Bitch, Don’t Kill My Vibe",
+        "Length": 5.17
+      },
+      {
+        "Name": "Backseat Freestyle",
+        "Length": 3.32
+      },
+      {
+        "Name": "The Art of Peer Pressure",
+        "Length": 5.24
+      },
+      {
+        "Name": "Money Trees",
+        "Length": 6.26
+      },
+      {
+        "Name": "Poetic Justice",
+        "Length": 5.00
+      },
+      {
+        "Name": "good kid",
+        "Length": 3.34
+      },
+      {
+        "Name": "m.A.A.d city",
+        "Length": 5.50
+      },
+      {
+        "Name": "Swimming Pools (Drank)",
+        "Length": 3.40
+      },
+      {
+        "Name": "Sing About Me, I’m Dying of Thirst",
+        "Length": 12.03
+      },
+      {
+        "Name": "Real",
+        "Length": 7.23
+      },
+      {
+        "Name": "Compton",
+        "Length": 4.08
       }
     ]
   }

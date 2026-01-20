@@ -18,6 +18,18 @@
             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85zm-5.242 1.106a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/>
         </svg>
     </button>
+
+    @if(IsBackVisible)
+    {
+        <a href="/">
+            <button class="nav-btn search-btn back-btn" title="Back">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="color: var(--layout-text-color, white);">
+                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+                </svg>
+            </button>
+        </a>
+    }
+
     <div class="search-bar-container @(isClosing ? "shrinking" : showSearchBar ? "expanded" : "")">
         @if (showSearchBar || isClosing)
         {
@@ -63,6 +75,7 @@
     private List<Album> suggestions = new List<Album>(); 
     private bool showSuggestions = false; 
     private bool isClosingSuggestions = false;
+    [Parameter] public bool IsBackVisible { get; set; } = false;
 
     private async Task OnInput(ChangeEventArgs e){
         searchText = e.Value?.ToString() ?? "";
