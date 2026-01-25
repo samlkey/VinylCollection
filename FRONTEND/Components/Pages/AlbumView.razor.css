@@ -11,11 +11,14 @@
 
 .album-view {
     margin-top: 10%;
+    margin-bottom: 10%;
+    width: 1000px;
+    max-width: 100vw;
 }
 
 .album-art {
-    width: 500px;
-    height: 500px;
+    width: 484px;
+    height: 484px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px;
@@ -39,9 +42,123 @@
     margin: 0;
 }
 
+.album-description {
+    width: 1000px;
+    max-width: 100vw;
+    word-break: break-word;
+    margin: 0 auto;
+    margin-top: 10%;
+    text-align: left;
+}
+
+.album-description p {
+    line-height: 1.6;
+    padding-bottom: 2em;
+    padding-top: 2em;
+}
+
+.album-description p:last-child {
+    padding-bottom: 0;
+}
+
 .meta-info {
     width: 50%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    gap: 2vw;
+}
+
+.track-list {
+    margin-top: 10%;
+    text-align: center;
+}
+
+.track-list table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-size: .9em;
+}
+
+.track-list th, .track-list td {
+    padding: 8px 12px;
+}
+
+.track-list td {
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.track-list tr:hover {
+    background-color: rgba(244, 244, 244, 0.1);
+    cursor: pointer;
+}
+
+.track-list tr:last-child {
+    border-bottom: none !important;
+}
+
+.track-list th {
+    background-color: #f4f4f4;
+}
+
+.show-more-btn {
+    margin-top: 1em;
+    padding: 0.5em 1.5em;
+    background-color: #535b59;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.2s;
+}
+
+.show-more-btn:hover {
+    background-color: #333;
+}
+
+.spotify-link {
+    display: inline-flex;
+    align-items: right;
+    gap: 0.5em;
+    background: linear-gradient(90deg, #1db954 0%, #1ed760 100%);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    padding: 0.7em 1.6em;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 8px rgba(30,185,84,0.15);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+    text-decoration: none;
+    outline: none;
+}
+
+.spotify-link:hover, .spotify-link:focus {
+    background: linear-gradient(90deg, #1ed760 0%, #1db954 100%);
+    color: #fff;
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 4px 16px rgba(30,185,84,0.25);
+    text-decoration: none;
+}
+
+.spotify-link-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.artist-banner {
+    width: 1000px;
+    max-width: 100vw;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-top: 2%;
+    background-size: cover;
+    background-position: center;
+    display: block;
 }

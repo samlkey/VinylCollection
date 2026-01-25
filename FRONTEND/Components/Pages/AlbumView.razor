@@ -22,16 +22,68 @@
             <img src="@album?.ImgSrc" alt="@album?.Name" class="album-art" />
             <img src="@album?.ImgSrcBack" alt="@album?.Name" class="album-art" />
         </div>
+
         <div class="album-details">
             <div class="album-info">
                 <h1 style="@textColor">@album?.Name</h1>
                 <h2 style="@textColor">@album?.Artist</h2>   
-                 
             </div>
 
             <div class="meta-info">
+                <div class="spotify-link-container">
+                    <button class="spotify-link">Listen on Spotify</button>
+                </div>
                 <Rating Value="@album!.Rating" TextColor="@textColor"></Rating>   
             </div>
+        </div>
+
+        <div class="album-description" style="@textColor;">
+            <h1>Blah blah blah blah blah blah.</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit ea eaque, quam odio sunt ipsum cupiditate saepe voluptate eligendi? Inventore dolore nihil aperiam cumque culpa nisi facere magnam quaerat iure.
+                lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit ea eaque, quam odio sunt ipsum cupiditate saepe voluptate eligendi? Inventore dolore nihil aperiam cumque culpa nisi facere magnam quaerat iure.
+                lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit ea eaque, quam odio sunt ipsum cupiditate saepe voluptate eligendi? Inventore dolore nihil aperiam cumque culpa nisi facere magnam quaerat iure.
+            </p>
+
+            <div class="artist-banner" style="background-image: url('@album?.BannerImg');">
+            </div>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit ea eaque, quam odio sunt ipsum cupiditate saepe voluptate eligendi? Inventore dolore nihil aperiam cumque culpa nisi facere magnam quaerat iure.
+                lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit ea eaque, quam odio sunt ipsum cupiditate saepe voluptate eligendi? Inventore dolore nihil aperiam cumque culpa nisi facere magnam quaerat iure.
+                lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit ea eaque, quam odio sunt ipsum cupiditate saepe voluptate eligendi? Inventore dolore nihil aperiam cumque culpa nisi facere magnam quaerat iure.
+            </p>
+        </div>
+
+        <div class="track-list">
+            <table>
+                @if (album?.TrackList != null && album.TrackList.Any())
+                {
+                    int i = 1;
+                    var tracksToShow = showAllTracks ? album.TrackList : album.TrackList.Take(4);
+                    foreach (var track in tracksToShow)
+                    {
+                        <tr style="border-bottom: 1px solid @(textColor.Contains(":") ? textColor.Split(':')[1].Trim() : textColor)">
+                            <td style="@textColor;"><b>@i</b></td>
+                            <td style="@textColor; text-align: left;">@track.Name</td>
+                            <td style="@textColor;">@track.Length</td>
+                        </tr>
+                        i++;    
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="3">No tracks available</td>
+                    </tr>
+                }
+            </table>
+            @if (album?.TrackList != null && album.TrackList.Count > 4)
+            {
+                <button @onclick="ToggleShowAllTracks" class="show-more-btn">
+                    @(showAllTracks ? "Show Less" : "Show More")
+                </button>
+            }
         </div>
     </div>
 </div>
@@ -41,6 +93,8 @@
     public int albumId { get; set; }
     
     private Album? album;
+    private bool showAllTracks = false;
+    private void ToggleShowAllTracks() => showAllTracks = !showAllTracks;
 
     protected override async Task OnInitializedAsync()
     {

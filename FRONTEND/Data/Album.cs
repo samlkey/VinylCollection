@@ -24,6 +24,7 @@ namespace FRONTEND.Data
         public float Length { get; set; }
         public string? ImgSrc { get; set; }
         public string? ImgSrcBack { get; set; }
+        public string? BannerImg { get; set; }
         public List<Track>? TrackList { get; set; }
         #endregion
     
