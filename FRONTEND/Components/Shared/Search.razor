@@ -3,8 +3,11 @@
 @rendermode InteractiveServer
 @inject IVinylService VinylService
 @inject NavigationManager Navigation
+@inject IJSRuntime JS
 
 <div class="search-anim-row">
+
+   
     <a href="/ranking">
         <button class="nav-btn search-btn" title="Rankings">
             <svg width="24" height="24" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="color: var(--layout-text-color, white);">
@@ -13,22 +16,22 @@
         </button>
     </a>
 
-    <button class="nav-btn search-btn" @onclick="ToggleSearchBar" title="Search">
-        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" viewBox="0 0 16 16" style="vertical-align: middle; color: var(--layout-text-color, white);">
-            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85zm-5.242 1.106a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/>
-        </svg>
-    </button>
-
     @if(IsBackVisible)
     {
         <a href="/">
-            <button class="nav-btn search-btn back-btn" title="Back">
+            <button class="nav-btn search-btn back-btn" title="Rankings">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="color: var(--layout-text-color, white);">
                     <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
                 </svg>
             </button>
         </a>
     }
+
+    <button class="nav-btn search-btn" @onclick="ToggleSearchBar" title="Search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" viewBox="0 0 16 16" style="vertical-align: middle; color: var(--layout-text-color, white);">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85zm-5.242 1.106a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/>
+        </svg>
+    </button>
 
     <div class="search-bar-container @(isClosing ? "shrinking" : showSearchBar ? "expanded" : "")">
         @if (showSearchBar || isClosing)
@@ -38,7 +41,9 @@
                 placeholder="Search albums..." 
                 @bind="searchText" 
                 @oninput="OnInput"
-                autofocus />
+                @onblur="OnBlurSearchBar"
+                autofocus
+                @ref="searchInputRef" />
             
             @if (!string.IsNullOrEmpty(searchText))
             {
@@ -75,7 +80,9 @@
     private List<Album> suggestions = new List<Album>(); 
     private bool showSuggestions = false; 
     private bool isClosingSuggestions = false;
+    private ElementReference searchInputRef;
     [Parameter] public bool IsBackVisible { get; set; } = false;
+
 
     private async Task OnInput(ChangeEventArgs e){
         searchText = e.Value?.ToString() ?? "";
@@ -116,6 +123,8 @@
         else
         {
             showSearchBar = true;
+            await Task.Yield(); // Wait for render
+            await searchInputRef.FocusAsync();
         }
     }
 
@@ -123,7 +132,7 @@
     {
         isClosingSuggestions = true;
         StateHasChanged();
-        await Task.Delay(250); // Match the animation duration
+        await Task.Delay(100); // Reduced animation duration for snappier feel
         showSuggestions = false;
         isClosingSuggestions = false;
         StateHasChanged();
@@ -134,5 +143,16 @@
         searchText = string.Empty;
         suggestions.Clear();
         await CloseSuggestionsAsync();
+        await Task.Yield(); 
+        await searchInputRef.FocusAsync();
+    }
+    
+    private async Task OnBlurSearchBar()
+    {
+        bool isSuggestionFocused = await JS.InvokeAsync<bool>("isSuggestionFocused");
+        if (!isSuggestionFocused)
+        {
+            await ToggleSearchBar();
+        }
     }
 }

@@ -1,7 +1,7 @@
 @* Rating bar component that accepts an integer between 0-100 *@
 <div class="rating-wrapper">
     <p class="rating-value" style="@TextColor">@Value</p>
-    <div class="rating-bar">
+    <div class="rating-bar" style="background-color: @(TextColor.Contains(":") ? TextColor.Split(':')[1].Trim() : TextColor);">
         <div class="rating-bar-fill" style="width: @(Math.Clamp(Value, 0, 100))%; background-color: @GetRatingColor()"></div>
     </div>
 </div>
@@ -11,7 +11,7 @@
     public int Value { get; set; } = 0;
     
     [Parameter]
-    public string TextColor { get; set; } = "green";
+    public string TextColor { get; set; } = "white";
 
     private string GetRatingColor()
     {
