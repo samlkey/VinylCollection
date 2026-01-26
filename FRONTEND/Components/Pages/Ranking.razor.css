@@ -212,33 +212,12 @@
 
 
 @media (max-width: 768px) {
-    .albums-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 1rem;
-    }
-    
     .container {
-        padding: 1rem;
         flex-direction: column;
     }
 
-    .carousel-section {
-        max-width: 100%;
-        flex-direction: column;
-    }
-
-    .carousel-wrapper {
-        margin: 0;
-        width: 100%;
-    }
-
-    .carousel-track {
-        gap: 1rem;
-    }
-
-    .carousel-album-card {
-        width: 280px;
-        padding: 1.5rem;
+    .carosuel-track {
+        height: 5vh;
     }
 
     .carousel-item.prev,
@@ -247,7 +226,7 @@
     }
 
     .carousel-item.current {
-        transform: scale(1);
+        transform: scale(.8);
     }
 
     .carousel-album-art {
@@ -257,6 +236,7 @@
 
     .carousel-album-info h3 {
         font-size: 1.5rem;
+        word-wrap: normal;
     }
 
     .carousel-album-info .artist {
@@ -266,18 +246,18 @@
     .carousel-btn {
         position: absolute;
         font-size: 2rem;
-        width: 50px;
-        height: 50px;
+        width: 30px;
+        height: 30px;
     }
 
     .carousel-btn-left {
-        left: 0.5rem;
+        left: 1rem;
         top: 50%;
         transform: translateY(-50%);
     }
 
     .carousel-btn-right {
-        right: 0.5rem;
+        right: 1rem;
         top: 50%;
         transform: translateY(-50%);
     }

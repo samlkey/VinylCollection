@@ -26,3 +26,19 @@
     transition: width 0.3s ease, background-color 0.3s ease;
     border-radius: 10px;
 }
+
+@media (max-width: 480px) {
+    .rating-wrapper {
+        width: 30%;
+        height: 5vh;
+        gap: 0.5rem;
+    }
+
+    .rating-bar {
+        height: 8px;
+    }
+
+    .rating-value {
+        font-size: .9rem;
+    }
+}

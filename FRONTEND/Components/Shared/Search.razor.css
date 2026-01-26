@@ -271,3 +271,26 @@
     top: 2vw;
     z-index: 2147483647;
 }
+
+@media (max-width: 480px) {
+    .search-anim-row {
+        top: 4vw;
+        right: 4vw;
+        width: 100vw;
+        gap: 2vw;
+    }
+
+    .search-bar-container.expanded {
+        width: 70vw;
+    }
+
+    .nav-btn {
+        width: 20vw;
+        height: 10vh;
+    }
+
+    .nav-btn svg {
+        width: 5vw;
+        height: 5vw;
+    }
+}

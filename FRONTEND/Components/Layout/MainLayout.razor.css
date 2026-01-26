@@ -86,6 +86,14 @@ main {
     }
 }
 
+@media (max-width: 480px) {
+    .main-footer{
+        margin-bottom: 2vh;
+        font-size: 1em;
+    }
+
+}
+
 #blazor-error-ui {
     color-scheme: light only;
     background: lightyellow;

@@ -55,28 +55,36 @@
             </p>
         </div>
 
+        <div class="album-meta-info">
+            <p style="@textColor">@album?.Release</p>
+            <p style="@textColor">@album?.TrackList!.Count Songs</p>
+            <p style="@textColor">@album?.Length</p>
+        </div>
+
         <div class="track-list">
             <table>
-                @if (album?.TrackList != null && album.TrackList.Any())
-                {
-                    int i = 1;
-                    var tracksToShow = showAllTracks ? album.TrackList : album.TrackList.Take(4);
-                    foreach (var track in tracksToShow)
+                <tbody class="@(animating ? (showAllTracks ? "collapsing" : "expanding") : "")">
+                    @if (album?.TrackList != null && album.TrackList.Any())
                     {
-                        <tr style="border-bottom: 1px solid @(textColor.Contains(":") ? textColor.Split(':')[1].Trim() : textColor)">
-                            <td style="@textColor;"><b>@i</b></td>
-                            <td style="@textColor; text-align: left;">@track.Name</td>
-                            <td style="@textColor;">@track.Length</td>
-                        </tr>
-                        i++;    
+                        int i = 1;
+                        var tracksToShow = showAllTracks ? album.TrackList : album.TrackList.Take(4);
+                        foreach (var track in tracksToShow)
+                        {
+                            <tr style="border-bottom: 1px solid @(textColor.Contains(":") ? textColor.Split(':')[1].Trim() : textColor)">
+                                <td style="@textColor;"><b>@i</b></td>
+                                <td style="@textColor; text-align: left;">@track.Name</td>
+                                <td style="@textColor;">@track.Length</td>
+                            </tr>
+                            i++;    
+                        }
                     }
-                }
-                else
-                {
-                    <tr>
-                        <td colspan="3">No tracks available</td>
-                    </tr>
-                }
+                    else
+                    {
+                        <tr>
+                            <td colspan="3">No tracks available</td>
+                        </tr>
+                    }
+                </tbody>
             </table>
             @if (album?.TrackList != null && album.TrackList.Count > 4)
             {
@@ -94,7 +102,31 @@
     
     private Album? album;
     private bool showAllTracks = false;
-    private void ToggleShowAllTracks() => showAllTracks = !showAllTracks;
+    private bool animating = false;
+
+    private async void ToggleShowAllTracks()
+    {
+        if (showAllTracks)
+        {
+            // Currently expanded, so collapse
+            animating = true;
+            StateHasChanged();
+            await Task.Delay(400); // Wait for collapse animation
+            showAllTracks = false;
+            animating = false;
+            StateHasChanged();
+        }
+        else
+        {
+            // Currently collapsed, so expand
+            showAllTracks = true;
+            animating = true;
+            StateHasChanged();
+            await Task.Delay(400); // Wait for expand animation
+            animating = false;
+            StateHasChanged();
+        }
+    }
 
     protected override async Task OnInitializedAsync()
     {

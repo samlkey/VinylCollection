@@ -486,7 +486,7 @@
   {
     "Name": "OK Computer",
     "Artist": "RADIOHEAD",
-    "Rating": 0,
+    "Rating": 94,
     "Release": 1997,
     "Length": 53.41,
     "ImgSrc": "https://m.media-amazon.com/images/I/715LZJ5qX0L._UF1000,1000_QL80_.jpg",
@@ -594,7 +594,7 @@
   {
     "Name": "The Fat of the Land",
     "Artist": "Prodigy",
-    "Rating": 0,
+    "Rating": 60,
     "Release": 1997,
     "Length": 60.0,
     "ImgSrc": "https://m.media-amazon.com/images/I/91DMeDHmwpL._UF1000,1000_QL80_.jpg",
