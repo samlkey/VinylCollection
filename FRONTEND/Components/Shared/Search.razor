@@ -23,6 +23,11 @@
         </button>
     </a>
 
+    <button class="nav-btn search-btn" @onclick="ToggleSearchBar" title="Search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" viewBox="0 0 16 16" style="vertical-align: middle; color: var(--layout-text-color, white);">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85zm-5.242 1.106a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/>
+        </svg>
+    </button>
 
     @if(IsBackVisible)
     {
@@ -33,11 +38,6 @@
         </button>
     }
 
-    <button class="nav-btn search-btn" @onclick="ToggleSearchBar" title="Search">
-        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" viewBox="0 0 16 16" style="vertical-align: middle; color: var(--layout-text-color, white);">
-            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85zm-5.242 1.106a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/>
-        </svg>
-    </button>
 
     <div class="search-bar-container @(isClosing ? "shrinking" : showSearchBar ? "expanded" : "")">
         @if (showSearchBar || isClosing)

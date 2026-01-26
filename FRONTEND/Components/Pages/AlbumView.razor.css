@@ -203,3 +203,72 @@
     font-weight: bold;
     transition: color 0.5s ease-in-out;
 }
+
+@media (max-width: 480px) {
+    .album-view {
+        width: 84vw;
+        margin-bottom: 15vh;
+    }
+    .album-wrapper {
+        margin-top: 12vh;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .album-art {
+        width: 300px;
+        height: 300px;
+        margin-bottom: 20px;
+    }
+
+    .album-details {
+        flex-direction: column;
+        align-items: left;
+    }
+
+    .meta-info {
+        margin-top: 2vh;
+        width: 90%;
+        justify-content: left;
+        gap: 8vw;
+    }
+
+    .spotify-link-container {
+        width: 70%;
+        justify-content: center;
+    }
+
+    .spotify-link {
+        padding: 0.5em 1em;
+        font-size: 1rem;
+    }
+
+    .album-description {
+        width: 84vw;
+        margin-top: 13vh;
+    }
+
+    .artist-banner {
+        width: 84vw;
+        height: 200px;
+    }
+
+    .album-meta-info {
+        font-size: 1em;
+    }
+
+    .track-list table {
+        width: 100%;
+        margin-bottom: 5vh;
+    }
+
+    .track-list th, .track-list td {
+        font-size: 0.8em;
+        padding: 25px 6px;
+    }
+
+    .track-list td:first-child {
+        text-align: left;
+        padding-left: 5%;
+    }
+}

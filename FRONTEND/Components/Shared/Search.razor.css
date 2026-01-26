@@ -278,6 +278,7 @@
         right: 4vw;
         width: 100vw;
         gap: 2vw;
+        position: absolute;
     }
 
     .search-bar-container.expanded {
@@ -292,5 +293,9 @@
     .nav-btn svg {
         width: 5vw;
         height: 5vw;
+    }
+
+    .back-btn {
+        position: unset;
     }
 }

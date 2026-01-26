@@ -88,6 +88,7 @@ main {
 
 @media (max-width: 480px) {
     .main-footer{
+        position: absolute;
         margin-bottom: 2vh;
         font-size: 1em;
     }
