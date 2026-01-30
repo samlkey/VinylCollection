@@ -66,7 +66,7 @@
                         @{
                             var rankingPosition = currentAlbumIndex + 1;
                         }
-                        <div class="carousel-item current" @onclick="() => NavigateToAlbum(currentAlbum.Id)" @key="@currentAlbumIndex">
+                        <div class="carousel-item current" @onclick="() => NavigateToAlbum(currentAlbum.Name!)" @key="@currentAlbumIndex">
                             <div class="carousel-album-card">
                                 <img src="@currentAlbum.ImgSrc" alt="@currentAlbum.Name" class="carousel-album-art" />
                                 <div class="carousel-album-info">
@@ -138,9 +138,9 @@
 
     private List<Album> GetAlbumsByRating() => albums.OrderByDescending(a => a.Rating).ToList();
 
-    private void NavigateToAlbum(int albumId)
+    private void NavigateToAlbum(string albumName)
     {
-        Navigation.NavigateTo($"/album/{albumId}");
+        Navigation.NavigateTo($"/album/{albumName.ToLower().Replace(" ", "_")}");
     }
 
     private void NextAlbum()

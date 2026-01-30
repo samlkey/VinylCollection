@@ -40,7 +40,7 @@
             </div>
 
             <div class="info-container">
-                <h1 style="@textColor" @onclick="() => NavigateToAlbum(currentAlbum!.Id)">@currentAlbum.Name</h1>
+                <h1 style="@textColor" @onclick="() => NavigateToAlbum(currentAlbum!.Name!)">@currentAlbum.Name</h1>
                 <h2 style="@textColor">@currentAlbum.Artist</h2>
 
                 <div class="meta-info">
@@ -112,9 +112,9 @@ else
         timer.Enabled = true;
     }
 
-    private void NavigateToAlbum(int albumId)
+    private void NavigateToAlbum(string albumName)
     {
-        Navigation.NavigateTo($"/album/{albumId}");
+        Navigation.NavigateTo($"/album/{albumName.ToLower().Replace(" ", "_")}");
     }
 
     private void SetAlbumIndex(int i)

@@ -1,4 +1,4 @@
-@page "/album/{albumId:int}"
+@page "/album/{albumName}"
 @rendermode InteractiveServer
 @using FRONTEND.Components.Shared
 @using FRONTEND.Data
@@ -49,7 +49,16 @@
                 lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit ea eaque, quam odio sunt ipsum cupiditate saepe voluptate eligendi? Inventore dolore nihil aperiam cumque culpa nisi facere magnam quaerat iure.
             </p>
 
-            <div class="artist-banner" style="background-image: url('@album?.BannerImg');">
+            <div class="artist-banner-wrapper" style="position:relative;">
+                @if (bannerLoading)
+                {
+                    <div class="banner-loading-silhouette" style="display:@(bannerLoading ? "flex" : "none")">
+                        <div class="spinner"></div>
+                    </div>
+                }
+                <div class="artist-banner" style="background-image: url('@album?.BannerImg'); visibility:@(bannerLoading ? "hidden" : "visible")">
+                    <img src="@album?.BannerImg" alt="Banner" style="display:none;" onload="this.dispatchEvent(new Event('bannerLoaded'))" />
+                </div>
             </div>
 
             <p>
@@ -65,51 +74,26 @@
             <p style="@textColor">@album?.Length</p>
         </div> 
 
-        <div class="track-list">
-            @* <table>
-                <tbody class="@(animating ? (showAllTracks ? "collapsing" : "expanding") : "")">
-                    @if (album?.TrackList != null && album.TrackList.Any())
-                    {
-                        int i = 1;
-                        var tracksToShow = showAllTracks ? album.TrackList : album.TrackList.Take(4);
-                        foreach (var track in tracksToShow)
-                        {
-                            <tr style="border-bottom: 1px solid @(textColor.Contains(":") ? textColor.Split(':')[1].Trim() : textColor)">
-                                <td style="@textColor;"><b>@i</b></td>
-                                <td style="@textColor; text-align: left;">@track.Name</td>
-                                <td style="@textColor;">@track.Length</td>
-                            </tr>
-                            i++;    
-                        }
-                    }
-                    else
-                    {
-                        <tr>
-                            <td colspan="3">No tracks available</td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-            @if (album?.TrackList != null && album.TrackList.Count > 4)
-            {
-                <button @onclick="ToggleShowAllTracks" class="show-more-btn">
-                    @(showAllTracks ? "Show Less" : "Show More")
-                </button>
-            } *@
-
-            <iframe data-testid="embed-iframe" style="border-radius:12px" src="@album?.SpotifyiFrame" width="100%" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            <p style="@textColor">© Spotify 2026</p>
+        <div class="track-list" style="position:relative;">
+            <div class="iframe-loading-silhouette" style="display:@(iframeLoading ? "flex" : "none")">
+                <div class="spinner"></div>
+            </div>
+            <iframe id="spotifyIframe" data-testid="embed-iframe" style="border-radius:12px" src="@album?.SpotifyiFrame" width="100%" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" onload="this.dispatchEvent(new Event('iframeLoaded'));"></iframe>
         </div>
+        <p style="@textColor">© Spotify 2026</p>
     </div>
 </div>
 
 @code {
     [Parameter]
-    public int albumId { get; set; }
+    public string? albumName { get; set; }
 
     private Album? album;
     private bool showAllTracks = false;
     private bool animating = false;
+    private bool iframeLoading = true;
+    private bool bannerLoading = true;
+    private DotNetObjectReference<AlbumView>? objRef;
 
     private async void ToggleShowAllTracks()
     {
@@ -137,7 +121,11 @@
 
     protected override async Task OnInitializedAsync()
     {
-        album = await VinylService.GetAlbumByIdAsync(albumId);
+        if (!string.IsNullOrEmpty(albumName))
+        {
+            var allAlbums = await VinylService.GetAllAlbumsAsync();
+            album = allAlbums.FirstOrDefault(a => a.Name != null && a.Name.ToLower().Replace(" ", "_") == albumName.ToLower());
+        }
     }
 
     private async void OpenSpotifyLink(string? link)
@@ -146,5 +134,35 @@
         {
             await JS.InvokeVoidAsync("window.open", link, "_blank");
         }
+    }
+
+    [JSInvokable]
+    public void OnIframeLoaded()
+    {
+        Console.WriteLine("Iframe loaded");
+        iframeLoading = false;
+        StateHasChanged();
+    }
+
+    [JSInvokable]
+    public void OnBannerLoaded()
+    {
+        bannerLoading = false;
+        StateHasChanged();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            objRef = DotNetObjectReference.Create(this);
+            await JS.InvokeVoidAsync("attachIframeLoadedHandler", "spotifyIframe", objRef);
+            await JS.InvokeVoidAsync("attachBannerLoadedHandler", "artist-banner", objRef);
+        }
+    }
+
+    public void Dispose()
+    {
+        objRef?.Dispose();
     }
 }
