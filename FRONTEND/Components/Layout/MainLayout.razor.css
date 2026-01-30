@@ -90,7 +90,8 @@ main {
     .main-footer{
         position: absolute;
         margin-bottom: 2vh;
-        font-size: 1em;
+        font-size: .8em;
+        margin-left: 2vw;
     }
 
 }

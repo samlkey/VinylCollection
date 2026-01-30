@@ -8,6 +8,7 @@
 @inject IColorAnalysisService ColorService
 @inject ICurrentAlbumColorService CurrentAlbumColorService
 @inject NavigationManager Navigation
+@inject IJSRuntime JS
 
 <PageTitle>Ranking</PageTitle>
 
@@ -136,6 +137,14 @@
         }
     }
 
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JS.InvokeVoidAsync("carouselGestures.init", _keyTarget, DotNetObjectReference.Create(this));
+        }
+    }
+
     private List<Album> GetAlbumsByRating() => albums.OrderByDescending(a => a.Rating).ToList();
 
     private void NavigateToAlbum(string albumName)
@@ -143,19 +152,23 @@
         Navigation.NavigateTo($"/album/{albumName.ToLower().Replace(" ", "_")}");
     }
 
-    private void NextAlbum()
+    [JSInvokable]
+    public void NextAlbum()
     {
         if (rankedAlbums.Count > 0 && currentAlbumIndex < rankedAlbums.Count - 1)
         {
             currentAlbumIndex = currentAlbumIndex + 1;
+            StateHasChanged();
         }
     }
 
-    private void PreviousAlbum()
+    [JSInvokable]
+    public void PreviousAlbum()
     {
         if (rankedAlbums.Count > 0 && currentAlbumIndex > 0)
         {
             currentAlbumIndex = currentAlbumIndex - 1;
+            StateHasChanged();
         }
     }
 
