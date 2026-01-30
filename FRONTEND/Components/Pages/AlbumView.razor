@@ -49,16 +49,7 @@
                 lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit ea eaque, quam odio sunt ipsum cupiditate saepe voluptate eligendi? Inventore dolore nihil aperiam cumque culpa nisi facere magnam quaerat iure.
             </p>
 
-            <div class="artist-banner-wrapper" style="position:relative;">
-                @if (bannerLoading)
-                {
-                    <div class="banner-loading-silhouette" style="display:@(bannerLoading ? "flex" : "none")">
-                        <div class="spinner"></div>
-                    </div>
-                }
-                <div class="artist-banner" style="background-image: url('@album?.BannerImg'); visibility:@(bannerLoading ? "hidden" : "visible")">
-                    <img src="@album?.BannerImg" alt="Banner" style="display:none;" onload="this.dispatchEvent(new Event('bannerLoaded'))" />
-                </div>
+            <div class="artist-banner" style="background-image: url('@album?.BannerImg');">
             </div>
 
             <p>
@@ -92,7 +83,6 @@
     private bool showAllTracks = false;
     private bool animating = false;
     private bool iframeLoading = true;
-    private bool bannerLoading = true;
     private DotNetObjectReference<AlbumView>? objRef;
 
     private async void ToggleShowAllTracks()
@@ -139,15 +129,7 @@
     [JSInvokable]
     public void OnIframeLoaded()
     {
-        Console.WriteLine("Iframe loaded");
         iframeLoading = false;
-        StateHasChanged();
-    }
-
-    [JSInvokable]
-    public void OnBannerLoaded()
-    {
-        bannerLoading = false;
         StateHasChanged();
     }
 
@@ -157,7 +139,6 @@
         {
             objRef = DotNetObjectReference.Create(this);
             await JS.InvokeVoidAsync("attachIframeLoadedHandler", "spotifyIframe", objRef);
-            await JS.InvokeVoidAsync("attachBannerLoadedHandler", "artist-banner", objRef);
         }
     }
 

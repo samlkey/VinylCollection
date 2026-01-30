@@ -111,7 +111,7 @@
     {
         searchText = album.Name ?? "";
         _ = CloseSuggestionsAsync();
-        Navigation.NavigateTo($"/album/{album.Id}");
+        Navigation.NavigateTo($"/album/{album.Name!.ToLower().Replace(" ", "_")}");
     }
 
     private async Task ToggleSearchBar()
