@@ -54,7 +54,7 @@
                 
 
                 <div class="spotify-link-container">
-                    <button class="spotify-link">Listen on Spotify</button>
+                    <button class="spotify-link" @onclick="() => OpenSpotifyLink(currentAlbum?.SpotifyLink)">Listen on Spotify</button>
                 </div>
             </div>
         </div>
@@ -185,6 +185,14 @@ else
             var textColor = isBright ? "black" : "white";
             
             await JS.InvokeVoidAsync("updateLayoutTextColor", textColor);
+        }
+    }
+
+    private async void OpenSpotifyLink(string? link)
+    {
+        if (!string.IsNullOrEmpty(link))
+        {
+            await JS.InvokeVoidAsync("window.open", link, "_blank");
         }
     }
 }

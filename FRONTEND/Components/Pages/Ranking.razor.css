@@ -71,9 +71,13 @@
 
 .carousel-track.first-item {
     justify-content: flex-start;
-    transform: translateX(calc(50% - 200px - 1rem)); /* Shift to center current item: 50% of wrapper minus half card width (200px) minus half gap (1rem) */
+    transform: translateX(calc(48% - 200px - 1rem)); /* Shift to center current item: 50% of wrapper minus half card width (200px) minus half gap (1rem) */
 }
 
+.carousel-track.last-item {
+    justify-content: flex-end;
+    transform: translateX(calc(-48% + 200px + 1rem)); /* Opposite shift to center last item */
+}
 
 .carousel-item {
     flex-shrink: 0;

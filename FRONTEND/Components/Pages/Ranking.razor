@@ -31,14 +31,14 @@
             <h1 style="@textColor">@(currentAlbumIndex+1)</h1>
             <div class="carousel-section">
                 @* Left Side Controls *@
-                <button class="carousel-btn carousel-btn-left" @onclick="PreviousAlbum" disabled="@(currentAlbumIndex <= 0)">
+                <button class="carousel-btn carousel-btn-left" @onclick="PreviousAlbum" style="visibility: @(currentAlbumIndex <= 0 ? "hidden" : "visible")">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="color: var(--layout-text-color, white);">
                         <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
                     </svg>
                 </button>
 
                 <div class="carousel-wrapper">
-                    <div class="carousel-track @(currentAlbumIndex == rankedAlbums.Count - 1 ? "centered" : "") @(currentAlbumIndex == 0 ? "first-item" : "")" @key="currentAlbumIndex">
+                    <div class="carousel-track @(currentAlbumIndex == 0 ? "first-item" : currentAlbumIndex == rankedAlbums.Count - 1 ? "last-item" : "")" @key="currentAlbumIndex">
                         @{
                             var prevIndex = GetPreviousIndex();
                             var nextIndex = GetNextIndex();
@@ -100,7 +100,7 @@
                 </div>
 
                 @* Right Side Controls *@
-                <button class="carousel-btn carousel-btn-right" @onclick="NextAlbum" disabled="@(currentAlbumIndex >= rankedAlbums.Count - 1)">
+                <button class="carousel-btn carousel-btn-right" @onclick="NextAlbum" style="visibility: @(currentAlbumIndex >= rankedAlbums.Count - 1 ? "hidden" : "visible")">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="color: var(--layout-text-color, white); transform: scaleX(-1);">
                         <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
                     </svg>

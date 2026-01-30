@@ -25,6 +25,9 @@ namespace FRONTEND.Data
         public string? ImgSrc { get; set; }
         public string? ImgSrcBack { get; set; }
         public string? BannerImg { get; set; }
+
+        public string? SpotifyLink { get; set; }
+        public string? SpotifyiFrame { get; set; }
         public List<Track>? TrackList { get; set; }
         #endregion
     

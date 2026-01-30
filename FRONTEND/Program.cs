@@ -9,10 +9,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
+// Use project root for DB path so dotnet watch run always uses the same file
+var dbPath = Path.Combine(Directory.GetCurrentDirectory(), "VinylCollection.db");
+
 // Database Configuration
 builder.Services.AddDbContext<VinylDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection") ?? 
-        "Data Source=VinylCollection.db"));
+    options.UseSqlite($"Data Source={dbPath}"));
 
 // Services
 builder.Services.AddScoped<IVinylService, VinylService>();
@@ -26,6 +28,11 @@ using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<VinylDbContext>();
     var colorService = scope.ServiceProvider.GetRequiredService<IColorAnalysisService>();
+    // Delete the database file if it exists to ensure a fresh DB each run
+    if (File.Exists(dbPath))
+    {
+        File.Delete(dbPath);
+    }
     context.Database.EnsureCreated();
     await SeedData.SeedDatabaseAsync(context, colorService);
 }
