@@ -54,6 +54,7 @@
                 
 
                 <div class="spotify-link-container">
+                    <button class="view-link" @onclick="() => NavigateToAlbum(currentAlbum?.Name!)">View Album</button>
                     <button class="spotify-link" @onclick="() => OpenSpotifyLink(currentAlbum?.SpotifyLink)">Listen on Spotify</button>
                 </div>
             </div>

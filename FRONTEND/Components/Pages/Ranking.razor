@@ -22,6 +22,7 @@
 <div class="container" style="--album-bg:@(currentAlbum.PrimaryColour ?? "#000000"); --layout-text-color:@layoutTextColor;" 
      @ref="_keyTarget"
      @onkeydown="HandleKeyDown"
+     @onwheel="HandleWheel"
      tabindex="0">
 
     <Search IsBackVisible="false" />
@@ -29,7 +30,7 @@
     @if (rankedAlbums != null && rankedAlbums.Count > 0)
     {
         <div class="ranking-content">
-            <h1 style="@textColor">@(currentAlbumIndex+1)</h1>
+            <h1 class="ranking-gold" style="@textColor">@(currentAlbumIndex+1)</h1>
             <div class="carousel-section">
                 @* Left Side Controls *@
                 <button class="carousel-btn carousel-btn-left" @onclick="PreviousAlbum" style="visibility: @(currentAlbumIndex <= 0 ? "hidden" : "visible")">
@@ -49,9 +50,10 @@
                         @if (rankedAlbums.Count > 1 && currentAlbumIndex != 0)
                         {
                             var prevAlbum = rankedAlbums[prevIndex];
+                            var prevClass = prevIndex == 0 ? "ranking-gold" : prevIndex == 1 ? "ranking-silver" : prevIndex == 2 ? "ranking-bronze" : "";
                             <div class="carousel-item prev" @onclick="PreviousAlbum" @key="@prevIndex">
                                 <div class="carousel-album-card">
-                                    <img src="@prevAlbum.ImgSrc" alt="@prevAlbum.Name" class="carousel-album-art" />
+                                    <img src="@prevAlbum.ImgSrc" alt="@prevAlbum.Name" class="carousel-album-art @(prevClass)" />
                                     <div class="carousel-album-info">
                                         <h3 style="@textColor">@prevAlbum.Name</h3>
                                         <p class="artist" style="@textColor">@prevAlbum.Artist</p>
@@ -66,10 +68,11 @@
                         @* Current Album *@
                         @{
                             var rankingPosition = currentAlbumIndex + 1;
+                            var currentClass = currentAlbumIndex == 0 ? "ranking-gold" : currentAlbumIndex == 1 ? "ranking-silver" : currentAlbumIndex == 2 ? "ranking-bronze" : "";
                         }
                         <div class="carousel-item current" @onclick="() => NavigateToAlbum(currentAlbum.Name!)" @key="@currentAlbumIndex">
                             <div class="carousel-album-card">
-                                <img src="@currentAlbum.ImgSrc" alt="@currentAlbum.Name" class="carousel-album-art" />
+                                <img src="@currentAlbum.ImgSrc" alt="@currentAlbum.Name" class="carousel-album-art @(currentClass)" />
                                 <div class="carousel-album-info">
                                     <h3 style="@textColor">@currentAlbum.Name</h3>
                                     <p class="artist" style="@textColor">@currentAlbum.Artist</p>
@@ -84,9 +87,10 @@
                         @if (rankedAlbums.Count > 1 && currentAlbumIndex != rankedAlbums.Count-1)
                         {
                             var nextAlbum = rankedAlbums[nextIndex];
+                            var nextClass = nextIndex == 0 ? "ranking-gold" : nextIndex == 1 ? "ranking-silver" : nextIndex == 2 ? "ranking-bronze" : "";
                             <div class="carousel-item next" @onclick="NextAlbum" @key="@nextIndex">
                                 <div class="carousel-album-card">
-                                    <img src="@nextAlbum.ImgSrc" alt="@nextAlbum.Name" class="carousel-album-art" />
+                                    <img src="@nextAlbum.ImgSrc" alt="@nextAlbum.Name" class="carousel-album-art @(nextClass)" />
                                     <div class="carousel-album-info">
                                         <h3 style="@textColor">@nextAlbum.Name</h3>
                                         <p class="artist" style="@textColor">@nextAlbum.Artist</p>
@@ -196,13 +200,30 @@
     
     private async Task HandleKeyDown(KeyboardEventArgs e)
     {
-        if (e.Key == "ArrowRight")
+        if (e.Key == "ArrowRight" || e.Key == "scrollUp")
         {
             NextAlbum();
             await InvokeAsync(StateHasChanged);
         }
-        else if (e.Key == "ArrowLeft")
+        else if (e.Key == "ArrowLeft" || e.Key == "scrollDown")
         {
+            PreviousAlbum();
+            await InvokeAsync(StateHasChanged);
+        }
+    }
+
+    // Add support for mouse wheel events
+    private async Task HandleWheel(WheelEventArgs e)
+    {
+        if (e.DeltaY > 0)
+        {
+            // Scrolled up
+            NextAlbum();
+            await InvokeAsync(StateHasChanged);
+        }
+        else if (e.DeltaY < 0)
+        {
+            // Scrolled down
             PreviousAlbum();
             await InvokeAsync(StateHasChanged);
         }

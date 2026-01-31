@@ -84,7 +84,7 @@
   {
     "Name": "Late Registration",
     "Artist": "Kanye West",
-    "Rating": 85,
+    "Rating": 84,
     "Release": 2005,
     "Length": 70.13,
     "ImgSrc": "https://m.media-amazon.com/images/I/718khrgr5bL._AC_SL1400_.jpg",
@@ -666,7 +666,7 @@
   {
     "Name": "Gorillaz",
     "Artist": "Gorillaz",
-    "Rating": 0,
+    "Rating": 78,
     "Release": 2001,
     "Length": 57.52,
     "ImgSrc": "https://m.media-amazon.com/images/I/71jHAy4L1IL.jpg",
@@ -798,7 +798,7 @@
   {
     "Name": "TYRON",
     "Artist": "Slowthai",
-    "Rating": 87,
+    "Rating": 86,
     "Release": 2021,
     "Length": 35.2,
     "ImgSrc": "https://m.media-amazon.com/images/I/71LDwv-JwYL._UF1000,1000_QL80_.jpg",
@@ -864,7 +864,7 @@
   {
     "Name": "Plastic Beach",
     "Artist": "Gorillaz",
-    "Rating": 0,
+    "Rating": 88,
     "Release": 2010,
     "Length": 56.8,
     "ImgSrc": "https://m.media-amazon.com/images/I/81EP2fxHLRL._UF1000,1000_QL80_.jpg",
@@ -1526,7 +1526,7 @@
   {
     "Name": "Demon Days",
     "Artist": "Gorillaz",
-    "Rating": 0,
+    "Rating": 91,
     "Release": 2005,
     "Length": 50.44,
     "ImgSrc": "https://cdn.hmv.com/r/w-640/hmv/files/7a/7ae39718-6d16-46ab-aaab-db852e1788d9.jpg",
@@ -1662,7 +1662,7 @@
   {
     "Name": "The Black Parade",
     "Artist": "My Chemical Romance",
-    "Rating": 91,
+    "Rating": 87,
     "Release": 2006,
     "Length": 51.57,
     "ImgSrc": "https://m.media-amazon.com/images/I/61BWI2VdBML._AC_SL1129_.jpg",
@@ -1928,6 +1928,186 @@
       {
         "Name": "Compton",
         "Length": 4.08
+      }
+    ]
+  },
+  {
+    "Name": "Way of the Samurai",
+    "Artist": "Samurai Champloo OST",
+    "Rating": 0,
+    "Release": 2010,
+    "Length": 60.8,
+    "ImgSrc": "https://i.discogs.com/gbeAfgv_Vw4gUKteEPLz0LcfAyoLhDI4F5SniSzkVj8/rs:fit/g:sm/q:90/h:582/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTk3MDI2/Ni0xNzAwNjMwNzk1/LTc5OTguanBlZw.jpeg",
+    "ImgSrcBack": "https://www.discrepancy-records.com.au/assets/alt_1/W0-454758.jpg?20211125155236",
+    "BannerImg": "https://damoclesjournal.com/wp-content/uploads/2020/10/samurai-champloo-wallpaper-17664-18222-hd-wallpapers.jpg?w=1024",
+    "SpotifyLink": "https://open.spotify.com/album/20r762YmB5HeofjMCiPMLv?si=fQ0jfMdjSAKS6-8DTxwPAw",
+    "SpotifyiFrame": "https://open.spotify.com/embed/album/20r762YmB5HeofjMCiPMLv?utm_source=generator",
+    "TrackList": [
+      {
+        "Name": "Battle Cry",
+        "Length": 3.20
+      },
+      {
+        "Name": "Nightshift",
+        "Length": 4.42
+      },
+      {
+        "Name": "Numbernine (Back in TYO)",
+        "Length": 3.26
+      },
+      {
+        "Name": "Just Forget",
+        "Length": 3.55
+      },
+      {
+        "Name": "Process",
+        "Length": 4.41
+      },
+      {
+        "Name": "Ole",
+        "Length": 3.07
+      },
+      {
+        "Name": "Raw Material",
+        "Length": 4.52
+      },
+      {
+        "Name": "Braclet",
+        "Length": 3.43
+      },
+      {
+        "Name": "World Without Words",
+        "Length": 6.13
+      },
+      {
+        "Name": "The Stroll",
+        "Length": 2.57
+      },
+      {
+        "Name": "Silver Morning",
+        "Length": 3.37
+      },
+      {
+        "Name": "Tubed (Drum Please!!)",
+        "Length": 4.31
+      },
+      {
+        "Name": "Funkin",
+        "Length": 3.36
+      },
+      {
+        "Name": "Tsurugi No Mai",
+        "Length": 3.24
+      },
+      {
+        "Name": "Sneak Chamber",
+        "Length": 3.15
+      },
+      {
+        "Name": "Genome",
+        "Length": 3.26
+      },
+      {
+        "Name": "Death Wish",
+        "Length": 2.43
+      },
+      {
+        "Name": "In Position",
+        "Length": 3.53
+      },
+      {
+        "Name": "Sincerely",
+        "Length": 4.48
+      }
+    ]
+  },
+  {
+    "Name": "Bleach OST",
+    "Artist": "Shiro Sagisu",
+    "Rating": 0,
+    "Release": 2010,
+    "Length": 60.8,
+    "ImgSrc": "https://m.media-amazon.com/images/I/71Q7c9-coyL.jpg",
+    "ImgSrcBack": "https://cdn-p.smehost.net/sites/af0adc8ea1314bfb8328afdc06ce1e06/wp-content/uploads/2022/10/BLEACH-Original-Soundtrack-2-1024x1016.jpg",
+    "BannerImg": "https://i.redd.it/hzo1fhd7bphy.jpg",
+    "SpotifyLink": "https://open.spotify.com/album/20r762YmB5HeofjMCiPMLv?si=fQ0jfMdjSAKS6-8DTxwPAw",
+    "SpotifyiFrame": "https://open.spotify.com/embed/album/20r762YmB5HeofjMCiPMLv?utm_source=generator",
+    "TrackList": [
+      {
+        "Name": "Battle Cry",
+        "Length": 3.20
+      },
+      {
+        "Name": "Nightshift",
+        "Length": 4.42
+      },
+      {
+        "Name": "Numbernine (Back in TYO)",
+        "Length": 3.26
+      },
+      {
+        "Name": "Just Forget",
+        "Length": 3.55
+      },
+      {
+        "Name": "Process",
+        "Length": 4.41
+      },
+      {
+        "Name": "Ole",
+        "Length": 3.07
+      },
+      {
+        "Name": "Raw Material",
+        "Length": 4.52
+      },
+      {
+        "Name": "Braclet",
+        "Length": 3.43
+      },
+      {
+        "Name": "World Without Words",
+        "Length": 6.13
+      },
+      {
+        "Name": "The Stroll",
+        "Length": 2.57
+      },
+      {
+        "Name": "Silver Morning",
+        "Length": 3.37
+      },
+      {
+        "Name": "Tubed (Drum Please!!)",
+        "Length": 4.31
+      },
+      {
+        "Name": "Funkin",
+        "Length": 3.36
+      },
+      {
+        "Name": "Tsurugi No Mai",
+        "Length": 3.24
+      },
+      {
+        "Name": "Sneak Chamber",
+        "Length": 3.15
+      },
+      {
+        "Name": "Genome",
+        "Length": 3.26
+      },
+      {
+        "Name": "Death Wish",
+        "Length": 2.43
+      },
+      {
+        "Name": "In Position",
+        "Length": 3.53
+      },
+      {
+        "Name": "Sincerely",
+        "Length": 4.48
       }
     ]
   }

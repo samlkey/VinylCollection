@@ -19,8 +19,8 @@
     var layoutTextColor = CurrentAlbumColorService.IsColorBright ? "black" : "white";
 }
 
-<Search IsBackVisible="true"/>
 <div class="container" style="--album-bg: @(album?.PrimaryColour); --layout-text-color:@layoutTextColor;">
+    <Search IsBackVisible="true"/>
     <div class="album-view">
         <div class="album-wrapper">
             <img src="@album?.ImgSrc" alt="@album?.Name" class="album-art" />
@@ -115,6 +115,11 @@
         {
             var allAlbums = await VinylService.GetAllAlbumsAsync();
             album = allAlbums.FirstOrDefault(a => a.Name != null && a.Name.ToLower().Replace(" ", "_") == albumName.ToLower());
+        }
+
+        if (string.IsNullOrEmpty(album!.PrimaryColour))
+        {
+            await album.CalculatePrimaryColourAsync(ColorService);
         }
     }
 
