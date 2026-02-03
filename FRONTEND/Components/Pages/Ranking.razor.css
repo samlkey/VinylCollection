@@ -295,4 +295,9 @@
     .carousel-track.last-item {
         transform: none;
     }
+
+    .carousel-album-card {
+        width: 260px;
+    }
+
 }

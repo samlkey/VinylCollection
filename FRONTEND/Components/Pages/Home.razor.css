@@ -17,6 +17,7 @@
     gap: 5vw;
     background-color: var(--album-bg, #535b59);
     transition: background-color 2s cubic-bezier(.34,1.56,.64,1);
+    overflow: hidden;
 }
 
 /* Add smooth transitions for color changes */
@@ -290,45 +291,43 @@
         gap: 2vh;
         flex: 1;
         justify-content: center;
-    }
-
-    /* Make vinyl box container smaller on mobile */
+    }    /* Make vinyl box container smaller on mobile */
     .vinyl-box-container {
-        width: 240px;
-        height: 240px;
+        width: 300px;
+        height: 300px;
         perspective: 600px;
     }
 
     /* Make vinyl box images smaller on mobile */
     .vinyl-box-img {
-        width: 220px;
-        height: 220px;
+        width: 280px;
+        height: 280px;
     }
 
     /* Make vinyl box flip container smaller on mobile */
     .vinyl-box-flip-container {
-        width: 240px;
-        height: 240px;
+        width: 300px;
+        height: 300px;
         perspective: 800px;
     }
 
     /* Make vinyl box flip smaller on mobile */
     .vinyl-box-flip {
-        width: 220px;
-        height: 220px;
+        width: 280px;
+        height: 280px;
     }
 
     /* Make vinyl box front/back images smaller on mobile */
     .vinyl-box-img.front,
     .vinyl-box-img.back {
-        width: 220px;
-        height: 220px;
+        width: 280px;
+        height: 280px;
     }
 
     /* Make regular album images smaller on mobile */
     .album-img {
-        width: 240px;
-        height: 240px;
+        width: 300px;
+        height: 300px;
     }
 
     .info-container {
@@ -391,39 +390,37 @@
 
     .album-carousel {
         gap: 1vh;
-    }
-
-    .vinyl-box-container {
-        width: 200px;
-        height: 200px;
+    }    .vinyl-box-container {
+        width: 260px;
+        height: 260px;
         perspective: 500px;
     }
 
     .vinyl-box-img {
-        width: 200px;
-        height: 200px;
+        width: 240px;
+        height: 240px;
     }
 
     .vinyl-box-flip-container {
-        width: 200px;
-        height: 200px;
+        width: 260px;
+        height: 260px;
         perspective: 600px;
     }
 
     .vinyl-box-flip {
-        width: 200px;
-        height: 200px;
+        width: 240px;
+        height: 240px;
     }
 
     .vinyl-box-img.front,
     .vinyl-box-img.back {
-        width: 200px;
-        height: 200px;
+        width: 240px;
+        height: 240px;
     }
 
     .album-img {
-        width: 200px;
-        height: 200px;
+        width: 260px;
+        height: 260px;
     }
 
     .info-container {
@@ -458,7 +455,7 @@
     }
 
     .album-indicator {
-        bottom: 10rem;
+        bottom: 6rem;
         gap: 2.3rem;
         margin-top: 0.5rem;
     }

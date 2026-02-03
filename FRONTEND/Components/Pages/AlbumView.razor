@@ -34,9 +34,12 @@
             </div>
 
             <div class="meta-info">
-                <div class="spotify-link-container">
-                    <button class="spotify-link" @onclick="() => OpenSpotifyLink(album?.SpotifyLink)">Listen on Spotify</button>
-                </div>
+                @if (!string.IsNullOrEmpty(album?.SpotifyLink))
+                {
+                    <div class="spotify-link-container">
+                        <button class="spotify-link" @onclick="() => OpenSpotifyLink(album?.SpotifyLink)">Listen on Spotify</button>
+                    </div>
+                }
                 <Rating Value="@album!.Rating" TextColor="@textColor"></Rating>   
             </div>
         </div>
@@ -66,12 +69,49 @@
         </div> 
 
         <div class="track-list" style="position:relative;">
-            <div class="iframe-loading-silhouette" style="display:@(iframeLoading ? "flex" : "none")">
-                <div class="spinner"></div>
-            </div>
-            <iframe id="spotifyIframe" data-testid="embed-iframe" style="border-radius:12px" src="@album?.SpotifyiFrame" width="100%" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" onload="this.dispatchEvent(new Event('iframeLoaded'));"></iframe>
+            @if(!string.IsNullOrEmpty(album?.SpotifyiFrame))
+            {
+                <div class="iframe-loading-silhouette" style="display:@(iframeLoading ? "flex" : "none")">
+                    <div class="spinner"></div>
+                </div>
+                <iframe id="spotifyIframe" data-testid="embed-iframe" style="border-radius:12px" src="@album?.SpotifyiFrame" width="100%" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" onload="this.dispatchEvent(new Event('iframeLoaded'));"></iframe>
+                <p style="@textColor">© Spotify 2026</p>
+            }
+            else
+            {
+                <table>
+                    <tbody class="@(animating ? (showAllTracks ? "collapsing" : "expanding") : "")">
+                    @if (album?.TrackList != null && album.TrackList.Any())
+                    {
+                        int i = 1;
+                        var tracksToShow = showAllTracks ? album.TrackList : album.TrackList.Take(4);
+                        foreach (var track in tracksToShow)
+                        {
+                            <tr style="border-bottom: 1px solid @(textColor.Contains(":") ? textColor.Split(':')[1].Trim() : textColor)">
+                                <td style="@textColor;"><b>@i</b></td>
+                                <td style="@textColor; text-align: left;">@track.Name</td>
+                                <td style="@textColor;">@track.Length</td>
+                            </tr>
+                            i++;    
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="3">No tracks available</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+                
+                @if (album?.TrackList != null && album.TrackList.Count > 4)
+                {
+                    <button @onclick="ToggleShowAllTracks" class="show-more-btn">
+                        @(showAllTracks ? "Show Less" : "Show More")
+                    </button>
+                }
+            }
         </div>
-        <p style="@textColor">© Spotify 2026</p>
     </div>
 </div>
 
