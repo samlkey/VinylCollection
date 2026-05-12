@@ -1,27 +1,44 @@
 .nav-btn {
-    background-color: rgba(255, 255, 255, 0.212); 
-    border: none;
-    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
     font-size: 1rem;
     color: white;
     font-weight: bold;
     cursor: pointer;
-    transition: background 0.2s, transform 0.1s;
+    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
     outline: none;
-    padding: .5rem;
+    padding: 0;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    width: 6vw;
-    min-width: 6vw;
-    height: 5vh;
-    margin-left: 1vw;
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.26);
+    border-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+    transform: translateY(-1px);
+}
+
+.nav-btn:active {
+    transform: translateY(0) scale(0.96);
 }
 
 .search-anim-row {
     position: fixed;
-    top: 2vw;
-    right: 2vw;
+    top: 16px;
+    right: 16px;
     z-index: 2147483647;
     width: auto;
     display: flex;
@@ -34,20 +51,23 @@
     position: relative;
     overflow: hidden;
     width: 0;
-    transition: width 0.35s cubic-bezier(0.4,0,0.2,1);
+    transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     align-items: center;
-    background: rgba(30, 30, 30, 0.95);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    border-radius: 15px;
-    height: 5vh;
-    margin-left: 0.5rem;
+    background: rgba(18, 18, 18, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    height: 44px;
+    margin-left: 8px;
     margin-right: 0;
 }
 
 .search-bar-container.expanded {
-    width: 40vw;
-    transition: width 0.35s cubic-bezier(0.4,0,0.2,1);
+    width: min(40vw, 500px);
+    transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: visible;
 }
 
@@ -61,21 +81,18 @@
     min-width: 120px;
     height: 100%;
     padding: 0 1.2rem;
-    border-radius: 15px;
+    border-radius: 12px;
     border: none;
-    font-size: 1.2rem;
+    font-size: 1rem;
     outline: none;
-    background: #222;
+    background: transparent;
     color: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-    transition: box-shadow 0.2s;
-    display: flex;
-    align-items: center;
+    font-family: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    letter-spacing: 0.01em;
 }
 
-.search-bar:focus, .search-bar.expanded {
-    width: 60vw;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+.search-bar::placeholder {
+    color: rgba(255, 255, 255, 0.45);
 }
 
 .shrinking {
@@ -152,30 +169,33 @@
     position: absolute;
     width: 100%;
     top: 100%;
-    max-height: 600px;
+    max-height: 440px;
     z-index: 2147483647;
     overflow-y: auto;
-    background: #222;
+    background: rgba(18, 18, 18, 0.96);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     color: #fff;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     margin: 0;
     padding: 0;
     list-style: none;
-    border-radius: 15px;
-    margin-top: 2vh;
-    animation: autocomplete-fade-slide 0.25s cubic-bezier(0.4,0,0.2,1);
+    border-radius: 14px;
+    margin-top: 8px;
+    animation: autocomplete-fade-slide 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .autocomplete-list li {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding: 0.5rem 1rem;
-    border-bottom: 1px solid #444;
+    gap: 0.9rem;
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
     background: transparent;
-    transition: background 0.2s, box-shadow 0.2s;
+    transition: background 0.15s ease;
     cursor: pointer;
-    min-height: 60px;
+    min-height: 58px;
 }
 
 .autocomplete-list li:last-child {
@@ -183,8 +203,7 @@
 }
 
 .autocomplete-list li:hover {
-    background: #333;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .autocomplete-list li img {
@@ -274,28 +293,39 @@
 
 @media (max-width: 480px) {
     .search-anim-row {
-        top: 4vw;
-        right: 4vw;
-        width: 100vw;
-        gap: 2vw;
-        position: absolute;
+        top: 14px;
+        right: 14px;
+        /* No left anchor — row stays right-aligned, search bar width is explicit */
+        gap: 6px;
+        position: fixed;
     }
 
     .search-bar-container.expanded {
-        width: 70vw;
+        /*
+         * 3 buttons × 40px + 3 × 6px gap + 8px bar margin + 14px right edge = ~166px used
+         * Leave the back button (54px) clearance on the left too → subtract ~220px total
+         */
+        width: calc(100vw - 220px);
+        max-width: calc(100vw - 220px);
+        flex: none;
     }
 
     .nav-btn {
-        width: 20vw;
-        height: 10vh;
+        width: 40px;
+        min-width: 40px;
+        height: 40px;
+        margin-left: 6px;
+        flex-shrink: 0;
     }
 
     .nav-btn svg {
-        width: 5vw;
-        height: 5vw;
+        width: 20px;
+        height: 20px;
     }
 
     .back-btn {
-        position: unset;
+        position: fixed;
+        left: 14px;
+        top: 14px;
     }
 }

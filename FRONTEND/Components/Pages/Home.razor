@@ -23,19 +23,27 @@
     <Search IsBackVisible="false"/>
     <div class="container" style="--album-bg:@(currentAlbum.PrimaryColour ?? "#000000"); --layout-text-color:@layoutTextColor;">
         <div class="@(hasAnimated ? "album-slide-in-right" : "") album-carousel" @key="currentAlbumIndex">
-            <div class="vinyl-box-flip-container"
-                 @onmousemove="OnImageMouseMove"
-                 @onmouseleave="OnImageMouseLeave"
-                 @onclick="ToggleFlip">
-                <div class="vinyl-box-flip @(isFlipped ? "flipped" : "")" style="transform:@(imageTransform + (isFlipped ? " rotateY(180deg)" : ""))">
-                    <img src="@currentAlbum.ImgSrc"
-                         alt="@currentAlbum.Name"
-                         class="vinyl-box-img front"
-                         draggable="false" />
-                    <img src="@currentAlbum.ImgSrcBack"
-                         alt="@($"{currentAlbum?.Name} back")"
-                         class="vinyl-box-img back"
-                         draggable="false" />
+            <div class="vinyl-col">
+                <div class="vinyl-box-flip-container"
+                     @onmousemove="OnImageMouseMove"
+                     @onmouseleave="OnImageMouseLeave"
+                     @onclick="ToggleFlip">
+                    <div class="vinyl-box-flip @(isFlipped ? "flipped" : "")" style="transform:@(imageTransform + (isFlipped ? " rotateY(180deg)" : ""))">
+                        <img src="@currentAlbum.ImgSrc"
+                             alt="@currentAlbum.Name"
+                             class="vinyl-box-img front"
+                             draggable="false" />
+                        <img src="@currentAlbum.ImgSrcBack"
+                             alt="@($"{currentAlbum?.Name} back")"
+                             class="vinyl-box-img back"
+                             draggable="false" />
+                    </div>
+                </div>
+                <div class="flip-hint" style="color: var(--layout-text-color, white);">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 6v3l4-4-4-4v3c-4.42 0-8 3.58-8 8 0 1.57.46 3.03 1.24 4.26L6.7 14.8c-.45-.83-.7-1.79-.7-2.8 0-3.31 2.69-6 6-6zm6.76 1.74L17.3 9.2c.44.84.7 1.79.7 2.8 0 3.31-2.69 6-6 6v-3l-4 4 4 4v-3c4.42 0 8-3.58 8-8 0-1.57-.46-3.03-1.24-4.26z"/>
+                    </svg>
+                    <span>@(isFlipped ? "Click to flip back" : "Click to flip")</span>
                 </div>
             </div>
 
@@ -51,14 +59,12 @@
 
                 <Rating Value="@currentAlbum.Rating" TextColor="@textColor"></Rating>
 
-                
-
                 <div class="spotify-link-container">
                     <button class="view-link" @onclick="() => NavigateToAlbum(currentAlbum?.Name!)">View Album</button>
-                    
+
                     @if(!string.IsNullOrEmpty(currentAlbum?.SpotifyLink))
                     {
-                        <button class="spotify-link" @onclick="() => OpenSpotifyLink(currentAlbum?.SpotifyLink)">Listen on Spotify</button> 
+                        <button class="spotify-link" @onclick="() => OpenSpotifyLink(currentAlbum?.SpotifyLink)">Listen on Spotify</button>
                     }
                 </div>
             </div>
