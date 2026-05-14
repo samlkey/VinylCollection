@@ -286,8 +286,8 @@
 
 .back-btn {
     position: fixed;
-    left: 2vw;
-    top: 2vw;
+    left: 16px;
+    top: 16px;
     z-index: 2147483647;
 }
 
@@ -295,19 +295,33 @@
     .search-anim-row {
         top: 14px;
         right: 14px;
-        /* No left anchor — row stays right-aligned, search bar width is explicit */
         gap: 6px;
         position: fixed;
     }
 
+    /* Break the expanded bar out of the flex row so it can span freely.
+       Left edge clears the back button (14px margin + 40px btn + 8px gap = 62px). */
     .search-bar-container.expanded {
-        /*
-         * 3 buttons × 40px + 3 × 6px gap + 8px bar margin + 14px right edge = ~166px used
-         * Leave the back button (54px) clearance on the left too → subtract ~220px total
-         */
-        width: calc(100vw - 220px);
-        max-width: calc(100vw - 220px);
+        position: fixed;
+        left: 62px;
+        right: 14px;
+        top: 14px;
+        width: auto !important;
+        max-width: none !important;
+        height: 40px;
+        margin-left: 0;
         flex: none;
+    }
+
+    /* Full-viewport-width autocomplete, anchored below the nav bar */
+    .autocomplete-list {
+        position: fixed;
+        left: 12px;
+        right: 12px;
+        top: 68px; /* 14px top + 40px bar height + 14px gap */
+        width: auto;
+        margin-top: 0;
+        max-height: 60vh;
     }
 
     .nav-btn {

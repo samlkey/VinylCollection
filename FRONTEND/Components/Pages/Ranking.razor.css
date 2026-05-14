@@ -40,13 +40,16 @@
     pointer-events: none;
 }
 
-/* ─── Hero: numeral + art + info ─────────────────────── */
+/* ─── Hero: art centred + info ───────────────────────── */
 .rank-hero {
     position: relative;
     z-index: 2;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* art always in centre column */
     align-items: center;
-    gap: 0;
+    width: 100%;
+    max-width: 1100px;
+    padding: 0 3rem;
     padding-bottom: 6rem; /* clear nav bar */
     animation: heroIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -62,19 +65,22 @@
     }
 }
 
-/* ─── Giant ghost rank numeral ───────────────────────── */
+/* ─── Giant ghost rank numeral (inside art-col, in front of art) */
 .rank-numeral {
+    position: absolute;
     font-size: clamp(7rem, 18vw, 16rem);
     font-weight: 900;
     line-height: 1;
     letter-spacing: -0.04em;
-    color: rgba(255, 255, 255, 0.10);
-    /* Overlap art from the left */
-    margin-right: -3.5rem;
-    z-index: 1;
+    color: rgba(255, 255, 255, 0.55);
+    text-shadow: 0 2px 32px rgba(0, 0, 0, 0.8), 0 0 60px rgba(0, 0, 0, 0.6);
+    left: 0;
+    bottom: -0.75rem;
+    transform: translateX(-100%) translateX(3.5rem);
+    z-index: 3; /* in front of .rank-art */
     pointer-events: none;
     font-variant-numeric: tabular-nums;
-    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 /* Medal numeral treatments */
@@ -83,6 +89,8 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    color: transparent;
+    text-shadow: none;
     opacity: 1;
 }
 
@@ -91,6 +99,8 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    color: transparent;
+    text-shadow: none;
     opacity: 1;
 }
 
@@ -99,17 +109,23 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    color: transparent;
+    text-shadow: none;
     opacity: 1;
 }
 
-/* ─── Art column ─────────────────────────────────────── */
+
+/* ─── Art column (grid centre) ───────────────────────── */
 .rank-art-col {
+    grid-column: 2;
     position: relative;
     z-index: 2;
     flex-shrink: 0;
 }
 
 .rank-art {
+    position: relative;
+    z-index: 2; /* in front of .rank-numeral */
     width: clamp(240px, 28vw, 380px);
     height: clamp(240px, 28vw, 380px);
     object-fit: cover;
@@ -131,27 +147,10 @@
         0 16px 40px rgba(0, 0, 0, 0.5);
 }
 
-/* Medal glows on the art */
-.rank-art.medal-gold {
-    box-shadow:
-        0 40px 100px rgba(0, 0, 0, 0.65),
-        0 0 60px 12px rgba(212, 175, 55, 0.30);
-}
 
-.rank-art.medal-silver {
-    box-shadow:
-        0 40px 100px rgba(0, 0, 0, 0.65),
-        0 0 60px 12px rgba(200, 200, 200, 0.25);
-}
-
-.rank-art.medal-bronze {
-    box-shadow:
-        0 40px 100px rgba(0, 0, 0, 0.65),
-        0 0 60px 12px rgba(180, 100, 40, 0.28);
-}
-
-/* ─── Info column ────────────────────────────────────── */
+/* ─── Info column (grid right) ───────────────────────── */
 .rank-info-col {
+    grid-column: 3;
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
@@ -195,6 +194,10 @@
 .rank-rating {
     width: 100%;
     margin-top: 0.6rem;
+}
+
+.rank-rating ::deep .rating-wrapper {
+    width: 100%;
 }
 
 /* ─── Bottom navigation ──────────────────────────────── */
@@ -291,20 +294,25 @@
 ═══════════════════════════════════════════════════════ */
 @media (max-width: 900px) {
     .rank-hero {
+        display: flex;
         flex-direction: column;
         align-items: center;
         gap: 0;
-        padding-bottom: 7rem;
-        padding-top: 4rem;
+        padding: 4rem 1rem 7rem;
         text-align: center;
+        width: 100%;
+        max-width: none;
     }
 
-    /* On tablet/mobile the numeral sits above the art */
+    /* On tablet/mobile the numeral peeks above the art */
     .rank-numeral {
         font-size: clamp(5rem, 22vw, 9rem);
-        margin-right: 0;
-        margin-bottom: -1.5rem; /* overlap art from above */
+        left: 50%;
+        bottom: auto;
+        top: -6rem;
+        transform: translateX(-50%);
         z-index: 3;
+        white-space: nowrap;
     }
 
     .rank-art-col {
@@ -318,25 +326,48 @@
     }
 
     .rank-info-col {
-        padding-left: 0;
-        align-items: center;
-        max-width: 80vw;
+        display: grid;
+        grid-template-rows: 1.2rem 3.5rem 1.4rem 2.4rem;
         gap: 0.3rem;
+        justify-items: center;
+        align-items: center;
+        grid-column: auto;
+        padding-left: 0;
+        max-width: 80vw;
         margin-top: 1.4rem;
+    }
+
+    .rank-rating {
+        margin-top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .rank-rating ::deep .rating-wrapper {
+        width: 180px;
     }
 
     .rank-album-name {
         font-size: clamp(1.4rem, 5vw, 1.9rem);
         text-align: center;
+        overflow: hidden;
+        align-self: center;
+        width: 100%;
     }
 
     .rank-artist {
         text-align: center;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        align-self: center;
+        width: 100%;
     }
 
     .rank-nav {
         gap: 1.2rem;
-        bottom: 1.8rem;
+        bottom: 3.5rem; /* clear the samkey.uk footer */
     }
 
     /* Hide scroll hint on mobile */
@@ -350,14 +381,13 @@
 ═══════════════════════════════════════════════════════ */
 @media (max-width: 480px) {
     .rank-hero {
-        padding-bottom: 6rem;
-        padding-top: 5rem;
+        padding: 10rem 1rem 6rem;
         gap: 0;
     }
 
     .rank-numeral {
         font-size: clamp(4.5rem, 28vw, 7rem);
-        margin-bottom: -1.2rem;
+        top: -4.5rem;
     }
 
     .rank-art {

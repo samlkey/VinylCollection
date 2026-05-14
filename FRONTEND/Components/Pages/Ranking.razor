@@ -15,13 +15,12 @@
 @{
     var currentAlbum = rankedAlbums[currentAlbumIndex];
     CurrentAlbumColorService.CurrentAlbumColor = currentAlbum.PrimaryColour ?? "#000000";
-    var layoutTextColor = CurrentAlbumColorService.IsColorBright ? "black" : "white";
     var rankPos = currentAlbumIndex + 1;
     var medalClass = rankPos == 1 ? "medal-gold" : rankPos == 2 ? "medal-silver" : rankPos == 3 ? "medal-bronze" : "";
 }
 
 <div class="rank-scene"
-     style="--album-bg:@(currentAlbum.PrimaryColour ?? "#1a1a1a"); --layout-text-color:@layoutTextColor;"
+     style="--album-bg:@(currentAlbum.PrimaryColour ?? "#1a1a1a");"
      @ref="_keyTarget"
      @onkeydown="HandleKeyDown"
      @onwheel="HandleWheel"
@@ -35,17 +34,15 @@
 
     @if (rankedAlbums != null && rankedAlbums.Count > 0)
     {
-        <!-- Hero: numeral + art + info -->
+        <!-- Hero: art (with numeral inside) + info -->
         <div class="rank-hero" @key="currentAlbumIndex">
 
-            <!-- Giant ghost rank numeral -->
-            <span class="rank-numeral @medalClass">@(rankPos.ToString("D2"))</span>
-
-            <!-- Album art -->
+            <!-- Album art + ghost rank numeral (behind art) -->
             <div class="rank-art-col">
+                <span class="rank-numeral @medalClass">@(rankPos.ToString("D2"))</span>
                 <img src="@currentAlbum.ImgSrc"
                      alt="@currentAlbum.Name"
-                     class="rank-art @medalClass"
+                     class="rank-art"
                      @onclick="() => NavigateToAlbum(currentAlbum.Name!)"
                      draggable="false" />
             </div>

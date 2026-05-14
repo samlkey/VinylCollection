@@ -255,11 +255,8 @@
         flex-direction: column;
         align-items: center;
         gap: 1rem;
-    }
-
-    /* Show only front cover on mobile — back cover just wastes vertical space */
-    .album-wrapper img:nth-child(2) {
-        display: none;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
     }
 
     .album-art {
@@ -374,8 +371,7 @@
 
     .album-meta-info {
         font-size: 0.88em;
-        flex-direction: column;
-        gap: 0.25rem;
+        gap: 2rem;
         margin-top: 2rem;
         align-items: flex-start;
     }

@@ -87,13 +87,12 @@ main {
 }
 
 @media (max-width: 480px) {
-    .main-footer{
-        position: absolute;
-        margin-bottom: 2vh;
+    .main-footer {
+        position: fixed;
+        margin-bottom: 1vh;
         font-size: .8em;
         margin-left: 2vw;
     }
-
 }
 
 #blazor-error-ui {
