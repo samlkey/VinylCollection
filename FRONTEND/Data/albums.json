@@ -2,7 +2,7 @@
   {
     "Name": "The College Dropout",
     "Artist": "Kanye West",
-    "Rating": 0,
+    "Rating": 82,
     "Release": 2004,
     "Length": 76.13,
     "ImgSrc": "https://m.media-amazon.com/images/I/8131j2MuspL._AC_SL1500_.jpg",
@@ -10,6 +10,7 @@
     "BannerImg": "https://res.cloudinary.com/jerrick/image/upload/d_642250b563292b35f27461a7.png,f_jpg,fl_progressive,q_auto,w_1024/628feaf3e6e59c001e83e988.jpg",
     "SpotifyLink": "https://open.spotify.com/album/4Uv86qWpGTxf7fU7lG5X6F?si=a8o196wlS02xwNZhvdjspQ",
     "SpotifyiFrame": "https://open.spotify.com/embed/album/4Uv86qWpGTxf7fU7lG5X6F?utm_source=generator",
+    "BestTrack": "Through the Wire",
     "TrackList": [
       {
         "Name": "Intro",
@@ -92,6 +93,7 @@
     "BannerImg": "https://thefader-res.cloudinary.com/private_images/w_760,c_limit,f_auto,q_auto:best/GettyImages-56508583_fhtqqy/kanye-west-late-registration-infographic.jpg",
     "SpotifyLink": "https://open.spotify.com/album/0Ds6i3h0F9RcYIKAD5Olum?si=z3tn77Z_SbuOYU092_NH0Q",
     "SpotifyiFrame": "https://open.spotify.com/embed/album/0Ds6i3h0F9RcYIKAD5Olum?utm_source=generator",
+    "BestTrack": "Touch the Sky",
     "TrackList": [
       {
         "Name": "Wake Up Mr. West",
@@ -186,6 +188,7 @@
     "BannerImg": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/64131e8c-ec9b-4bce-ac2f-c2d816e81efd/dge46e0-d7009dab-248d-48e2-a9dd-e11b352ea840.jpg/v1/fill/w_1280,h_721,q_75,strp/ye_mountains_from_album_ye_by_ddddane_dge46e0-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIxIiwicGF0aCI6Ii9mLzY0MTMxZThjLWVjOWItNGJjZS1hYzJmLWMyZDgxNmU4MWVmZC9kZ2U0NmUwLWQ3MDA5ZGFiLTI0OGQtNDhlMi1hOWRkLWUxMWIzNTJlYTg0MC5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.ruB5zfRlwTQprjXZ45ZuvSuNVubftXzNF6QNytWseVM",
     "SpotifyLink": "https://open.spotify.com/album/2Ek1q2haOnxVqhvVKqMvJe?si=8bf754bf521c43d2",
     "SpotifyiFrame": "https://open.spotify.com/embed/album/2Ek1q2haOnxVqhvVKqMvJe?utm_source=generator",
+    "BestTrack": "Ghost Town",
     "TrackList": [
       {
         "Name": "I Thought About Killing You",
@@ -228,6 +231,7 @@
     "BannerImg": "https://www.vice.com/wp-content/uploads/sites/2/2018/11/1542132810283-KSG.jpeg",
     "SpotifyLink": "https://open.spotify.com/album/6pwuKxMUkNg673KETsXPUV?si=96097e8149da4e03",
     "SpotifyiFrame": "https://open.spotify.com/embed/album/6pwuKxMUkNg673KETsXPUV?utm_source=generator",
+    "BestTrack": "Cudi Montage",
     "TrackList": [
       {
         "Name": "Feel the Love",
@@ -508,6 +512,7 @@
     "BannerImg": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/3DDE/production/_95883851_dc8332c6-2435-48b3-bf78-37e526a80cef.jpg",
     "SpotifyLink": "https://open.spotify.com/album/6dVIqQ8qmQ5GBnJ9shOYGE?si=cEBWuqSAS--GcbxY8O2N4w",
     "SpotifyiFrame": "https://open.spotify.com/embed/album/6dVIqQ8qmQ5GBnJ9shOYGE?utm_source=generator",
+    "BestTrack": "Paranoid Android",
     "TrackList": [
       {
         "Name": "Airbag",
@@ -620,6 +625,7 @@
     "BannerImg": "https://theprodigy.info/media/image/sleeves/the_fat_of_the_land/1lrg.jpg",
     "SpotifyLink": "https://open.spotify.com/album/4fdgcEVMdJe0KVgupMNJAP?si=fbcfa720ad6d4041",
     "SpotifyiFrame": "https://open.spotify.com/embed/album/4fdgcEVMdJe0KVgupMNJAP?utm_source=generator",
+    "BestTrack": "Breathe",
     "TrackList": [
       {
         "Name": "Smack My Bitch Up",
@@ -674,6 +680,7 @@
     "BannerImg": "https://gorillazforbeginners.com/wp-content/uploads/2018/07/phase-1-art.jpg",
     "SpotifyLink": "https://open.spotify.com/album/4tUxQkrduOE8sfgwJ5BI2F?si=5c5674e62e904ad3",
     "SpotifyiFrame": "https://open.spotify.com/embed/album/4tUxQkrduOE8sfgwJ5BI2F?utm_source=generator",
+    "BestTrack": "Rock the House",
     "TrackList": [
       {
         "Name": "Re-Hash",
@@ -806,6 +813,7 @@
     "BannerImg": "https://creativereview.imgix.net/uploads/2021/02/banner2-Screenshot-2020-12-02-at-12.11.45.jpg?auto=compress,format&crop=faces,entropy,edges&fit=crop&q=60&w=1670&h=1080",
     "SpotifyLink": "https://open.spotify.com/album/7qE3WaOVAAIxgH8WtjbBBj?si=4446f4d62808453f",
     "SpotifyiFrame": "https://open.spotify.com/embed/album/7qE3WaOVAAIxgH8WtjbBBj?utm_source=generator",
+    "BestTrack": "nhs",
     "TrackList": [
       {
         "Name": "45 SMOKE",
@@ -872,6 +880,7 @@
     "BannerImg": "https://live.staticflickr.com/5041/5242668365_372ee7501d_b.jpg",
     "SpotifyLink": "https://open.spotify.com/album/2dIGnmEIy1WZIcZCFSj6i8?si=870Bz4nVRtyxfCALLXKDXg",
     "SpotifyiFrame": "https://open.spotify.com/embed/album/2dIGnmEIy1WZIcZCFSj6i8?utm_source=generator",
+    "BestTrack": "Empire Ants",
     "TrackList": [
       {
         "Name": "Orchestral Intro",
@@ -1274,7 +1283,7 @@
   {
     "Name": "Original Pirate Material",
     "Artist": "The Streets",
-    "Rating": 82,
+    "Rating": 80,
     "Release": 2002,
     "Length": 48.36,
     "ImgSrc": "https://m.media-amazon.com/images/I/81upq3MhouL._AC_SL1400_.jpg",
@@ -1282,6 +1291,7 @@
     "BannerImg": "https://miro.medium.com/1*K82wJHNh5AoO66PJJWmhQw.jpeg",
     "SpotifyLink": "https://open.spotify.com/album/0hkZGxfsFypXbjq15hM6U9?si=e159de9ce12f4ffc",
     "SpotifyiFrame": "https://open.spotify.com/embed/album/0hkZGxfsFypXbjq15hM6U9?utm_source=generator",
+    "BestTrack": "Weak Become Heroes",
     "TrackList": [
       {
         "Name": "Turn the Page",
@@ -1418,6 +1428,7 @@
     "BannerImg": "https://i.guim.co.uk/img/media/66ed8e580a2978795427d38d8a274ccdbca8f704/0_500_1991_1195/master/1991.jpg?width=1200&quality=85&auto=format&fit=max&s=224313b4eaec105dd2495dfddb260e59",
     "SpotifyLink": "https://open.spotify.com/album/5fx2Hde8xw2jWPtUKXA73X?si=TOwcx3LXSNOFTFxPvn5dyw",
     "SpotifyiFrame": "https://open.spotify.com/embed/album/5fx2Hde8xw2jWPtUKXA73X?utm_source=generator",
+    "BestTrack": "T N Biscuits",
     "TrackList": [
       {
         "Name": "Nothing Great About Britain",
@@ -1534,6 +1545,7 @@
     "BannerImg": "https://images.genius.com/4b743f95dbb5da9df36fe98727b167da.1000x665x1.png",
     "SpotifyLink": "https://open.spotify.com/album/0bUTHlWbkSQysoM3VsWldT?si=dd84348d7b484327",
     "SpotifyiFrame": "https://open.spotify.com/embed/album/0bUTHlWbkSQysoM3VsWldT?utm_source=generator",
+    "BestTrack": "Dirty Harry",
     "TrackList": [
       {
         "Name": "Intro",
@@ -1670,6 +1682,7 @@
     "BannerImg": "https://tvobsessive.com/wp-content/uploads/2022/03/mcr-758x441.jpg",
     "SpotifyLink": "https://open.spotify.com/album/0FZK97MXMm5mUQ8mtudjuK?si=b3b867cca6a9474d",
     "SpotifyiFrame": "https://open.spotify.com/embed/album/0FZK97MXMm5mUQ8mtudjuK?utm_source=generator",
+    "BestTrack": "Welcome to the Black Parade",
     "TrackList": [
       {
         "Name": "The End.",
@@ -1740,6 +1753,7 @@
     "BannerImg": "https://media.gq.com/photos/564f92c8dc7b324869a6ec18/16:9/w_2560%2Cc_limit/GettyImages-104037857.jpg",
     "SpotifyLink": "https://open.spotify.com/album/20r762YmB5HeofjMCiPMLv?si=fQ0jfMdjSAKS6-8DTxwPAw",
     "SpotifyiFrame": "https://open.spotify.com/embed/album/20r762YmB5HeofjMCiPMLv?utm_source=generator",
+    "BestTrack": "Devil In A New Dress",
     "TrackList": [
       {
         "Name": "Dark Fantasy",
@@ -2108,6 +2122,61 @@
       {
         "Name": "Sincerely",
         "Length": 4.48
+      }
+    ]
+  },
+  {
+    "Name": "DON'T BE DUMB",
+    "Artist": "A$AP Rocky",
+    "Rating": 0,
+    "Release": 2026,
+    "Length": 59.49,
+    "ImgSrc": "https://m.media-amazon.com/images/I/813zkTUT7EL._AC_SL1500_.jpg",
+    "ImgSrcBack": "https://i0.wp.com/stanisland.com/wp-content/uploads/2025/12/img_1079.jpg?resize=1206%2C1206&ssl=1",
+    "BannerImg": "https://images.complex.com/complex/image/upload/c_fill,w_1200,h_630,g_auto,q_auto,f_auto/v1769547778/CS_BrandArtist_Desktop_ASAPROCKY_21x7_y4lob7.png",
+    "SpotifyLink": "https://open.spotify.com/album/4itKk52E9ZCdWUQcFAkud9?si=a50B5ZWLQuSFM11KBZFxpQ",
+    "SpotifyiFrame": "https://open.spotify.com/embed/album/4itKk52E9ZCdWUQcFAkud9?utm_source=generator",
+    "BestTrack": "STAY HERE 4 LIFE",
+    "TrackList": [
+      {
+        "Name": "Smack My Bitch Up",
+        "Length": 5.42
+      },
+      {
+        "Name": "Breathe",
+        "Length": 5.35
+      },
+      {
+        "Name": "Diesel Power",
+        "Length": 4.11
+      },
+      {
+        "Name": "Funky Shit",
+        "Length": 5.16
+      },
+      {
+        "Name": "Serial Thrilla",
+        "Length": 5.11
+      },
+      {
+        "Name": "Mindfields",
+        "Length": 5.4
+      },
+      {
+        "Name": "Narayan",
+        "Length": 9.05
+      },
+      {
+        "Name": "Firestarter",
+        "Length": 4.4
+      },
+      {
+        "Name": "Climbatize",
+        "Length": 7.37
+      },
+      {
+        "Name": "Fuel My Fire",
+        "Length": 4.19
       }
     ]
   }

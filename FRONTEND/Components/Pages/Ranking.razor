@@ -52,6 +52,7 @@
                 <p class="rank-label">No. @rankPos</p>
                 <h2 class="rank-album-name" @onclick="() => NavigateToAlbum(currentAlbum.Name!)">@currentAlbum.Name</h2>
                 <p class="rank-artist">@currentAlbum.Artist</p>
+                <p class="rank-best-track">Best Song: @(string.IsNullOrEmpty(currentAlbum.BestTrack) ? "N/A" : currentAlbum.BestTrack)</p>
                 <div class="rank-rating">
                     <Rating Value="@currentAlbum.Rating" TextColor="color: white"></Rating>
                 </div>
